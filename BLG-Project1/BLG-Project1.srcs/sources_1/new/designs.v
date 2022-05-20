@@ -635,4 +635,76 @@ module ALUSystem(
     
 endmodule
         
+module HardwiredControlUnit(CLK);
+    reg [3:0] clock_counter;
+    input CLK;
+    
+    reg [1:0] RF_OutASel;
+    reg [1:0] RF_OutBSel; 
+    reg [1:0] RF_FunSel;
+    reg [3:0] RF_RegSel;
+    reg [3:0] ALU_FunSel;
+    reg [1:0] ARF_OutCSel; 
+    reg [1:0] ARF_OutDSel; 
+    reg [1:0] ARF_FunSel;
+    reg [2:0] ARF_RegSel;
+    reg IR_LH;
+    reg IR_Enable;
+    reg [1:0] IR_Funsel;
+    reg Mem_WR;
+    reg Mem_CS;
+    reg [1:0] MuxASel;
+    reg [1:0] MuxBSel;
+    reg MuxCSel;
+    
+    always@(posedge CLK) begin
+    if(clock_counter === 4'bX)begin
+        clock_counter = 4'd0;
+    end
+    case(clock_counter)
+        4'bX :clock_counter <= 4'd1;
+        4'b101 : clock_counter <= 4'b000;
+        default : clock_counter <= clock_counter + 4'b001;
+    endcase
+    end
+    always@(posedge CLK) begin
+        if(clock_counter == 4'd0 || clock_counter == 4'bX) begin 
+           IR_LH <= 1'b0;
+           IR_Enable <= 1'b1;
+           IR_Funsel <= 2'b10;
+           ARF_RegSel <= 3'b011; 
+           ARF_FunSel <= 2'b01;
+           ARF_OutDSel <= 2'b01;
+           Mem_WR <= 1'b0;   
+           RF_RegSel <= 4'b1111;           
+         end
+         else if(clock_counter == 4'd1) begin 
+            IR_LH <= 1'b1;
+            IR_Enable <= 1'b1;
+            IR_Funsel <= 2'b10;
+            ARF_RegSel <= 3'b011; 
+            ARF_FunSel <= 2'b01;
+            ARF_OutDSel <= 2'b01;
+            Mem_WR <= 1'b0;  
+            RF_RegSel <= 4'b1111;             
+          end
+    end    
+    ALUSystem AluSystem(RF_OutASel, RF_OutBSel, RF_FunSel, RF_RegSel, ALU_FunSel, ARF_OutCSel, 
+    ARF_OutDSel, 
+    ARF_FunSel,
+    ARF_RegSel,
+    IR_LH,
+    IR_Enable,
+    IR_Funsel,
+    Mem_WR,
+    Mem_CS,
+    MuxASel,
+    MuxBSel,
+    MuxCSel,
+    CLK
+    );    
+
+endmodule
+
+
 
