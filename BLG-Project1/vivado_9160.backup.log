@@ -1,0 +1,1228 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed May 11 13:29:44 2022
+# Process ID: 9160
+# Current directory: C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12524 C:\Users\mertc\Desktop\BLG222E-Project1\BLG-Project1\BLG-Project1.xpr
+# Log file: C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/vivado.log
+# Journal file: C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mertc/Desktop/BLG222Eexit
+INFO: [Common 17-206] Exiting Vivado at Wed May 11 15:36:35 2022...
+s-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Project1Test' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/RAM.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Project1Test_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module D_Latch
+INFO: [VRFC 10-311] analyzing module D_Flip_Flop
+INFO: [VRFC 10-311] analyzing module MUX2_1_4bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX4_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX16_4_8bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_16bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_1bit
+INFO: [VRFC 10-311] analyzing module Full_Adder_1bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_4bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_8bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_16bit
+INFO: [VRFC 10-311] analyzing module ZCNO_register
+INFO: [VRFC 10-311] analyzing module PART1_8bit
+INFO: [VRFC 10-311] analyzing module PART1_16bit
+INFO: [VRFC 10-311] analyzing module PART2_a
+INFO: [VRFC 10-311] analyzing module PART2_b
+INFO: [VRFC 10-311] analyzing module PART2_c
+INFO: [VRFC 10-311] analyzing module PART3
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-311] analyzing module ALUSystem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module part1_8bit_test
+INFO: [VRFC 10-311] analyzing module part1_16bit_test
+INFO: [VRFC 10-311] analyzing module PART2_a_test
+INFO: [VRFC 10-311] analyzing module PART2_b_test
+INFO: [VRFC 10-311] analyzing module PART2_c_test
+INFO: [VRFC 10-311] analyzing module PART3_test
+INFO: [VRFC 10-311] analyzing module Project1Test
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819be057ad0ade57cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Project1Test_behav xil_defaultlib.Project1Test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.MUX2_1_8bit
+Compiling module xil_defaultlib.Full_Adder_1bit
+Compiling module xil_defaultlib.Adder_Substractor_8bit
+Compiling module xil_defaultlib.D_Latch
+Compiling module xil_defaultlib.D_Flip_Flop
+Compiling module xil_defaultlib.PART1_8bit
+Compiling module xil_defaultlib.MUX4_1_8bit
+Compiling module xil_defaultlib.PART2_a
+Compiling module xil_defaultlib.PART2_b
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.MUX2_1_16bit
+Compiling module xil_defaultlib.Adder_Substractor_16bit
+Compiling module xil_defaultlib.PART1_16bit
+Compiling module xil_defaultlib.PART2_c
+Compiling module xil_defaultlib.MUX2_1_1bit
+Compiling module xil_defaultlib.MUX16_4_8bit
+Compiling module xil_defaultlib.MUX2_1_4bit
+Compiling module xil_defaultlib.Adder_Substractor_4bit
+Compiling module xil_defaultlib.ZCNO_register
+Compiling module xil_defaultlib.PART3
+Compiling module xil_defaultlib.ALUSystem
+Compiling module xil_defaultlib.Project1Test
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Project1Test_behav
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/xsim.dir/Project1Test_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed May 11 13:32:14 2022...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 760.105 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Project1Test_behav -key {Behavioral:sim_1:Functional:Project1Test} -tclbatch {Project1Test.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source Project1Test.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/Project1Test/TestVectors" to the wave window because it has 350035 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+Input Values:
+Operation: 1
+Register File: OutASel: 2, OutBSel: 3, FunSel: 3, Regsel:  0
+ALU FunSel:  3
+Addres Register File: OutCSel: 3, OutDSel: 1, FunSel: 3, Regsel: 0
+Instruction Register: LH: 1, Enable: 1, FunSel: 3
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut:   x, BOut:   x
+ALUOut:   x, ALUOutFlag:  x, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut:   x, DOut (Address):   x
+Memory Out:   z
+Instruction Register: IROut:   x
+MuxAOut:   x, MuxBOut:   x, MuxCOut:   x
+Input Values:
+Operation: 0
+Register File: OutASel: 1, OutBSel: 2, FunSel: 1, Regsel:  2
+ALU FunSel:  5
+Addres Register File: OutCSel: 2, OutDSel: 2, FunSel: 0, Regsel: 2
+Instruction Register: LH: 0, Enable: 0, FunSel: 1
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut:   0, BOut:   0
+ALUOut:   0, ALUOutFlag:  x, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut:   0, DOut (Address):   0
+Memory Out:   0
+Instruction Register: IROut:   0
+MuxAOut:   0, MuxBOut:   0, MuxCOut:   0
+Input Values:
+Operation: 0
+Register File: OutASel: 1, OutBSel: 2, FunSel: 1, Regsel:  2
+ALU FunSel:  5
+Addres Register File: OutCSel: 2, OutDSel: 2, FunSel: 1, Regsel: 2
+Instruction Register: LH: 0, Enable: 0, FunSel: 1
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut:   1, BOut:   0
+ALUOut:   0, ALUOutFlag:  8, ALUOutFlags: Z:1, C:0, N:0, O:0,
+Address Register File: COut:   0, DOut (Address):   0
+Memory Out:   0
+Instruction Register: IROut:   0
+MuxAOut:   0, MuxBOut:   0, MuxCOut:   0
+         3 tests completed.
+$finish called at time : 25 ns : File "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" Line 296
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Project1Test_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 773.480 ; gain = 13.375
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 us
+Input Values:
+Operation: 1
+Register File: OutASel: 2, OutBSel: 3, FunSel: 3, Regsel:  0
+ALU FunSel:  3
+Addres Register File: OutCSel: 3, OutDSel: 1, FunSel: 3, Regsel: 0
+Instruction Register: LH: 1, Enable: 1, FunSel: 3
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut:   x, BOut:   x
+ALUOut:   x, ALUOutFlag:  x, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut:   x, DOut (Address):   x
+Memory Out:   z
+Instruction Register: IROut:   x
+MuxAOut:   x, MuxBOut:   x, MuxCOut:   x
+Input Values:
+Operation: 0
+Register File: OutASel: 1, OutBSel: 2, FunSel: 1, Regsel:  2
+ALU FunSel:  5
+Addres Register File: OutCSel: 2, OutDSel: 2, FunSel: 0, Regsel: 2
+Instruction Register: LH: 0, Enable: 0, FunSel: 1
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut:   0, BOut:   0
+ALUOut:   0, ALUOutFlag:  x, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut:   0, DOut (Address):   0
+Memory Out:   0
+Instruction Register: IROut:   0
+MuxAOut:   0, MuxBOut:   0, MuxCOut:   0
+Input Values:
+Operation: 0
+Register File: OutASel: 1, OutBSel: 2, FunSel: 1, Regsel:  2
+ALU FunSel:  5
+Addres Register File: OutCSel: 2, OutDSel: 2, FunSel: 1, Regsel: 2
+Instruction Register: LH: 0, Enable: 0, FunSel: 1
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut:   1, BOut:   0
+ALUOut:   0, ALUOutFlag:  8, ALUOutFlags: Z:1, C:0, N:0, O:0,
+Address Register File: COut:   0, DOut (Address):   0
+Memory Out:   0
+Instruction Register: IROut:   0
+MuxAOut:   0, MuxBOut:   0, MuxCOut:   0
+         3 tests completed.
+$finish called at time : 25 ns : File "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" Line 296
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 ps
+run 1 ps
+run 1 ps
+run 1 ps
+run 1 ps
+run 1 ps
+run 1 ps
+run 1 ps
+run 1 ps
+run 1 ps
+run 1 ps
+run 1 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 ns
+run all
+Input Values:
+Operation: 1
+Register File: OutASel: 2, OutBSel: 3, FunSel: 3, Regsel:  0
+ALU FunSel:  3
+Addres Register File: OutCSel: 3, OutDSel: 1, FunSel: 3, Regsel: 0
+Instruction Register: LH: 1, Enable: 1, FunSel: 3
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut:   x, BOut:   x
+ALUOut:   x, ALUOutFlag:  x, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut:   x, DOut (Address):   x
+Memory Out:   z
+Instruction Register: IROut:   x
+MuxAOut:   x, MuxBOut:   x, MuxCOut:   x
+Input Values:
+Operation: 0
+Register File: OutASel: 1, OutBSel: 2, FunSel: 1, Regsel:  2
+ALU FunSel:  5
+Addres Register File: OutCSel: 2, OutDSel: 2, FunSel: 0, Regsel: 2
+Instruction Register: LH: 0, Enable: 0, FunSel: 1
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut:   0, BOut:   0
+ALUOut:   0, ALUOutFlag:  x, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut:   0, DOut (Address):   0
+Memory Out:   0
+Instruction Register: IROut:   0
+MuxAOut:   0, MuxBOut:   0, MuxCOut:   0
+Input Values:
+Operation: 0
+Register File: OutASel: 1, OutBSel: 2, FunSel: 1, Regsel:  2
+ALU FunSel:  5
+Addres Register File: OutCSel: 2, OutDSel: 2, FunSel: 1, Regsel: 2
+Instruction Register: LH: 0, Enable: 0, FunSel: 1
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut:   1, BOut:   0
+ALUOut:   0, ALUOutFlag:  8, ALUOutFlags: Z:1, C:0, N:0, O:0,
+Address Register File: COut:   0, DOut (Address):   0
+Memory Out:   0
+Instruction Register: IROut:   0
+MuxAOut:   0, MuxBOut:   0, MuxCOut:   0
+         3 tests completed.
+$finish called at time : 25 ns : File "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" Line 296
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+Input Values:
+Operation: 1
+Register File: OutASel: 2, OutBSel: 3, FunSel: 3, Regsel:  0
+ALU FunSel:  3
+Addres Register File: OutCSel: 3, OutDSel: 1, FunSel: 3, Regsel: 0
+Instruction Register: LH: 1, Enable: 1, FunSel: 3
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut:   x, BOut:   x
+ALUOut:   x, ALUOutFlag:  x, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut:   x, DOut (Address):   x
+Memory Out:   z
+Instruction Register: IROut:   x
+MuxAOut:   x, MuxBOut:   x, MuxCOut:   x
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+Input Values:
+Operation: 0
+Register File: OutASel: 1, OutBSel: 2, FunSel: 1, Regsel:  2
+ALU FunSel:  5
+Addres Register File: OutCSel: 2, OutDSel: 2, FunSel: 0, Regsel: 2
+Instruction Register: LH: 0, Enable: 0, FunSel: 1
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut:   0, BOut:   0
+ALUOut:   0, ALUOutFlag:  x, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut:   0, DOut (Address):   0
+Memory Out:   0
+Instruction Register: IROut:   0
+MuxAOut:   0, MuxBOut:   0, MuxCOut:   0
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+Input Values:
+Operation: 0
+Register File: OutASel: 1, OutBSel: 2, FunSel: 1, Regsel:  2
+ALU FunSel:  5
+Addres Register File: OutCSel: 2, OutDSel: 2, FunSel: 1, Regsel: 2
+Instruction Register: LH: 0, Enable: 0, FunSel: 1
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut:   1, BOut:   0
+ALUOut:   0, ALUOutFlag:  8, ALUOutFlags: Z:1, C:0, N:0, O:0,
+Address Register File: COut:   0, DOut (Address):   0
+Memory Out:   0
+Instruction Register: IROut:   0
+MuxAOut:   0, MuxBOut:   0, MuxCOut:   0
+         3 tests completed.
+$finish called at time : 25 ns : File "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" Line 296
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+Input Values:
+Operation: 1
+Register File: OutASel: 2, OutBSel: 3, FunSel: 3, Regsel:  0
+ALU FunSel:  3
+Addres Register File: OutCSel: 3, OutDSel: 1, FunSel: 3, Regsel: 0
+Instruction Register: LH: 1, Enable: 1, FunSel: 3
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut:   x, BOut:   x
+ALUOut:   x, ALUOutFlag:  x, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut:   x, DOut (Address):   x
+Memory Out:   z
+Instruction Register: IROut:   x
+MuxAOut:   x, MuxBOut:   x, MuxCOut:   x
+Input Values:
+Operation: 0
+Register File: OutASel: 1, OutBSel: 2, FunSel: 1, Regsel:  2
+ALU FunSel:  5
+Addres Register File: OutCSel: 2, OutDSel: 2, FunSel: 0, Regsel: 2
+Instruction Register: LH: 0, Enable: 0, FunSel: 1
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut:   0, BOut:   0
+ALUOut:   0, ALUOutFlag:  x, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut:   0, DOut (Address):   0
+Memory Out:   0
+Instruction Register: IROut:   0
+MuxAOut:   0, MuxBOut:   0, MuxCOut:   0
+Input Values:
+Operation: 0
+Register File: OutASel: 1, OutBSel: 2, FunSel: 1, Regsel:  2
+ALU FunSel:  5
+Addres Register File: OutCSel: 2, OutDSel: 2, FunSel: 1, Regsel: 2
+Instruction Register: LH: 0, Enable: 0, FunSel: 1
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut:   1, BOut:   0
+ALUOut:   0, ALUOutFlag:  8, ALUOutFlags: Z:1, C:0, N:0, O:0,
+Address Register File: COut:   0, DOut (Address):   0
+Memory Out:   0
+Instruction Register: IROut:   0
+MuxAOut:   0, MuxBOut:   0, MuxCOut:   0
+         3 tests completed.
+$finish called at time : 25 ns : File "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" Line 296
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Project1Test' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/RAM.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Project1Test_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module D_Latch
+INFO: [VRFC 10-311] analyzing module D_Flip_Flop
+INFO: [VRFC 10-311] analyzing module MUX2_1_4bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX4_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX16_4_8bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_16bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_1bit
+INFO: [VRFC 10-311] analyzing module Full_Adder_1bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_4bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_8bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_16bit
+INFO: [VRFC 10-311] analyzing module ZCNO_register
+INFO: [VRFC 10-311] analyzing module PART1_8bit
+INFO: [VRFC 10-311] analyzing module PART1_16bit
+INFO: [VRFC 10-311] analyzing module PART2_a
+INFO: [VRFC 10-311] analyzing module PART2_b
+INFO: [VRFC 10-311] analyzing module PART2_c
+INFO: [VRFC 10-311] analyzing module PART3
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-311] analyzing module ALUSystem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module part1_8bit_test
+INFO: [VRFC 10-311] analyzing module part1_16bit_test
+INFO: [VRFC 10-311] analyzing module PART2_a_test
+INFO: [VRFC 10-311] analyzing module PART2_b_test
+INFO: [VRFC 10-311] analyzing module PART2_c_test
+INFO: [VRFC 10-311] analyzing module PART3_test
+INFO: [VRFC 10-311] analyzing module Project1Test
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819be057ad0ade57cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Project1Test_behav xil_defaultlib.Project1Test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.MUX2_1_8bit
+Compiling module xil_defaultlib.Full_Adder_1bit
+Compiling module xil_defaultlib.Adder_Substractor_8bit
+Compiling module xil_defaultlib.D_Latch
+Compiling module xil_defaultlib.D_Flip_Flop
+Compiling module xil_defaultlib.PART1_8bit
+Compiling module xil_defaultlib.MUX4_1_8bit
+Compiling module xil_defaultlib.PART2_a
+Compiling module xil_defaultlib.PART2_b
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.MUX2_1_16bit
+Compiling module xil_defaultlib.Adder_Substractor_16bit
+Compiling module xil_defaultlib.PART1_16bit
+Compiling module xil_defaultlib.PART2_c
+Compiling module xil_defaultlib.MUX2_1_1bit
+Compiling module xil_defaultlib.MUX16_4_8bit
+Compiling module xil_defaultlib.MUX2_1_4bit
+Compiling module xil_defaultlib.Adder_Substractor_4bit
+Compiling module xil_defaultlib.ZCNO_register
+Compiling module xil_defaultlib.PART3
+Compiling module xil_defaultlib.ALUSystem
+Compiling module xil_defaultlib.Project1Test
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Project1Test_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Project1Test_behav -key {Behavioral:sim_1:Functional:Project1Test} -tclbatch {Project1Test.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source Project1Test.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/Project1Test/TestVectors" to the wave window because it has 350035 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+Input Values:
+Operation: 1
+Register File: OutASel: 10, OutBSel: 11, FunSel: 11, Regsel: 0000
+ALU FunSel:  3
+Addres Register File: OutCSel: 11, OutDSel: 01, FunSel: 11, Regsel: 000
+Instruction Register: LH: 1, Enable: 1, FunSel: 11
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut: xxxxxxxx, BOut: xxxxxxxx
+ALUOut: xxxxxxxx, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: xxxxxxxx, DOut (Address): xxxxxxxx
+Memory Out: zzzzzzzz
+Instruction Register: IROut: xxxxxxxx
+MuxAOut: xxxxxxxx, MuxBOut: xxxxxxxx, MuxCOut: xxxxxxxx
+Input Values:
+Operation: 0
+Register File: OutASel: 01, OutBSel: 10, FunSel: 01, Regsel: 0010
+ALU FunSel:  5
+Addres Register File: OutCSel: 10, OutDSel: 10, FunSel: 00, Regsel: 010
+Instruction Register: LH: 0, Enable: 0, FunSel: 01
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut: 00000000, BOut: 00000000
+ALUOut: 00000000, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: 00000000, DOut (Address): 00000000
+Memory Out: 00000000
+Instruction Register: IROut: 00000000
+MuxAOut: 00000000, MuxBOut: 00000000, MuxCOut: 00000000
+Input Values:
+Operation: 0
+Register File: OutASel: 01, OutBSel: 10, FunSel: 01, Regsel: 0010
+ALU FunSel:  5
+Addres Register File: OutCSel: 10, OutDSel: 10, FunSel: 01, Regsel: 010
+Instruction Register: LH: 0, Enable: 0, FunSel: 01
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut: 00000001, BOut: 00000000
+ALUOut: 00000000, ALUOutFlag: 1000, ALUOutFlags: Z:1, C:0, N:0, O:0,
+Address Register File: COut: 00000000, DOut (Address): 00000000
+Memory Out: 00000000
+Instruction Register: IROut: 00000000
+MuxAOut: 00000000, MuxBOut: 00000000, MuxCOut: 00000000
+         3 tests completed.
+$finish called at time : 25 ns : File "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" Line 296
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Project1Test_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 819.234 ; gain = 4.125
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Project1Test' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/RAM.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Project1Test_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module D_Latch
+INFO: [VRFC 10-311] analyzing module D_Flip_Flop
+INFO: [VRFC 10-311] analyzing module MUX2_1_4bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX4_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX16_4_8bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_16bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_1bit
+INFO: [VRFC 10-311] analyzing module Full_Adder_1bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_4bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_8bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_16bit
+INFO: [VRFC 10-311] analyzing module ZCNO_register
+INFO: [VRFC 10-311] analyzing module PART1_8bit
+INFO: [VRFC 10-311] analyzing module PART1_16bit
+INFO: [VRFC 10-311] analyzing module PART2_a
+INFO: [VRFC 10-311] analyzing module PART2_b
+INFO: [VRFC 10-311] analyzing module PART2_c
+INFO: [VRFC 10-311] analyzing module PART3
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-311] analyzing module ALUSystem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module part1_8bit_test
+INFO: [VRFC 10-311] analyzing module part1_16bit_test
+INFO: [VRFC 10-311] analyzing module PART2_a_test
+INFO: [VRFC 10-311] analyzing module PART2_b_test
+INFO: [VRFC 10-311] analyzing module PART2_c_test
+INFO: [VRFC 10-311] analyzing module PART3_test
+INFO: [VRFC 10-311] analyzing module Project1Test
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819be057ad0ade57cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Project1Test_behav xil_defaultlib.Project1Test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.MUX2_1_8bit
+Compiling module xil_defaultlib.Full_Adder_1bit
+Compiling module xil_defaultlib.Adder_Substractor_8bit
+Compiling module xil_defaultlib.D_Latch
+Compiling module xil_defaultlib.D_Flip_Flop
+Compiling module xil_defaultlib.PART1_8bit
+Compiling module xil_defaultlib.MUX4_1_8bit
+Compiling module xil_defaultlib.PART2_a
+Compiling module xil_defaultlib.PART2_b
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.MUX2_1_16bit
+Compiling module xil_defaultlib.Adder_Substractor_16bit
+Compiling module xil_defaultlib.PART1_16bit
+Compiling module xil_defaultlib.PART2_c
+Compiling module xil_defaultlib.MUX2_1_1bit
+Compiling module xil_defaultlib.MUX16_4_8bit
+Compiling module xil_defaultlib.MUX2_1_4bit
+Compiling module xil_defaultlib.Adder_Substractor_4bit
+Compiling module xil_defaultlib.ZCNO_register
+Compiling module xil_defaultlib.PART3
+Compiling module xil_defaultlib.ALUSystem
+Compiling module xil_defaultlib.Project1Test
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Project1Test_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Project1Test_behav -key {Behavioral:sim_1:Functional:Project1Test} -tclbatch {Project1Test.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source Project1Test.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/Project1Test/TestVectors" to the wave window because it has 350035 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+Input Values:
+Operation: 1
+Register File: OutASel: 10, OutBSel: 11, FunSel: 11, Regsel: 0000
+ALU FunSel:  3
+Addres Register File: OutCSel: 11, OutDSel: 01, FunSel: 11, Regsel: 000
+Instruction Register: LH: 1, Enable: 1, FunSel: 11
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut: xxxxxxxx, BOut: xxxxxxxx
+ALUOut: xxxxxxxx, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: xxxxxxxx, DOut (Address): xxxxxxxx
+Memory Out: zzzzzzzz
+Instruction Register: IROut: xxxxxxxx
+MuxAOut: xxxxxxxx, MuxBOut: xxxxxxxx, MuxCOut: xxxxxxxx
+Input Values:
+Operation: 0
+Register File: OutASel: 01, OutBSel: 10, FunSel: 01, Regsel: 0010
+ALU FunSel:  5
+Addres Register File: OutCSel: 10, OutDSel: 10, FunSel: 00, Regsel: 010
+Instruction Register: LH: 0, Enable: 0, FunSel: 01
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut: 00000000, BOut: 00000000
+ALUOut: 00000000, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: 00000000, DOut (Address): 00000000
+Memory Out: 00000000
+Instruction Register: IROut: 00000000
+MuxAOut: 00000000, MuxBOut: 00000000, MuxCOut: 00000000
+Input Values:
+Operation: 0
+Register File: OutASel: 01, OutBSel: 10, FunSel: 01, Regsel: 0010
+ALU FunSel:  5
+Addres Register File: OutCSel: 10, OutDSel: 10, FunSel: 01, Regsel: 010
+Instruction Register: LH: 0, Enable: 0, FunSel: 01
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut: 00000001, BOut: 00000000
+ALUOut: 00000000, ALUOutFlag: 1000, ALUOutFlags: Z:1, C:0, N:0, O:0,
+Address Register File: COut: 00000000, DOut (Address): 00000000
+Memory Out: 00000000
+Instruction Register: IROut: 00000000
+MuxAOut: 00000000, MuxBOut: 00000000, MuxCOut: 00000000
+         3 tests completed.
+$finish called at time : 25 ns : File "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" Line 296
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Project1Test_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 826.309 ; gain = 1.984
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Project1Test' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/RAM.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Project1Test_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819be057ad0ade57cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Project1Test_behav xil_defaultlib.Project1Test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Project1Test_behav -key {Behavioral:sim_1:Functional:Project1Test} -tclbatch {Project1Test.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source Project1Test.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/Project1Test/TestVectors" to the wave window because it has 350035 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+Input Values:
+Operation: 1
+Register File: OutASel: 10, OutBSel: 11, FunSel: 11, Regsel: 0000
+ALU FunSel:  3
+Addres Register File: OutCSel: 11, OutDSel: 01, FunSel: 11, Regsel: 000
+Instruction Register: LH: 1, Enable: 1, FunSel: 11
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut: xxxxxxxx, BOut: xxxxxxxx
+ALUOut: xxxxxxxx, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: xxxxxxxx, DOut (Address): xxxxxxxx
+Memory Out: zzzzzzzz
+Instruction Register: IROut: xxxxxxxx
+MuxAOut: xxxxxxxx, MuxBOut: xxxxxxxx, MuxCOut: xxxxxxxx
+Input Values:
+Operation: 0
+Register File: OutASel: 01, OutBSel: 10, FunSel: 01, Regsel: 0010
+ALU FunSel:  5
+Addres Register File: OutCSel: 10, OutDSel: 10, FunSel: 00, Regsel: 010
+Instruction Register: LH: 0, Enable: 0, FunSel: 01
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut: 00000000, BOut: 00000000
+ALUOut: 00000000, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: 00000000, DOut (Address): 00000000
+Memory Out: 00000000
+Instruction Register: IROut: 00000000
+MuxAOut: 00000000, MuxBOut: 00000000, MuxCOut: 00000000
+Input Values:
+Operation: 0
+Register File: OutASel: 01, OutBSel: 10, FunSel: 01, Regsel: 0010
+ALU FunSel:  5
+Addres Register File: OutCSel: 10, OutDSel: 10, FunSel: 01, Regsel: 010
+Instruction Register: LH: 0, Enable: 0, FunSel: 01
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut: 00000001, BOut: 00000000
+ALUOut: 00000000, ALUOutFlag: 1000, ALUOutFlags: Z:1, C:0, N:0, O:0,
+Address Register File: COut: 00000000, DOut (Address): 00000000
+Memory Out: 00000000
+Instruction Register: IROut: 00000000
+MuxAOut: 00000000, MuxBOut: 00000000, MuxCOut: 00000000
+         3 tests completed.
+$finish called at time : 25 ns : File "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" Line 296
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Project1Test_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 833.316 ; gain = 0.812
+run 0.5 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 0.5 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Project1Test' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/RAM.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Project1Test_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819be057ad0ade57cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Project1Test_behav xil_defaultlib.Project1Test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Project1Test_behav -key {Behavioral:sim_1:Functional:Project1Test} -tclbatch {Project1Test.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source Project1Test.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/Project1Test/TestVectors" to the wave window because it has 350035 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+Input Values:
+Operation: 1
+Register File: OutASel: 10, OutBSel: 11, FunSel: 11, Regsel: 0000
+ALU FunSel:  3
+Addres Register File: OutCSel: 11, OutDSel: 01, FunSel: 11, Regsel: 000
+Instruction Register: LH: 1, Enable: 1, FunSel: 11
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut: xxxxxxxx, BOut: xxxxxxxx
+ALUOut: xxxxxxxx, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: xxxxxxxx, DOut (Address): xxxxxxxx
+Memory Out: zzzzzzzz
+Instruction Register: IROut: xxxxxxxx
+MuxAOut: xxxxxxxx, MuxBOut: xxxxxxxx, MuxCOut: xxxxxxxx
+Input Values:
+Operation: 0
+Register File: OutASel: 01, OutBSel: 10, FunSel: 01, Regsel: 0010
+ALU FunSel:  5
+Addres Register File: OutCSel: 10, OutDSel: 10, FunSel: 00, Regsel: 010
+Instruction Register: LH: 0, Enable: 0, FunSel: 01
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut: 00000000, BOut: 00000000
+ALUOut: 00000000, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: 00000000, DOut (Address): 00000000
+Memory Out: 00000000
+Instruction Register: IROut: 00000000
+MuxAOut: 00000000, MuxBOut: 00000000, MuxCOut: 00000000
+Input Values:
+Operation: 0
+Register File: OutASel: 01, OutBSel: 10, FunSel: 01, Regsel: 0010
+ALU FunSel:  5
+Addres Register File: OutCSel: 10, OutDSel: 10, FunSel: 01, Regsel: 010
+Instruction Register: LH: 0, Enable: 0, FunSel: 01
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut: 00000001, BOut: 00000000
+ALUOut: 00000000, ALUOutFlag: 1000, ALUOutFlags: Z:1, C:0, N:0, O:0,
+Address Register File: COut: 00000000, DOut (Address): 00000000
+Memory Out: 00000000
+Instruction Register: IROut: 00000000
+MuxAOut: 00000000, MuxBOut: 00000000, MuxCOut: 00000000
+         3 tests completed.
+$finish called at time : 25 ns : File "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" Line 296
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Project1Test_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 840.562 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+Input Values:
+Operation: 1
+Register File: OutASel: 10, OutBSel: 11, FunSel: 11, Regsel: 0000
+ALU FunSel:  3
+Addres Register File: OutCSel: 11, OutDSel: 01, FunSel: 11, Regsel: 000
+Instruction Register: LH: 1, Enable: 1, FunSel: 11
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut: xxxxxxxx, BOut: xxxxxxxx
+ALUOut: xxxxxxxx, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: xxxxxxxx, DOut (Address): xxxxxxxx
+Memory Out: zzzzzzzz
+Instruction Register: IROut: xxxxxxxx
+MuxAOut: xxxxxxxx, MuxBOut: xxxxxxxx, MuxCOut: xxxxxxxx
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+Input Values:
+Operation: 0
+Register File: OutASel: 01, OutBSel: 10, FunSel: 01, Regsel: 0010
+ALU FunSel:  5
+Addres Register File: OutCSel: 10, OutDSel: 10, FunSel: 00, Regsel: 010
+Instruction Register: LH: 0, Enable: 0, FunSel: 01
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut: 00000000, BOut: 00000000
+ALUOut: 00000000, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: 00000000, DOut (Address): 00000000
+Memory Out: 00000000
+Instruction Register: IROut: 00000000
+MuxAOut: 00000000, MuxBOut: 00000000, MuxCOut: 00000000
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+run 0.5 ns
+Input Values:
+Operation: 0
+Register File: OutASel: 01, OutBSel: 10, FunSel: 01, Regsel: 0010
+ALU FunSel:  5
+Addres Register File: OutCSel: 10, OutDSel: 10, FunSel: 01, Regsel: 010
+Instruction Register: LH: 0, Enable: 0, FunSel: 01
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut: 00000001, BOut: 00000000
+ALUOut: 00000000, ALUOutFlag: 1000, ALUOutFlags: Z:1, C:0, N:0, O:0,
+Address Register File: COut: 00000000, DOut (Address): 00000000
+Memory Out: 00000000
+Instruction Register: IROut: 00000000
+MuxAOut: 00000000, MuxBOut: 00000000, MuxCOut: 00000000
+         3 tests completed.
+$finish called at time : 25 ns : File "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" Line 296
+run 10.350 ns
+Input Values:
+Operation: x
+Register File: OutASel: xx, OutBSel: xx, FunSel: xx, Regsel: xxxx
+ALU FunSel:  x
+Addres Register File: OutCSel: xx, OutDSel: xx, FunSel: xx, Regsel: xxx
+Instruction Register: LH: x, Enable: x, FunSel: xx
+Memory: WR: x, CS: x
+MuxASel: x, MuxBSel: x, MuxCSel: x
+
+Ouput Values:
+Register File: AOut: 000000x0, BOut: 000000x0
+ALUOut: xxxxxxxx, ALUOutFlag: 1000, ALUOutFlags: Z:1, C:0, N:0, O:0,
+Address Register File: COut: 00000000, DOut (Address): 00000000
+Memory Out: xxxxxxxx
+Instruction Register: IROut: 00000000
+MuxAOut: xxxxxxxx, MuxBOut: xxxxxxxx, MuxCOut: 000000x0
+         4 tests completed.
+$finish called at time : 35 ns : File "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" Line 296
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10.350 ns
+Input Values:
+Operation: 1
+Register File: OutASel: 10, OutBSel: 11, FunSel: 11, Regsel: 0000
+ALU FunSel:  3
+Addres Register File: OutCSel: 11, OutDSel: 01, FunSel: 11, Regsel: 000
+Instruction Register: LH: 1, Enable: 1, FunSel: 11
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut: xxxxxxxx, BOut: xxxxxxxx
+ALUOut: xxxxxxxx, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: xxxxxxxx, DOut (Address): xxxxxxxx
+Memory Out: zzzzzzzz
+Instruction Register: IROut: xxxxxxxx
+MuxAOut: xxxxxxxx, MuxBOut: xxxxxxxx, MuxCOut: xxxxxxxx
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 9.350 ns
+Input Values:
+Operation: 1
+Register File: OutASel: 10, OutBSel: 11, FunSel: 11, Regsel: 0000
+ALU FunSel:  3
+Addres Register File: OutCSel: 11, OutDSel: 01, FunSel: 11, Regsel: 000
+Instruction Register: LH: 1, Enable: 1, FunSel: 11
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut: xxxxxxxx, BOut: xxxxxxxx
+ALUOut: xxxxxxxx, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: xxxxxxxx, DOut (Address): xxxxxxxx
+Memory Out: zzzzzzzz
+Instruction Register: IROut: xxxxxxxx
+MuxAOut: xxxxxxxx, MuxBOut: xxxxxxxx, MuxCOut: xxxxxxxx
+run 9.350 ns
+Input Values:
+Operation: 0
+Register File: OutASel: 01, OutBSel: 10, FunSel: 01, Regsel: 0010
+ALU FunSel:  5
+Addres Register File: OutCSel: 10, OutDSel: 10, FunSel: 00, Regsel: 010
+Instruction Register: LH: 0, Enable: 0, FunSel: 01
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut: 00000000, BOut: 00000000
+ALUOut: 00000000, ALUOutFlag: xxxx, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut: 00000000, DOut (Address): 00000000
+Memory Out: 00000000
+Instruction Register: IROut: 00000000
+MuxAOut: 00000000, MuxBOut: 00000000, MuxCOut: 00000000
+set_property top PART2_a_test [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'PART2_a_test' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/RAM.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj PART2_a_test_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module D_Latch
+INFO: [VRFC 10-311] analyzing module D_Flip_Flop
+INFO: [VRFC 10-311] analyzing module MUX2_1_4bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX4_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX16_4_8bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_16bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_1bit
+INFO: [VRFC 10-311] analyzing module Full_Adder_1bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_4bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_8bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_16bit
+INFO: [VRFC 10-311] analyzing module ZCNO_register
+INFO: [VRFC 10-311] analyzing module PART1_8bit
+INFO: [VRFC 10-311] analyzing module PART1_16bit
+INFO: [VRFC 10-311] analyzing module PART2_a
+INFO: [VRFC 10-311] analyzing module PART2_b
+INFO: [VRFC 10-311] analyzing module PART2_c
+INFO: [VRFC 10-311] analyzing module PART3
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-311] analyzing module ALUSystem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module part1_8bit_test
+INFO: [VRFC 10-311] analyzing module part1_16bit_test
+INFO: [VRFC 10-311] analyzing module PART2_a_test
+INFO: [VRFC 10-311] analyzing module PART2_b_test
+INFO: [VRFC 10-311] analyzing module PART2_c_test
+INFO: [VRFC 10-311] analyzing module PART3_test
+INFO: [VRFC 10-311] analyzing module Project1Test
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819be057ad0ade57cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot PART2_a_test_behav xil_defaultlib.PART2_a_test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.MUX2_1_8bit
+Compiling module xil_defaultlib.Full_Adder_1bit
+Compiling module xil_defaultlib.Adder_Substractor_8bit
+Compiling module xil_defaultlib.D_Latch
+Compiling module xil_defaultlib.D_Flip_Flop
+Compiling module xil_defaultlib.PART1_8bit
+Compiling module xil_defaultlib.MUX4_1_8bit
+Compiling module xil_defaultlib.PART2_a
+Compiling module xil_defaultlib.PART2_a_test
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot PART2_a_test_behav
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/xsim.dir/PART2_a_test_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed May 11 15:33:32 2022...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 854.070 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "PART2_a_test_behav -key {Behavioral:sim_1:Functional:PART2_a_test} -tclbatch {PART2_a_test.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source PART2_a_test.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'PART2_a_test_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 867.113 ; gain = 13.148
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May 11 15:36:31 2022...

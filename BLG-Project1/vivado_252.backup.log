@@ -1,0 +1,84 @@
+#-----------------------------------------------------------
+# Vivado v2017.4.1 (64-bit)
+# SW Build 2117270 on Tue Jan 30 15:32:00 MST 2018
+# IP Build 2095745 on Tue Jan 30 17:13:15 MST 2018
+# Start of session at: Tue May 10 15:22:16 2022
+# Process ID: 252
+# Current directory: C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16788 C:\Users\mertc\Desktop\BLG222E-Project1\BLG-Project1\BLG-Project1.xpr
+# Log file: C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/vivado.log
+# Journal file: C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/2017.4/data/ip'.
+update_compile_order -fileset sources_1
+set_property top PART3 [current_fileset]
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-1
+Top: PART3
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 834.328 ; gain = 81.840
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'PART3' [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:473]
+INFO: [Synth 8-638] synthesizing module 'MUX2_1_8bit' [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:68]
+INFO: [Synth 8-256] done synthesizing module 'MUX2_1_8bit' (1#1) [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:68]
+INFO: [Synth 8-638] synthesizing module 'MUX2_1_1bit' [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:168]
+INFO: [Synth 8-256] done synthesizing module 'MUX2_1_1bit' (2#1) [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:168]
+INFO: [Synth 8-638] synthesizing module 'Adder_Substractor_8bit' [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:214]
+INFO: [Synth 8-638] synthesizing module 'Full_Adder_1bit' [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:177]
+INFO: [Synth 8-256] done synthesizing module 'Full_Adder_1bit' (3#1) [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:177]
+INFO: [Synth 8-256] done synthesizing module 'Adder_Substractor_8bit' (4#1) [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:214]
+INFO: [Synth 8-638] synthesizing module 'MUX16_4_8bit' [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:106]
+INFO: [Synth 8-638] synthesizing module 'MUX4_1_8bit' [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:86]
+INFO: [Synth 8-256] done synthesizing module 'MUX4_1_8bit' (5#1) [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:86]
+INFO: [Synth 8-256] done synthesizing module 'MUX16_4_8bit' (6#1) [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:106]
+INFO: [Synth 8-638] synthesizing module 'ZCNO_register' [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:258]
+INFO: [Synth 8-638] synthesizing module 'MUX2_1_4bit' [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:54]
+INFO: [Synth 8-256] done synthesizing module 'MUX2_1_4bit' (7#1) [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:54]
+INFO: [Synth 8-638] synthesizing module 'Adder_Substractor_4bit' [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:192]
+INFO: [Synth 8-256] done synthesizing module 'Adder_Substractor_4bit' (8#1) [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:192]
+INFO: [Synth 8-638] synthesizing module 'D_Flip_Flop' [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:39]
+INFO: [Synth 8-638] synthesizing module 'D_Latch' [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:23]
+INFO: [Synth 8-256] done synthesizing module 'D_Latch' (9#1) [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:23]
+INFO: [Synth 8-256] done synthesizing module 'D_Flip_Flop' (10#1) [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:39]
+INFO: [Synth 8-256] done synthesizing module 'ZCNO_register' (11#1) [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:258]
+INFO: [Synth 8-256] done synthesizing module 'PART3' (12#1) [C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:473]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 887.039 ; gain = 134.551
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 887.039 ; gain = 134.551
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1223.500 ; gain = 471.012
+28 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1223.500 ; gain = 471.012
+write_schematic -format pdf -orientation portrait -force C:/Users/mertc/Desktop/BLG222E-Project1/AssignmentFiles/schematic.pdf
+C:/Users/mertc/Desktop/BLG222E-Project1/AssignmentFiles/schematic.pdf
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue May 10 17:47:23 2022...

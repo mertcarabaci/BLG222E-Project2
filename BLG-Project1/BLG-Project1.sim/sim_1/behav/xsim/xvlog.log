@@ -1,0 +1,30 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module D_Latch
+INFO: [VRFC 10-311] analyzing module D_Flip_Flop
+INFO: [VRFC 10-311] analyzing module MUX2_1_4bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX4_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX16_4_8bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_16bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_1bit
+INFO: [VRFC 10-311] analyzing module Full_Adder_1bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_4bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_8bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_16bit
+INFO: [VRFC 10-311] analyzing module ZCNO_register
+INFO: [VRFC 10-311] analyzing module PART1_8bit
+INFO: [VRFC 10-311] analyzing module PART1_16bit
+INFO: [VRFC 10-311] analyzing module PART2_a
+INFO: [VRFC 10-311] analyzing module PART2_b
+INFO: [VRFC 10-311] analyzing module PART2_c
+INFO: [VRFC 10-311] analyzing module PART3
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-311] analyzing module ALUSystem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module part1_8bit_test
+INFO: [VRFC 10-311] analyzing module part1_16bit_test
+INFO: [VRFC 10-311] analyzing module PART2_a_test
+INFO: [VRFC 10-311] analyzing module PART2_b_test
+INFO: [VRFC 10-311] analyzing module PART2_c_test
+INFO: [VRFC 10-311] analyzing module PART3_test
+INFO: [VRFC 10-311] analyzing module Project1Test

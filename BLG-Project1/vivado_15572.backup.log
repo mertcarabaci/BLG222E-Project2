@@ -1,0 +1,118 @@
+#-----------------------------------------------------------
+# Vivado v2017.4.1 (64-bit)
+# SW Build 2117270 on Tue Jan 30 15:32:00 MST 2018
+# IP Build 2095745 on Tue Jan 30 17:13:15 MST 2018
+# Start of session at: Tue May 10 20:54:48 2022
+# Process ID: 15572
+# Current directory: C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3096 C:\Users\mertc\Desktop\BLG222E-Project1\BLG-Project1\BLG-Project1.xpr
+# Log file: C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/vivado.log
+# Journal file: C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/2017.4/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Project1Test' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/RAM.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Project1Test_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819be057ad0ade57cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Project1Test_behav xil_defaultlib.Project1Test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Project1Test_behav -key {Behavioral:sim_1:Functional:Project1Test} -tclbatch {Project1Test.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source Project1Test.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/Project1Test/TestVectors" to the wave window because it has 350035 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+Input Values:
+Operation: 1
+Register File: OutASel: 2, OutBSel: 3, FunSel: 3, Regsel:  0
+ALU FunSel:  3
+Addres Register File: OutCSel: 3, OutDSel: 1, FunSel: 3, Regsel: 0
+Instruction Register: LH: 1, Enable: 1, FunSel: 3
+Memory: WR: 1, CS: 1
+MuxASel: 2, MuxBSel: 1, MuxCSel: 1
+
+Ouput Values:
+Register File: AOut:   x, BOut:   x
+ALUOut:   x, ALUOutFlag:  x, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut:   x, DOut (Address):   x
+Memory Out:   z
+Instruction Register: IROut:   x
+MuxAOut:   x, MuxBOut:   x, MuxCOut:   x
+Input Values:
+Operation: 0
+Register File: OutASel: 1, OutBSel: 2, FunSel: 1, Regsel:  2
+ALU FunSel:  5
+Addres Register File: OutCSel: 2, OutDSel: 2, FunSel: 0, Regsel: 2
+Instruction Register: LH: 0, Enable: 0, FunSel: 1
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut:   0, BOut:   0
+ALUOut:   0, ALUOutFlag:  x, ALUOutFlags: Z:x, C:x, N:x, O:x,
+Address Register File: COut:   0, DOut (Address):   0
+Memory Out:   0
+Instruction Register: IROut:   0
+MuxAOut:   0, MuxBOut:   0, MuxCOut:   0
+Input Values:
+Operation: 0
+Register File: OutASel: 1, OutBSel: 2, FunSel: 1, Regsel:  2
+ALU FunSel:  5
+Addres Register File: OutCSel: 2, OutDSel: 2, FunSel: 1, Regsel: 2
+Instruction Register: LH: 0, Enable: 0, FunSel: 1
+Memory: WR: 0, CS: 0
+MuxASel: 1, MuxBSel: 0, MuxCSel: 0
+
+Ouput Values:
+Register File: AOut:   1, BOut:   0
+ALUOut:   0, ALUOutFlag:  8, ALUOutFlags: Z:1, C:0, N:0, O:0,
+Address Register File: COut:   0, DOut (Address):   0
+Memory Out:   0
+Instruction Register: IROut:   0
+MuxAOut:   0, MuxBOut:   0, MuxCOut:   0
+         3 tests completed.
+$finish called at time : 25 ns : File "C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" Line 296
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Project1Test_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 736.855 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue May 10 21:04:11 2022...

@@ -1,0 +1,349 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05.04.2022 23:40:42
+// Design Name: 
+// Module Name: OR
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module OR(A, B, O);
+    input wire A;
+    input wire B;
+    output wire O;
+    
+    assign O = A | B;
+endmodule
+
+module AND(A, B, O);
+    input wire A;
+    input wire B;
+    output wire O;
+    
+    assign O = A & B;
+endmodule
+
+module DECODER_8_3(S2,S1,S0,O0,O1,O2,O3,O4,O5,O6,O7);
+    input wire S0;
+    input wire S1;
+    input wire S2;
+    
+    output wire O0;
+    output wire O1;
+    output wire O2;
+    output wire O3;
+    output wire O4;
+    output wire O5;
+    output wire O6;
+    output wire O7;
+    
+    assign
+    O0 = !S2 & !S1 & !S0,
+    O1 = !S2 & !S1 & S0,
+    O2 = !S2 & S1 & !S0,
+    O3 = !S2 & S1 & S0,
+    O4 = S2 & !S1 & !S0,
+    O5 = S2 & !S1 & S0,
+    O6 = S2 & S1 & !S0,
+    O7 = S2 & S1 & S0;    
+    
+    
+endmodule
+
+
+module MUX_8_1(I0,I1,I2,I3,I4,I5,I6,I7,S2,S1,S0,O);
+    input wire I0;
+    input wire I1;
+    input wire I2;
+    input wire I3;
+    input wire I4;
+    input wire I5;
+    input wire I6;
+    input wire I7;
+    
+    input wire S0;
+    input wire S1;
+    input wire S2;
+ 
+    output O;
+    
+    assign O = ~S2&~S1&~S0&I0|~S2&~S1&S0&I1|~S2&S1&~S0&I2|~S2&S1&S0&I3|S2&~S1&~S0&I4|S2&~S1&S0&I5|S2&S1&~S0&I6|S2&S1&S0&I7;
+    
+     
+endmodule
+
+
+module NAND(A, B, O);
+    input wire A;
+    input wire B;
+    output wire O;
+    
+    wire AB;
+    AND and_gate(.A(A),.B(B),.O(AB));
+    NOT not_gate(.A(AB),.O(O));
+endmodule
+
+module NOT(A, O);
+    input wire A;
+    output wire O;
+    
+    assign O = !A;
+endmodule
+
+module XOR(A, B, O);
+    input wire A;
+    input wire B;
+    output wire O;
+    
+    wire A_not;
+    wire B_not;
+    wire AB1;
+    wire AB2;
+    
+    NOT NOT1(.A(A),.O(A_not));
+    AND AND1(.A(A_not),.B(B),.O(AB1));
+    
+    NOT NOT2(.A(B),.O(B_not));
+    AND AND2(.A(B_not),.B(A),.O(AB2));
+    
+    OR OR1(.A(AB1),.B(AB2),.O(O));
+endmodule
+
+module PART2(A,B,C,D,O);
+    input wire A;
+    input wire B;
+    input wire C;
+    input wire D;
+    
+    output wire O;
+    
+    wire A_not;
+    wire B_not;
+    wire D_not;
+    
+    wire BD;    
+    wire AD;
+    wire AB;
+    wire ABD;
+    wire ABCD;
+    
+    NOT not1(.A(A),.O(A_not));
+    NOT not2(.A(B),.O(B_not));
+    NOT not3(.A(D),.O(D_not));
+    
+    AND and1(.A(B_not),.B(D_not),.O(BD));
+    AND and2(.A(A),.B(D),.O(AD));
+    AND and3(.A(A_not),.B(B),.O(AB));
+    
+    OR or1(.A(AD),.B(AB),.O(ABD));
+    AND and4(.A(ABD),.B(C),.O(ABCD));
+    
+    OR or2(.A(ABCD),.B(BD),.O(O));
+endmodule
+
+module PART3(A,B,C,D,O);
+
+    input wire A;
+    input wire B;
+    input wire C;
+    input wire D;
+    
+    output wire O;
+    
+    wire A_not;
+    wire B_not;
+    wire D_not;
+    
+    wire BD;    
+    wire AD;
+    wire AB;
+    wire ABD;
+    wire ABCD;
+    
+    NAND nand1(.A(A),.B(A),.O(A_not));
+    NAND nand2(.A(B),.B(B),.O(B_not));
+    NAND nand3(.A(D),.B(D),.O(D_not));
+    
+    NAND nand4(.A(B_not),.B(D_not),.O(BD));
+    
+    NAND nand5(.A(A),.B(D),.O(AD));
+    
+    NAND nand6(.A(B),.B(A_not),.O(AB));
+    
+    NAND nand7(.A(AB),.B(AD),.O(ABD));
+    
+    NAND nand8(.A(ABD),.B(C),.O(ABCD));
+    
+    NAND nand9(.A(BD),.B(ABCD),.O(O));
+      
+    
+endmodule
+
+module PART4(A,B,C,D,O);
+    input wire A;
+    input wire B;
+    input wire C;
+    input wire D;
+    
+    output wire O;
+    
+    wire D_not;
+    
+    NOT not1(.A(D),.O(D_not));
+    
+    MUX_8_1 mux(.I0(D_not),.I1(D_not),.I2(A),.I3(B),.I4(D_not),.I5(A),.I6(C),.I7(D),.S0(C),.S1(B),.S2(A),.O(O));
+endmodule
+
+module PART5(A,B,C,F2,F3);
+    input wire A;
+    input wire B;
+    input wire C;
+    
+    output wire F2;
+    output wire F3;
+    
+    wire O0,O1,O2,O3,O4,O5,O6,O7;
+    
+    DECODER_8_3 decoder1(.S2(A),.S1(B),.S0(C),.O0(O0),.O1(O1),.O2(O2),.O3(O3),.O4(O4),.O5(O5),.O6(O6),.O7(O7));
+    OR or1(.A(O3),.B(O5),.O(F2));
+    OR or2(.A(O6),.B(O7),.O(F3));       
+
+endmodule
+
+
+module PART6(A,B,S,C);
+
+    input wire A;
+    input wire B;
+    
+    output wire S;
+    output wire C;
+    
+    XOR xor1(.A(A),.B(B),.O(S));
+    AND and1(.A(A),.B(B),.O(C));
+    
+endmodule
+
+module PART7(A,B,Cin,C,S);
+    
+    input wire A;
+    input wire B;
+    input wire Cin;
+    
+    wire S1;
+    wire C1;
+    wire C2;
+
+    
+    output wire S;
+    output wire C;
+    
+    PART6 halfadder0(.A(A),.B(B),.S(S1),.C(C1));
+    PART6 halfadder1(.A(S1),.B(Cin),.S(S),.C(C2));
+    OR or1(.A(C1),.B(C2),.O(C));
+      
+endmodule
+
+ module PART8(A,B,Cin,S,Cout);
+    
+    input wire [3:0] A;
+    input wire [3:0] B;
+    input wire Cin;
+    
+    wire C1,C2,C3;
+    
+    output wire [3:0] S;
+    output wire Cout;
+    
+     
+    
+    PART7 fulladder0(.A(A[0]),.B(B[0]),.Cin(Cin),.C(C1),.S(S[0]));
+    PART7 fulladder1(.A(A[1]),.B(B[1]),.Cin(C1),.C(C2),.S(S[1]));
+    PART7 fulladder2(.A(A[2]),.B(B[2]),.Cin(C2),.C(C3),.S(S[2]));
+    PART7 fulladder3(.A(A[3]),.B(B[3]),.Cin(C3),.C(Cout),.S(S[3]));
+
+endmodule    
+
+ 
+module PART9(A,B,Cin,S,Cout);
+    input wire [7:0] A;
+    input wire [7:0] B;
+    input wire Cin;
+    
+    output wire [7:0]S;
+    output wire Cout;
+    
+    wire C1,C2,C3,C4,C5,C6,C7;
+    
+    PART7 fulladder0(.A(A[0]),.B(B[0]),.Cin(Cin),.C(C1),.S(S[0]));
+    PART7 fulladder1(.A(A[1]),.B(B[1]),.Cin(C1),.C(C2),.S(S[1]));
+    PART7 fulladder2(.A(A[2]),.B(B[2]),.Cin(C2),.C(C3),.S(S[2]));
+    PART7 fulladder3(.A(A[3]),.B(B[3]),.Cin(C3),.C(C4),.S(S[3]));
+    PART7 fulladder4(.A(A[4]),.B(B[4]),.Cin(C4),.C(C5),.S(S[4]));
+    PART7 fulladder5(.A(A[5]),.B(B[5]),.Cin(C5),.C(C6),.S(S[5]));
+    PART7 fulladder6(.A(A[6]),.B(B[6]),.Cin(C6),.C(C7),.S(S[6]));
+    PART7 fulladder7(.A(A[7]),.B(B[7]),.Cin(C7),.C(Cout),.S(S[7]));
+    
+
+endmodule
+
+module PART10(A,B,Cin,S,Cout);
+    input wire [15:0] A;
+    input wire [15:0] B;
+    input wire Cin;
+    
+    output wire [15:0]S;
+    output wire Cout;
+    
+    wire C1;
+    wire [7:0] X1;
+    wire [7:0] X2;
+    
+    XOR xor0(.A(B[0]),.B(Cin),.O(X1[0]));
+    XOR xor1(.A(B[1]),.B(Cin),.O(X1[1]));
+    XOR xor2(.A(B[2]),.B(Cin),.O(X1[2]));
+    XOR xor3(.A(B[3]),.B(Cin),.O(X1[3]));
+    XOR xor4(.A(B[4]),.B(Cin),.O(X1[4]));
+    XOR xor5(.A(B[5]),.B(Cin),.O(X1[5]));
+    XOR xor6(.A(B[6]),.B(Cin),.O(X1[6]));
+    XOR xor7(.A(B[7]),.B(Cin),.O(X1[7]));
+    XOR xor8(.A(B[8]),.B(Cin),.O(X2[0]));
+    XOR xor9(.A(B[9]),.B(Cin),.O(X2[1]));
+    XOR xor10(.A(B[10]),.B(Cin),.O(X2[2]));
+    XOR xor11(.A(B[11]),.B(Cin),.O(X2[3]));
+    XOR xor12(.A(B[12]),.B(Cin),.O(X2[4]));
+    XOR xor13(.A(B[13]),.B(Cin),.O(X2[5]));
+    XOR xor14(.A(B[14]),.B(Cin),.O(X2[6]));
+    XOR xor15(.A(B[15]),.B(Cin),.O(X2[7]));   
+        
+    PART9 fulladder0(.A(A[7:0]),.B(X1),.Cin(Cin),.S(S[7:0]),.Cout(C1));
+    PART9 fulladder1(.A(A[15:8]),.B(X2),.Cin(C1),.S(S[15:8]),.Cout(Cout));  
+
+endmodule
+
+module PART11(A,B,S,C);
+    input wire [15:0] A;
+    input wire [15:0] B;
+    output wire [15:0] S;
+    output wire C;
+    
+    wire [15:0] A1;
+    wire c1;
+    
+    PART10 fulladder1(.A(A),.B(A),.Cin(0),.S(A1),.Cout(c1));
+    PART10 fulladder2(.A(B),.B(A1),.Cin(1),.S(S),.Cout(C));
+    
+endmodule
