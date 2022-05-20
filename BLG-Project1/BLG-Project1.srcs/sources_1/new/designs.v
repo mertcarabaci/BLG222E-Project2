@@ -607,12 +607,14 @@ module ALUSystem(
     wire [7:0] ARF_COut; //address register file part2b
     wire [7:0] Address;
     wire [7:0] MemoryOut;
-    wire [7:0] IROut;//IR(0-7)
+    wire [7:0] IROut_mux;//IR(0-7)
     wire [7:0] MuxAOut;
     wire [7:0] MuxBOut;
     wire [7:0] MuxCOut;
     wire [15:0] temp_I;
-    wire [3:0] ALUOutFlag;
+    wire [3:0] ALUOutFlag;    
+    wire [15:0] IROut;//IR(0-7)
+
     
     PART2_a register_file(RF_FunSel,RF_OutASel,RF_OutBSel,RF_RegSel,MuxAOut,AOut,BOut,Clock);
     
@@ -621,12 +623,12 @@ module ALUSystem(
     Memory mem(Address,ALUOut,Mem_WR,Mem_CS,Clock,MemoryOut);
     
     
-    PART2_c IR(IR_Enable,IR_LH,IR_Funsel,MemoryOut,temp_I,Clock);
+    PART2_c IR(IR_Enable,IR_LH,IR_Funsel,MemoryOut,IROut,Clock);
     
-    assign IROut = temp_I[7:0];
+    assign IROut_mux = IROut[7:0];
     
-    MUX4_1_8bit MUXA(IROut,MemoryOut,ARF_COut,ALUOut,MuxAOut,MuxASel);
-    MUX4_1_8bit MUXB(8'b0,IROut,MemoryOut,ALUOut,MuxBOut,MuxBSel);
+    MUX4_1_8bit MUXA(IROut_mux,MemoryOut,ARF_COut,ALUOut,MuxAOut,MuxASel);
+    MUX4_1_8bit MUXB(8'b0,IROut_mux,MemoryOut,ALUOut,MuxBOut,MuxBSel);
     MUX2_1_8bit MUXC(ARF_COut,AOut,MuxCOut,MuxCSel);
     
     PART3 ALU(MuxCOut,BOut,ALU_FunSel,ALUOut,ALUOutFlag,Clock);

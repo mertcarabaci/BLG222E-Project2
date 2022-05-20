@@ -1,0 +1,423 @@
+/*
+
+Xilinx Vivado v2017.4 (64-bit) [Major: 2017, Minor: 4]
+SW Build: 2086221 on Fri Dec 15 20:55:39 MST 2017
+IP Build: 2085800 on Fri Dec 15 22:25:07 MST 2017
+
+Process ID: 3212
+License: Customer
+
+Current time: 	Fri May 20 13:49:15 EEST 2022
+Time zone: 	Eastern European Time (Asia/Istanbul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 12
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 158 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2017.4/tps/win64/jre
+JVM executable location: 	C:/Xilinx/Vivado/2017.4/tps/win64/jre/bin/java.exe
+
+User name: 	mertc
+User home directory: C:/Users/mertc
+User working directory: C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1
+User country: 	GB
+User language: 	en
+User locale: 	en_GB
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2017.4
+RDI_DATADIR: C:/Xilinx/Vivado/2017.4/data
+RDI_BINDIR: C:/Xilinx/Vivado/2017.4/bin
+
+Vivado preferences file location: C:/Users/mertc/AppData/Roaming/Xilinx/Vivado/2017.4/vivado.xml
+Vivado preferences directory: C:/Users/mertc/AppData/Roaming/Xilinx/Vivado/2017.4/
+Vivado layouts directory: C:/Users/mertc/AppData/Roaming/Xilinx/Vivado/2017.4/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2017.4/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/vivado.log
+Vivado journal file location: 	C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/vivado.jou
+Engine tmp dir: 	C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/.Xil/Vivado-3212-DESKTOP-PKBE7EJ
+
+GUI allocated memory:	181 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 570 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\Users\mertc\Desktop\BLG222E-Project2\BLG-Project1\BLG-Project1.xpr. Version: Vivado v2017.4 
+// bs (cj):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// Tcl Message: open_project C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.xpr 
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 57 MB (+56842kb) [00:00:09]
+// [Engine Memory]: 491 MB (+363383kb) [00:00:09]
+// Tcl Message: open_project C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/mertc/Desktop/BLG222E-Project1/BLG-Project1' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 65 MB (+6189kb) [00:00:11]
+// [Engine Memory]: 534 MB (+18811kb) [00:00:11]
+// [GUI Memory]: 71 MB (+2665kb) [00:00:12]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 570 MB. GUI used memory: 40 MB. Current time: 5/20/22 1:49:15 PM EEST
+// [Engine Memory]: 570 MB (+9783kb) [00:00:13]
+// Project name: BLG-Project1; location: C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1; part: xc7a100tcsg324-1
+dismissDialog("Open Project"); // bs (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 26 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ALUSystem (designs.v), ALU : PART3 (designs.v)]", 9); // B (D, cj)
+// PAPropertyPanels.initPanels (designs.v) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ALUSystem (designs.v)]", 1, true); // B (D, cj) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ALUSystem (designs.v)]", 1, true, false, false, false, false, true); // B (D, cj) - Double Click - Node
+// [Engine Memory]: 602 MB (+4580kb) [00:00:48]
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 4); // B (D, cj)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 5); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, PART2_a_test (simulations.v)]", 6, true); // B (D, cj) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, PART2_a_test (simulations.v)]", 6, true, false, false, false, false, true); // B (D, cj) - Double Click - Node
+selectCodeEditor("simulations.v", 390, 283); // cd (w, cj)
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "designs.v", 1); // k (j, cj)
+selectCodeEditor("designs.v", 238, 377); // cd (w, cj)
+// [GUI Memory]: 78 MB (+3210kb) [00:01:12]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Project1Test (simulations.v)]", 11, true, false, false, false, true, false); // B (D, cj) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // Z (ai, cj)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // Z (ai, cj)
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ac (ai, cj)
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property top Project1Test [get_filesets sim_1] 
+// bs (cj):  Set as Top : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top_lib xil_defaultlib [get_filesets sim_1] 
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Set as Top"); // bs (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// [GUI Memory]: 84 MB (+2195kb) [00:01:22]
+selectCodeEditor("designs.v", 94, 354); // cd (w, cj)
+selectCodeEditor("designs.v", 272, 372); // cd (w, cj)
+selectCodeEditor("designs.v", 256, 262); // cd (w, cj)
+selectCodeEditor("designs.v", 256, 262, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 388, 268); // cd (w, cj)
+selectCodeEditor("designs.v", 388, 268, false, false, false, false, true); // cd (w, cj) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "simulations.v", 2); // k (j, cj)
+selectCodeEditor("simulations.v", 425, 296); // cd (w, cj)
+selectCodeEditor("simulations.v", 444, 279); // cd (w, cj)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "designs.v", 1); // k (j, cj)
+selectCodeEditor("designs.v", 390, 286); // cd (w, cj)
+selectCodeEditor("designs.v", 379, 270); // cd (w, cj)
+selectCodeEditor("designs.v", 379, 270, false, false, false, false, true); // cd (w, cj) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("designs.v", 372, 293); // cd (w, cj)
+selectCodeEditor("designs.v", 208, 314); // cd (w, cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("designs.v", 239, 299); // cd (w, cj)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("designs.v", 113, 299); // cd (w, cj)
+// [GUI Memory]: 90 MB (+1838kb) [00:02:03]
+selectCodeEditor("designs.v", 367, 260); // cd (w, cj)
+selectCodeEditor("designs.v", 367, 260, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 179, 300); // cd (w, cj)
+selectCodeEditor("designs.v", 179, 300, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 372, 264); // cd (w, cj)
+selectCodeEditor("designs.v", 372, 264, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 115, 351); // cd (w, cj)
+selectCodeEditor("designs.v", 115, 351, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 115, 351, false, true, false, false, false); // cd (w, cj) - Control Key
+selectCodeEditor("designs.v", 166, 383); // cd (w, cj)
+selectCodeEditor("designs.v", 166, 383, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 371, 315); // cd (w, cj)
+selectCodeEditor("designs.v", 371, 315, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 205, 398); // cd (w, cj)
+selectCodeEditor("designs.v", 205, 398, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 381, 314); // cd (w, cj)
+selectCodeEditor("designs.v", 381, 314, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 123, 76); // cd (w, cj)
+selectCodeEditor("designs.v", 123, 76, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 378, 314); // cd (w, cj)
+selectCodeEditor("designs.v", 378, 314, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 180, 346); // cd (w, cj)
+selectCodeEditor("designs.v", 180, 346, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 508, 324); // cd (w, cj)
+selectCodeEditor("designs.v", 191, 195); // cd (w, cj)
+selectCodeEditor("designs.v", 261, 179); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 214, 261); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 214, 261); // cd (w, cj)
+selectCodeEditor("designs.v", 143, 284); // cd (w, cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("designs.v", 373, 226); // cd (w, cj)
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cj)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis]", 3); // u (O, cj)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ac (ai, cj)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cj):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvlog --incr --relax -prj Project1Test_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '2' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim' 
+// Tcl Message: Built simulation snapshot Project1Test_behav 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message:  ****** Webtalk v2017.4 (64-bit)   **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017   **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017     ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.  source C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/xsim.dir/Project1Test_behav/webtalk/xsim_webtalk.tcl -notrace INFO: [Common 17-206] Exiting Webtalk at Fri May 20 13:52:02 2022... 
+// Tcl Message: run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 778.734 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "Project1Test_behav -key {Behavioral:sim_1:Functional:Project1Test} -tclbatch {Project1Test.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2017.4 
+// [GUI Memory]: 96 MB (+2197kb) [00:03:00]
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 630 MB. GUI used memory: 87 MB. Current time: 5/20/22 1:52:05 PM EEST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: source Project1Test.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// Tcl Message: # run 1000ns 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'Project1Test_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 799.004 ; gain = 20.270 
+// 'd' command handler elapsed time: 12 seconds
+// Elapsed time: 13 seconds
+dismissDialog("Run Simulation"); // e (cj)
+// [Engine Memory]: 636 MB (+3926kb) [00:03:06]
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Elapsed time: 12 seconds
+selectTab((HResource) null, (HResource) null, "Sources", 1); // aF (Q, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Project1Test (simulations.v)]", 14, true, false, false, false, true, false); // B (D, cj) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // Z (ai, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // Z (ai, Popup.HeavyWeightWindow)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+// HMemoryUtils.trashcanNow. Engine heap size: 643 MB. GUI used memory: 55 MB. Current time: 5/20/22 1:52:27 PM EEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // R (Q, cj)
+// TclEventType: WAVEFORM_CLOSE_WCFG
+closeView(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1"); // w
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // ax
+// Elapsed time: 12 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Memory File]", 22); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Memory File, RAM.mem]", 23, false, false, false, false, true, false); // B (D, cj) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ac (ai, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// as (cj): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (as)
+dismissDialog("Remove Sources"); // as (cj)
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/Users/mertc/Desktop/BLG222E-Project2/AssignmentFiles/RAM.mem] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  C:/Users/mertc/Desktop/BLG222E-Project2/AssignmentFiles/RAM.mem 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Memory File, TestBench.mem]", 22, false, false, false, false, true, false); // B (D, cj) - Popup Trigger
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Memory File, TestBench.mem]", 22, false, false, false, false, true, false); // B (D, cj) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ac (ai, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// as (cj): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (as)
+dismissDialog("Remove Sources"); // as (cj)
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/Users/mertc/Desktop/BLG222E-Project2/AssignmentFiles/TestBench.mem] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  -fileset sim_1 C:/Users/mertc/Desktop/BLG222E-Project2/AssignmentFiles/TestBench.mem 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 33 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, cj)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cj): Add Sources: addNotify
+// Elapsed time: 14 seconds
+selectButton("NEXT", "Next >"); // JButton (h, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (C, c)
+// Elapsed time: 17 seconds
+selectComboBox(RDIResource.HJFileChooserRecentListPreview_RECENT_DIRECTORIES, "C:/Users/mertc/Downloads", 9); // ak (ag, JDialog)
+// HMemoryUtils.trashcanNow. Engine heap size: 651 MB. GUI used memory: 55 MB. Current time: 5/20/22 1:54:25 PM EEST
+// Elapsed time: 13 seconds
+setFileChooser("C:/Users/mertc/Downloads/Project1_TestBench/RAM.mem");
+selectButton("FINISH", "Finish"); // JButton (h, c)
+// 'h' command handler elapsed time: 50 seconds
+dismissDialog("Add Sources"); // c (cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse C:/Users/mertc/Downloads/Project1_TestBench/RAM.mem 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, cj)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cj): Add Sources: addNotify
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, "Add or create simulation sources"); // a (o, c)
+selectButton("NEXT", "Next >"); // JButton (h, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (C, c)
+setFileChooser("C:/Users/mertc/Downloads/Project1_TestBench/TestBench.mem");
+selectButton("FINISH", "Finish"); // JButton (h, c)
+// 'h' command handler elapsed time: 9 seconds
+dismissDialog("Add Sources"); // c (cj)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property SOURCE_SET sources_1 [get_filesets sim_1] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset sim_1 -norecurse C:/Users/mertc/Downloads/Project1_TestBench/TestBench.mem 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 83 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Project1Test (simulations.v)]", 14, true); // B (D, cj) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Project1Test (simulations.v)]", 14, true, false, false, false, false, true); // B (D, cj) - Double Click - Node
+selectCodeEditor("simulations.v", 2, 179); // cd (w, cj)
+typeControlKey((HResource) null, "simulations.v", 'v'); // cd (w, cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug]", 6); // u (O, cj)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ac (ai, cj)
+// TclEventType: DG_GRAPH_GENERATED
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// e (cj):  Run Simulation : addNotify
+selectButton("PAResourceQtoS.SimulationRun_SIMULATION_ALREADY_RUNNING_DO_YOU_Yes", "Yes"); // JButton (A, G)
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "Project1Test_behav -key {Behavioral:sim_1:Functional:Project1Test} -tclbatch {Project1Test.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2017.4 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 653 MB. GUI used memory: 59 MB. Current time: 5/20/22 1:56:38 PM EEST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: source Project1Test.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 1000ns 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'Project1Test_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 819.816 ; gain = 9.543 
+// 'd' command handler elapsed time: 13 seconds
+dismissDialog("Run Simulation"); // e (cj)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 315, 315); // dw (ad, cj)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "designs.v", 0); // k (j, cj)
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aB, cj)
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - Project1Test", "DesignTask.SIMULATION");
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// [GUI Memory]: 101 MB (+91kb) [00:08:01]
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aB, cj)
+// Tcl Message: close_sim 
+closeTask("Project Manager", "Project Manager", "DesignTask.PROJECT_MANAGER");
+// Run Command: PAResourceCommand.PACommandNames_CLOSE_PROJECT
+// x (cj): Close Project: addNotify
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// 'b' command handler elapsed time: 3 seconds
+dismissDialog("Close Project"); // x (cj)
+selectCodeEditor("designs.v", 121, 443); // cd (w, cj)
+selectCodeEditor("designs.v", 113, 455); // cd (w, cj)
