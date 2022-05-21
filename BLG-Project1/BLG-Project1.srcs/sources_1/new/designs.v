@@ -83,23 +83,33 @@ module MUX2_1_8bit(S0,S1,O,S);
     
 endmodule
 
-module MUX4_1_8bit(S0,S1,S2,S3,O,S);
+module MUX4_1_8bit(S0,S1,S2,S3,Output,S);
     input wire [7:0] S0;
     input wire [7:0] S1;
     input wire [7:0] S2;
     input wire [7:0] S3;
     input wire [1:0]S;
     
-    output wire [7:0] O;
-    
-    assign O[0] = (S0[0]&(~S[0]&~S[1])) | (S1[0]&(S[0]&~S[1])) | (S2[0]&(~S[0]&S[1])) | (S3[0]&(S[0]&S[1]));
-    assign O[1] = (S0[1]&(~S[0]&~S[1])) | (S1[1]&(S[0]&~S[1])) | (S2[1]&(~S[0]&S[1])) | (S3[1]&(S[0]&S[1]));
-    assign O[2] = (S0[2]&(~S[0]&~S[1])) | (S1[2]&(S[0]&~S[1])) | (S2[2]&(~S[0]&S[1])) | (S3[2]&(S[0]&S[1]));
-    assign O[3] = (S0[3]&(~S[0]&~S[1])) | (S1[3]&(S[0]&~S[1])) | (S2[3]&(~S[0]&S[1])) | (S3[3]&(S[0]&S[1]));
-    assign O[4] = (S0[4]&(~S[0]&~S[1])) | (S1[4]&(S[0]&~S[1])) | (S2[4]&(~S[0]&S[1])) | (S3[4]&(S[0]&S[1]));
-    assign O[5] = (S0[5]&(~S[0]&~S[1])) | (S1[5]&(S[0]&~S[1])) | (S2[5]&(~S[0]&S[1])) | (S3[5]&(S[0]&S[1]));
-    assign O[6] = (S0[6]&(~S[0]&~S[1])) | (S1[6]&(S[0]&~S[1])) | (S2[6]&(~S[0]&S[1])) | (S3[6]&(S[0]&S[1]));
-    assign O[7] = (S0[7]&(~S[0]&~S[1])) | (S1[7]&(S[0]&~S[1])) | (S2[7]&(~S[0]&S[1])) | (S3[7]&(S[0]&S[1]));
+    output wire [7:0] Output;
+    reg [7:0] out;
+    always@(*)begin
+        if(S == 2'b00)begin
+            out = S0;
+            end
+        else if(S == 2'b01)begin
+            out = S1;
+            end
+        else if(S == 2'b10)begin
+            out = S2;
+            end
+        else if(S == 2'b11)begin
+            out = S3;
+            end
+        else begin
+            out = 7'bX;
+            end
+    end
+    assign Output = out;
     
 endmodule
 
@@ -656,29 +666,48 @@ module HardwiredControlUnit(CLK);
     reg [1:0] MuxASel;
     reg [1:0] MuxBSel;
     reg MuxCSel;
-    
-    always@(posedge CLK) begin
+    reg [1:0] REGSEL;
+    /* 
+    always@(negedge CLK) begin
     if(clock_counter === 4'bX)begin
         clock_counter = 4'd0;
     end
     case(clock_counter)
-        4'bX :clock_counter <= 4'd1;
+        4'bX :clock_counter <= 4'd0;
         4'b101 : clock_counter <= 4'b000;
         default : clock_counter <= clock_counter + 4'b001;
     endcase
-    end
-    always@(posedge CLK) begin
-        if(clock_counter == 4'd0 || clock_counter == 4'bX) begin 
-           IR_LH <= 1'b0;
-           IR_Enable <= 1'b1;
-           IR_Funsel <= 2'b10;
-           ARF_RegSel <= 3'b011; 
-           ARF_FunSel <= 2'b01;
-           ARF_OutDSel <= 2'b01;
-           Mem_WR <= 1'b0;   
-           RF_RegSel <= 4'b1111;           
-         end
-         else if(clock_counter == 4'd1) begin 
+    end*/
+    
+    //We used negedge because a variable changed in a clock cycle effects the circuit in the next cycle
+    //When we change in negedge, they will effect at next posedge. Thus we save clock cycle.
+    always@(negedge CLK) begin  
+        //Reset all registers into 0
+        if(clock_counter == 4'd0 || clock_counter === 4'bX) begin 
+            IR_Enable <= 1'b0;
+            ARF_RegSel <= 3'b000; 
+            ARF_FunSel <= 2'b11;
+            RF_RegSel <= 4'b0000;  
+            RF_FunSel <= 2'b11; 
+            ARF_OutDSel <= 2'b01;
+            Mem_CS <= 1'b1;     
+            clock_counter <= 4'd1;
+        end
+        //IR(15-8) <- M[PC], PC <- PC + 1
+        else if(clock_counter == 4'd1) begin 
+            IR_LH <= 1'b0;
+            IR_Enable <= 1'b1;
+            IR_Funsel <= 2'b10;
+            ARF_RegSel <= 3'b011; 
+            ARF_FunSel <= 2'b01;
+            ARF_OutDSel <= 2'b01;
+            Mem_WR <= 1'b0;   
+            RF_RegSel <= 4'b1111;   
+            Mem_CS <= 1'b0;   
+            clock_counter <= clock_counter + 4'd1;        
+        end
+        //IR(7-0) <- M[PC]
+        else if(clock_counter == 4'd2) begin 
             IR_LH <= 1'b1;
             IR_Enable <= 1'b1;
             IR_Funsel <= 2'b10;
@@ -686,9 +715,71 @@ module HardwiredControlUnit(CLK);
             ARF_FunSel <= 2'b01;
             ARF_OutDSel <= 2'b01;
             Mem_WR <= 1'b0;  
-            RF_RegSel <= 4'b1111;             
-          end
-    end    
+            RF_RegSel <= 4'b1111;  
+            Mem_CS <= 1'b0;  
+            clock_counter <= clock_counter + 4'd1;           
+        end
+        else if(AluSystem.IROut[15:12] < 4'b0011 || AluSystem.IROut[15:12] > 4'b1110) begin
+            if(clock_counter == 4'd3) begin 
+                IR_Enable <= 1'b0;            
+                MuxBSel <= 2'b01;
+                ARF_RegSel <= 3'b101; 
+                ARF_FunSel <= 2'b10;
+                ARF_OutDSel <= 2'b10;
+                Mem_WR <= 1'b0;  
+                RF_RegSel <= 4'b1111;  
+                Mem_CS <= 1'b0;  
+                clock_counter <= clock_counter + 4'd1;           
+            end
+            else if(clock_counter == 4'd4) begin 
+                if(AluSystem.IROut[11] == 1)begin
+                    IR_Enable <= 1'b0;            
+                    MuxBSel <= 2'b10;
+                    ARF_RegSel <= 3'b101; 
+                    ARF_FunSel <= 2'b10;
+                    ARF_OutDSel <= 2'b10;
+                    Mem_WR <= 1'b0;  
+                    RF_RegSel <= 4'b1111;  
+                    Mem_CS <= 1'b0;  
+                end            
+                clock_counter <= clock_counter + 4'd1;           
+            end
+            else if(clock_counter == 4'd5) begin 
+                Mem_WR <= 1'b0; 
+                IR_Enable <= 1'b0;            
+                Mem_CS <= 1'b0;
+                clock_counter <= clock_counter + 4'd1; 
+                if(AluSystem.IROut[15:12] == 4'b0000)begin
+                    ARF_RegSel <= 3'b011; 
+                    ARF_FunSel <= 2'b10;
+                    MuxBSel <= 2'b10;
+                    clock_counter <= 4'b1;
+                end
+                else if(AluSystem.IROut[15:12] == 4'b0001)begin
+                    ARF_RegSel <= 3'b111; 
+                    MuxASel <= 2'b01;
+                    RF_RegSel <= 4'b1111;
+                    RF_OutBSel <= AluSystem.IROut[9:8];
+                    ALU_FunSel <= 4'b0001;   
+                    clock_counter <= 4'b1;                 
+                end
+                else if(AluSystem.IROut[15:12] == 4'b0010)begin
+                    ARF_RegSel <= 3'b111; 
+                    MuxASel <= 2'b01;
+                    RF_FunSel <= 2'b10;
+                    REGSEL <= AluSystem.IROut[9:8];
+                    Mem_WR <= 1'b1;
+                    clock_counter <= 4'b1;
+                end
+                else if(AluSystem.IROut[15:12] == 4'b1111)begin
+                    ARF_RegSel <= 3'b011; 
+                    ARF_FunSel <= 2'b10;
+                    MuxBSel <= 2'b10;
+                    clock_counter <= 4'b1;
+                end                          
+            end            
+         end
+    end   
     ALUSystem AluSystem(RF_OutASel, RF_OutBSel, RF_FunSel, RF_RegSel, ALU_FunSel, ARF_OutCSel, 
     ARF_OutDSel, 
     ARF_FunSel,

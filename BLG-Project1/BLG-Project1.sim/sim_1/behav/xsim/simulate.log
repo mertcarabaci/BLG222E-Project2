@@ -1,2 +1,18 @@
 Vivado Simulator 2017.4
 Time resolution is 1 ps
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 0
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 1
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 31
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 32
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 33
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 35
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 36
+WARNING: Too many words specified in data file RAM.mem
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 0
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 1
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 31
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 32
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 33
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 35
+WARNING: Data truncated while reading Datafile: RAM.mem, while loading at index: 36
+WARNING: Too many words specified in data file RAM.mem

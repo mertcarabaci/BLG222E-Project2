@@ -20,6 +20,7 @@ INFO: [VRFC 10-311] analyzing module PART2_c
 INFO: [VRFC 10-311] analyzing module PART3
 INFO: [VRFC 10-311] analyzing module Memory
 INFO: [VRFC 10-311] analyzing module ALUSystem
+INFO: [VRFC 10-311] analyzing module HardwiredControlUnit
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module part1_8bit_test
 INFO: [VRFC 10-311] analyzing module part1_16bit_test
@@ -28,3 +29,4 @@ INFO: [VRFC 10-311] analyzing module PART2_b_test
 INFO: [VRFC 10-311] analyzing module PART2_c_test
 INFO: [VRFC 10-311] analyzing module PART3_test
 INFO: [VRFC 10-311] analyzing module Project1Test
+INFO: [VRFC 10-311] analyzing module lasttest

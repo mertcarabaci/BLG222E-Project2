@@ -44,6 +44,8 @@ module part1_8bit_test();
     end
 endmodule
 
+
+
 module part1_16bit_test();
     reg E;
     reg [15:0] FunSel;
@@ -308,4 +310,15 @@ module Project1Test();
                 $finish; // End simulation
             end
         end
+endmodule
+
+module lasttest();
+    reg clk;
+    
+    HardwiredControlUnit uut(.CLK(clk));
+    initial begin
+            clk = 0;
+            forever #20 clk = ~clk;     
+        end  
+    
 endmodule
