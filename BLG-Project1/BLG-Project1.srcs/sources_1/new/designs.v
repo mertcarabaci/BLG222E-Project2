@@ -575,7 +575,7 @@ module Memory(
     input wire clock,
     output reg[7:0] o // Output
 );
-    //Declaration oýf the RAM Area
+    //Declaration oï¿½f the RAM Area
     reg[7:0] RAM_DATA[0:255];
     //Read Ram data from the file
     initial $readmemh("RAM.mem", RAM_DATA);
@@ -782,14 +782,36 @@ module CombinationalControlUnit(
     reg rSC_reset = 1'b0;
     
     always@(*)begin
-        if(BRA&AddressMode&T2)begin
-            rMuxBSel <= 2'b01;
-            rARF_RegSel <= 3'b011;
-            rARF_FunSel <= 2'b10;
-            rSC_reset <= 1'b1;
-            rIR_Enable <= 1'b0;
+        if(T0)begin
             rRF_RegSel <= 4'b1111;
-            rMem_CS <= 1'b0;
+            rARF_RegSel <= 3'b011;
+            rARF_FunSel <= 2'b01;
+            rARF_OutDSel <= 2'b01;
+            rMem_WR <= 0;
+            rMem_CS <= 1;
+            rIR_Enable <= 1;
+            rIR_LH <= 1;
+            rIR_Funsel <= 2'b10;
+        end
+        else if(T1)begin 
+            rRF_RegSel <= 4'b1111;
+            rARF_RegSel <= 3'b011;
+            rARF_FunSel <= 2'b01;
+            rARF_OutDSel <= 2'b01;
+            rMem_WR <= 0;
+            rMem_CS <= 1;
+            rIR_Enable <= 1;
+            rIR_LH <= 0;
+            rIR_Funsel <= 2'b10;        
+        end
+        else if(BRA&AddressMode&T2)begin
+            rMuxBSel = 2'b01;
+            rARF_RegSel = 3'b011;
+            rARF_FunSel = 2'b10;
+            rSC_reset = 1'b1;
+            rIR_Enable = 1'b0;
+            rRF_RegSel = 4'b1111;
+            rMem_CS = 1'b0;
         end
         else if((BRA&~AddressMode&T2) | (BNE&~Z&T2&~AddressMode) | (ST&T2&AddressMode))begin
             rSC_reset <= 1'b1;
@@ -855,6 +877,9 @@ module CombinationalControlUnit(
             rIR_Enable <= 1'b0;
             rMem_WR <= 1'b1;
             rMem_CS <= 1'b1;
+        end
+        else if((MOV|AND|OR|NOT|ADD|SUB|LSR|LSL|PUL|PSH|INC|DEC)&T3)begin
+            
         end
     end
     
