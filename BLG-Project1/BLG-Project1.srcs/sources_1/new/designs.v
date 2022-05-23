@@ -915,14 +915,26 @@ module CombinationalControlUnit(
                     rARF_RegSel <= 3'b111;
                 end             
             endcase
-            case(SRCREG1[2])
-                1'b0:begin
-                    rARF_OutCSel <= SRCREG1[1:0];
-                end
-                1'b1:begin
-                    rRF_OutBSel <= SRCREG1[1:0];
-                end           
-            endcase
+            if(LSL|LSR)begin
+                case(SRCREG1[2])
+                    1'b0:begin
+                        rARF_OutCSel <= SRCREG1[1:0];
+                    end
+                    1'b1:begin
+                        rRF_OutASel <= SRCREG1[1:0];
+                    end           
+                endcase
+            end
+            else begin
+                case(SRCREG1[2])
+                    1'b0:begin
+                        rARF_OutCSel <= SRCREG1[1:0];
+                    end
+                    1'b1:begin
+                        rRF_OutBSel <= SRCREG1[1:0];
+                    end           
+                endcase
+            end
             case(SRCREG2[2])
                 1'b0:begin
                     rARF_OutCSel <= SRCREG2[1:0];
@@ -932,6 +944,7 @@ module CombinationalControlUnit(
                 end           
             endcase
             if(MOV)begin
+                rSC_reset <= 1'b1;
                 if(DESTREG[2] == 1'b1)begin
                     rRF_FunSel <= 2'b10;
                     if(SRCREG1[2] == 1'b1)begin 
@@ -955,7 +968,181 @@ module CombinationalControlUnit(
                     end
                 end 
             end
-            
+            else if(AND)begin
+                rSC_reset <= 1'b1;
+                if(DESTREG[2] == 1'b1)begin
+                    rRF_FunSel <= 2'b10;
+                    if(SRCREG2[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
+                    rALU_FunSel <= 4'b0111;
+                    rMuxASel <= 2'b11;
+                end
+                else begin
+                    rARF_FunSel <= 2'b10;
+                    if(SRCREG2[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
+                    rALU_FunSel <= 4'b0111;
+                    rMuxBSel <= 2'b11;
+                end 
+            end
+            else if(OR) begin
+                rSC_reset <= 1'b1;
+                if(DESTREG[2] == 1'b1)begin
+                    rRF_FunSel <= 2'b10;
+                    if(SRCREG2[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
+                    rALU_FunSel <= 4'b1000;
+                    rMuxASel <= 2'b11;
+                end
+                else begin
+                    rARF_FunSel <= 2'b10;
+                    if(SRCREG2[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
+                    rALU_FunSel <= 4'b1000;
+                    rMuxBSel <= 2'b11;
+                end 
+            end
+            else if(NOT) begin
+                rSC_reset <= 1'b1;
+                if(DESTREG[2] == 1'b1)begin
+                    rRF_FunSel <= 2'b10;
+                    if(SRCREG1[2] == 1'b1)begin
+                        rALU_FunSel <= 4'b0011;
+                    end
+                    else begin
+                        rALU_FunSel <= 4'b0010;
+                        rMuxCSel <= 1'b0;
+                    end
+                    rMuxASel <= 2'b11;
+                end
+                else begin
+                    rARF_FunSel <= 2'b10;
+                    if(SRCREG2[2] == 1'b1)begin
+                        rALU_FunSel <= 4'b0011;
+                    end
+                    else begin
+                        rALU_FunSel <= 4'b0010;
+                        rMuxCSel <= 1'b0;
+                    end
+                    rMuxBSel <= 2'b11;
+                end 
+            end
+            else if(ADD) begin
+                rSC_reset <= 1'b1;
+                if(DESTREG[2] == 1'b1)begin
+                    rRF_FunSel <= 2'b10;
+                    if(SRCREG2[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
+                    rALU_FunSel <= 4'b0100;
+                    rMuxASel <= 2'b11;
+                end
+                else begin
+                    rARF_FunSel <= 2'b10;
+                    if(SRCREG2[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
+                    rALU_FunSel <= 4'b0100;
+                    rMuxBSel <= 2'b11;
+                end 
+            end
+            else if(SUB) begin
+                rSC_reset <= 1'b1;
+                if(DESTREG[2] == 1'b1)begin
+                    rRF_FunSel <= 2'b10;
+                    if(SRCREG2[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
+                    rALU_FunSel <= 4'b0110;
+                    rMuxASel <= 2'b11;
+                end
+                else begin
+                    rARF_FunSel <= 2'b10;
+                    if(SRCREG2[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
+                    rALU_FunSel <= 4'b0110;
+                    rMuxBSel <= 2'b11;
+                end 
+            end 
+            else if(LSR) begin
+                rSC_reset <= 1'b1;
+                if(DESTREG[2] == 1'b1)begin
+                    rRF_FunSel <= 2'b10;
+                    if(SRCREG1[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
+                    rALU_FunSel <= 4'b1011;
+                    rMuxASel <= 2'b11;
+                end
+                else begin
+                    rARF_FunSel <= 2'b10;
+                    if(SRCREG1[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
+                    rALU_FunSel <= 4'b1011;
+                    rMuxBSel <= 2'b11;
+                end 
+            end 
+            else if(LSL) begin
+                rSC_reset <= 1'b1;
+                if(DESTREG[2] == 1'b1)begin
+                    rRF_FunSel <= 2'b10;
+                    if(SRCREG1[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
+                    rALU_FunSel <= 4'b1010;
+                    rMuxASel <= 2'b11;
+                end
+                else begin
+                    rARF_FunSel <= 2'b10;
+                    if(SRCREG1[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
+                    rALU_FunSel <= 4'b1010;
+                    rMuxBSel <= 2'b11;
+                end 
+            end           
         end
     end
     
