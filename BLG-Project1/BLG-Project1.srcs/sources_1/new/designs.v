@@ -674,6 +674,8 @@ module SequenceCounter(CLK,Reset,T);
     assign T = counter;
 endmodule
 
+
+
 module CombinationalControlUnit(
     input T0,
     input T1,
@@ -709,26 +711,25 @@ module CombinationalControlUnit(
     input N,
     input O,  
     
-    input [15:0] IROut,
     
-    output [1:0] RF_OutASel, 
-    output [1:0] RF_OutBSel, 
-    output [1:0] RF_FunSel,
-    output [3:0] RF_RegSel,
-    output [3:0] ALU_FunSel,
-    output [1:0] ARF_OutCSel, 
-    output [1:0] ARF_OutDSel, 
-    output [1:0] ARF_FunSel,
-    output [2:0] ARF_RegSel,
-    output IR_LH,
-    output IR_Enable,
-    output [1:0] IR_Funsel,
-    output Mem_WR,
-    output Mem_CS,
-    output [1:0] MuxASel,
-    output [1:0] MuxBSel,
-    output MuxCSel
-    output SC_reset);
+    output wire [1:0] RF_OutASel, 
+    output wire [1:0] RF_OutBSel, 
+    output wire [1:0] RF_FunSel,
+    output wire [3:0] RF_RegSel,
+    output wire [3:0] ALU_FunSel,
+    output wire [1:0] ARF_OutCSel, 
+    output wire [1:0] ARF_OutDSel, 
+    output wire [1:0] ARF_FunSel,
+    output wire [2:0] ARF_RegSel,
+    output wire IR_LH,
+    output wire IR_Enable,
+    output wire [1:0] IR_Funsel,
+    output wire Mem_WR,
+    output wire Mem_CS,
+    output wire [1:0] MuxASel,
+    output wire [1:0] MuxBSel,
+    output wire MuxCSel,
+    output wire SC_reset);
     
     reg  [1:0] rRF_OutASel;
     reg  [1:0] rRF_OutBSel; 
@@ -760,10 +761,10 @@ module CombinationalControlUnit(
             rRF_RegSel = 4'b1111;
             rMem_CS = 1'b0;
         end
-        else if((BRA&~AddressMode&T2) | (BNE&~Z&T2&~AddressMode))begin
+        else if((BRA&~AddressMode&T2) | (BNE&~Z&T2&~AddressMode) | (ST&T2&AddressMode))begin
             rSC_reset = 1'b1;
         end
-        else if(BNE_select_IM = BNE&~Z&T2&AddressMode)begin
+        else if(BNE&~Z&T2&AddressMode)begin
             rMuxBSel = 2'b01;
             rARF_RegSel = 3'b011;
             rARF_FunSel = 2'b10;
@@ -772,7 +773,7 @@ module CombinationalControlUnit(
             rRF_RegSel = 4'b1111;
             rMem_CS = 1'b0;
         end
-        else if(LD&T2&~AddressMod)begin
+        else if(LD&T2&~AddressMode)begin
             rARF_RegSel = 3'b111;
             rARF_OutDSel = 2'b10;
             rMem_WR = 1'b0;
@@ -813,52 +814,39 @@ module CombinationalControlUnit(
             else if(REGSEL == 2'b11)begin
                 rRF_RegSel = 4'b1110;
             end
-            
+        end
+        else if(ST&T2&~AddressMode)begin
+            rSC_reset = 1'b1;
+            rRF_OutBSel = REGSEL;
+            rRF_RegSel = 4'b1111;
+            rALU_FunSel = 4'b0001;
+            rARF_OutDSel = 2'b10; 
+            rARF_RegSel = 3'b111;
+            rIR_Enable = 1'b0;
+            rMem_WR = 1'b1;
+            rMem_CS = 1'b1;
         end
     end
-   
     
-    wire ST_select_D = ST&T2&~AddressMode;
-    wire ST_select_IM = ST&T2&AddressMode;//reset
-    
-    wire MOV_select = MOV&T2;
-    wire MOV_dest;
-    wire MOV_src;
-    MUX2_1_1bit MOVDEST(0,1,MOV_dest,DESTREG[2]);
-    MUX2_1_1bit MOVSRC(0,1,MOV_src,SRCREG1[2]);
-    wire MOV_dest_select = MOV_select & MOV_dest;
-    wire MOV_src_select = MOV_select & MOV_src;
-    
-    wire NOT_select = NOT&T2;
-    wire NOT_dest;
-    wire NOT_src;
-    MUX2_1_1bit NOTDEST(0,1,NOT_dest,DESTREG[2]);
-    MUX2_1_1bit NOTSRC(0,1,NOT_src,SRCREG1[2]);
-    wire NOT_dest_select = NOT_select & NOT_dest;
-    wire NOT_src_select = NOT_select & NOT_src;
-    
-    
-    
-    
-
-    decoderRF_OutASel();
-    decoderRF_OutBSel();
-    decoderRF_FunSel();
-    decoderRF_RegSel();
-    decoderALU_FunSel();
-    decoderARF_OutCSel();
-    decoderARF_OutDSel();
-    decoderARF_FunSel();
-    decoderARF_RegSel();
-    decoderIR_LH();
-    decoderIR_Enable();
-    decoderIR_Funsel();
-    decoderMem_WR();
-    decoderMem_CS();
-    decoderMuxASel();
-    decoderMuxBSel(2'b01);
-    decoderMuxCSel)();
-    
+    assign RF_OutASel = rRF_OutASel;
+    assign RF_OutBSel = rRF_OutBSel;
+    assign RF_FunSel = rRF_FunSel;
+    assign RF_RegSel = rRF_RegSel;
+    assign ALU_FunSel = rALU_FunSel;
+    assign ARF_OutCSel = rARF_OutCSel;
+    assign ARF_OutDSel = rARF_OutDSel;
+    assign ARF_FunSel = rARF_FunSel;
+    assign ARF_RegSel = rARF_RegSel;
+    assign IR_LH = rIR_LH;
+    assign IR_Enable = rIR_Enable;
+    assign IR_Funsel = rIR_Funsel;
+    assign Mem_WR = rMem_WR;
+    assign Mem_CS = rMem_CS;
+    assign MuxASel = rMuxASel;
+    assign MuxBSel = rMuxBSel;
+    assign MuxCSel = rMuxCSel;
+    assign SC_reset = rSC_reset;   
+        
 endmodule
 
 module HardwiredControlUnit(CLK);
@@ -897,7 +885,7 @@ module HardwiredControlUnit(CLK);
     
     //We used negedge because a variable changed in a clock cycle effects the circuit in the next cycle
     //When we change in negedge, they will effect at next posedge. Thus we save clock cycle.
-    always@(negedge CLK) begin  
+    /*always@(negedge CLK) begin  
         //Reset all registers into 0
         if(clock_counter == 4'd0 || clock_counter === 4'bX) begin 
             IR_Enable <= 1'b0;
@@ -1009,7 +997,7 @@ module HardwiredControlUnit(CLK);
     MuxBSel,
     MuxCSel,
     CLK
-    );    
+    );    */
 
 endmodule
 
