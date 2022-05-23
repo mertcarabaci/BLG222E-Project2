@@ -957,6 +957,57 @@ module CombinationalControlUnit(
                         rRF_OutBSel <= SRCREG2[1:0];
                     end           
                 endcase
+                
+                if(LSR) begin
+                    rSC_reset <= 1'b1;
+                    if(DESTREG[2] == 1'b1)begin
+                        rRF_FunSel <= 2'b10;
+                        if(SRCREG1[2] == 1'b1)begin
+                            rMuxCSel <= 1'b1;
+                        end
+                        else begin
+                            rMuxCSel <= 1'b0;
+                        end
+                        rALU_FunSel <= 4'b1011;
+                        rMuxASel <= 2'b11;
+                    end
+                    else begin
+                        rARF_FunSel <= 2'b10;
+                        if(SRCREG1[2] == 1'b1)begin
+                            rMuxCSel <= 1'b1;
+                        end
+                        else begin
+                            rMuxCSel <= 1'b0;
+                        end
+                        rALU_FunSel <= 4'b1011;
+                        rMuxBSel <= 2'b11;
+                    end 
+                end 
+                else if(LSL) begin
+                    rSC_reset <= 1'b1;
+                    if(DESTREG[2] == 1'b1)begin
+                        rRF_FunSel <= 2'b10;
+                        if(SRCREG1[2] == 1'b1)begin
+                            rMuxCSel <= 1'b1;
+                        end
+                        else begin
+                            rMuxCSel <= 1'b0;
+                        end
+                        rALU_FunSel <= 4'b1010;
+                        rMuxASel <= 2'b11;
+                    end
+                    else begin
+                        rARF_FunSel <= 2'b10;
+                        if(SRCREG1[2] == 1'b1)begin
+                            rMuxCSel <= 1'b1;
+                        end
+                        else begin
+                            rMuxCSel <= 1'b0;
+                        end
+                        rALU_FunSel <= 4'b1010;
+                        rMuxBSel <= 2'b11;
+                    end 
+                end           
             end
             else begin
                 case(SRCREG1[2])
@@ -1126,57 +1177,13 @@ module CombinationalControlUnit(
                     rMuxBSel <= 2'b11;
                 end 
             end 
-            else if(LSR) begin
-                rSC_reset <= 1'b1;
-                if(DESTREG[2] == 1'b1)begin
-                    rRF_FunSel <= 2'b10;
-                    if(SRCREG1[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
-                    end
-                    else begin
-                        rMuxCSel <= 1'b0;
-                    end
-                    rALU_FunSel <= 4'b1011;
-                    rMuxASel <= 2'b11;
-                end
-                else begin
-                    rARF_FunSel <= 2'b10;
-                    if(SRCREG1[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
-                    end
-                    else begin
-                        rMuxCSel <= 1'b0;
-                    end
-                    rALU_FunSel <= 4'b1011;
-                    rMuxBSel <= 2'b11;
-                end 
-            end 
-            else if(LSL) begin
-                rSC_reset <= 1'b1;
-                if(DESTREG[2] == 1'b1)begin
-                    rRF_FunSel <= 2'b10;
-                    if(SRCREG1[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
-                    end
-                    else begin
-                        rMuxCSel <= 1'b0;
-                    end
-                    rALU_FunSel <= 4'b1010;
-                    rMuxASel <= 2'b11;
-                end
-                else begin
-                    rARF_FunSel <= 2'b10;
-                    if(SRCREG1[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
-                    end
-                    else begin
-                        rMuxCSel <= 1'b0;
-                    end
-                    rALU_FunSel <= 4'b1010;
-                    rMuxBSel <= 2'b11;
-                end 
-            end           
         end
+        else if(PUL&T2)begin
+            rSC_reset <= 1'b1;
+            rIR_Enable <= 1'b0;
+            
+        end
+        
     end
     
     assign RF_OutASel = rRF_OutASel;

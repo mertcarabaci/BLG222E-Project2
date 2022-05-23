@@ -1,0 +1,187 @@
+/*
+
+Xilinx Vivado v2017.4 (64-bit) [Major: 2017, Minor: 4]
+SW Build: 2086221 on Fri Dec 15 20:55:39 MST 2017
+IP Build: 2085800 on Fri Dec 15 22:25:07 MST 2017
+
+Process ID: 9276
+License: Customer
+
+Current time: 	Mon May 23 18:55:39 EEST 2022
+Time zone: 	Eastern European Time (Asia/Istanbul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 12
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 157 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2017.4/tps/win64/jre
+JVM executable location: 	C:/Xilinx/Vivado/2017.4/tps/win64/jre/bin/java.exe
+
+User name: 	mertc
+User home directory: C:/Users/mertc
+User working directory: C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1
+User country: 	GB
+User language: 	en
+User locale: 	en_GB
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2017.4
+RDI_DATADIR: C:/Xilinx/Vivado/2017.4/data
+RDI_BINDIR: C:/Xilinx/Vivado/2017.4/bin
+
+Vivado preferences file location: C:/Users/mertc/AppData/Roaming/Xilinx/Vivado/2017.4/vivado.xml
+Vivado preferences directory: C:/Users/mertc/AppData/Roaming/Xilinx/Vivado/2017.4/
+Vivado layouts directory: C:/Users/mertc/AppData/Roaming/Xilinx/Vivado/2017.4/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2017.4/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/vivado.log
+Vivado journal file location: 	C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/vivado.jou
+Engine tmp dir: 	C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/.Xil/Vivado-9276-DESKTOP-PKBE7EJ
+
+GUI allocated memory:	197 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 599 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\Users\mertc\Desktop\BLG222E-Project2\BLG-Project1\BLG-Project1.xpr. Version: Vivado v2017.4 
+// bs (cj):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 80 MB (+81354kb) [00:00:08]
+// [Engine Memory]: 529 MB (+402852kb) [00:00:08]
+// [GUI Memory]: 93 MB (+9084kb) [00:00:09]
+// [Engine Memory]: 568 MB (+13430kb) [00:00:10]
+// [GUI Memory]: 102 MB (+5119kb) [00:00:10]
+// [GUI Memory]: 108 MB (+914kb) [00:00:10]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'. 
+// Project name: BLG-Project1; location: C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1; part: xc7a100tcsg324-1
+// [GUI Memory]: 119 MB (+5926kb) [00:00:11]
+// [Engine Memory]: 605 MB (+9434kb) [00:00:11]
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 40 MB. Current time: 5/23/22 6:55:40 PM EEST
+dismissDialog("Open Project"); // bs (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (designs.v) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, HardwiredControlUnit (designs.v)]", 1, true); // B (D, cj) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, HardwiredControlUnit (designs.v)]", 1, true, false, false, false, false, true); // B (D, cj) - Double Click - Node
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "designs.v", 1); // k (j, cj)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "designs.v", 1, false, true); // k (j, cj) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // R (Q, cj)
+// Elapsed time: 56 seconds
+selectCodeEditor("designs.v", 108, 191); // cd (w, cj)
+// Elapsed time: 64 seconds
+selectCodeEditor("designs.v", 96, 298); // cd (w, cj)
+selectCodeEditor("designs.v", 94, 458); // cd (w, cj)
+// Elapsed time: 23 seconds
+selectCodeEditor("designs.v", 215, 268); // cd (w, cj)
+// Elapsed time: 14 seconds
+selectCodeEditor("designs.v", 170, 415); // cd (w, cj)
+// Elapsed time: 18 seconds
+selectCodeEditor("designs.v", 86, 28); // cd (w, cj)
+// [Engine Memory]: 644 MB (+9090kb) [00:03:28]
+// Elapsed time: 22 seconds
+selectCodeEditor("designs.v", 213, 487); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 229, 574); // cd (w, cj)
+// Elapsed time: 14 seconds
+selectCodeEditor("designs.v", 136, 424); // cd (w, cj)
+selectCodeEditor("designs.v", 134, 344); // cd (w, cj)
+selectCodeEditor("designs.v", 136, 516); // cd (w, cj)
+selectCodeEditor("designs.v", 136, 516, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey(null, null, 'z');
+selectCodeEditor("designs.v", 127, 93); // cd (w, cj)
+selectCodeEditor("designs.v", 127, 93, false, false, false, false, true); // cd (w, cj) - Double Click
+// Elapsed time: 77 seconds
+selectCodeEditor("designs.v", 192, 280); // cd (w, cj)
+selectCodeEditor("designs.v", 192, 280, false, false, false, false, true); // cd (w, cj) - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("designs.v", 301, 486); // cd (w, cj)
+selectCodeEditor("designs.v", 301, 486, false, false, false, false, true); // cd (w, cj) - Double Click
+// Elapsed time: 15 seconds
+selectCodeEditor("designs.v", 97, 249); // cd (w, cj)
+selectCodeEditor("designs.v", 97, 249, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 215, 516); // cd (w, cj)
+// Elapsed time: 692 seconds
+selectCodeEditor("designs.v", 1081, 190); // cd (w, cj)
+// Elapsed time: 187 seconds
+selectCodeEditor("designs.v", 191, 317); // cd (w, cj)
+selectCodeEditor("designs.v", 191, 317, false, false, false, false, true); // cd (w, cj) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 644 MB. GUI used memory: 43 MB. Current time: 5/23/22 7:25:40 PM EEST
+// Elapsed time: 658 seconds
+selectCodeEditor("designs.v", 274, 334); // cd (w, cj)
+selectCodeEditor("designs.v", 275, 346); // cd (w, cj)
+selectCodeEditor("designs.v", 283, 397); // cd (w, cj)
+// Elapsed time: 144 seconds
+selectCodeEditor("designs.v", 119, 656); // cd (w, cj)
+// Elapsed time: 69 seconds
+selectCodeEditor("designs.v", 459, 420); // cd (w, cj)
+// Elapsed time: 643 seconds
+selectCodeEditor("designs.v", 249, 359); // cd (w, cj)
+selectCodeEditor("designs.v", 129, 315); // cd (w, cj)
+selectCodeEditor("designs.v", 128, 315, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 128, 315); // cd (w, cj)
+selectCodeEditor("designs.v", 99, 334); // cd (w, cj)
+selectCodeEditor("designs.v", 99, 334, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 90, 177); // cd (w, cj)
+selectCodeEditor("designs.v", 71, 598); // cd (w, cj)
+selectCodeEditor("designs.v", 71, 598, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 49, 595); // cd (w, cj)
+selectCodeEditor("designs.v", 54, 555); // cd (w, cj)
+// Elapsed time: 23 seconds
+selectCodeEditor("designs.v", 74, 348); // cd (w, cj)
+// Elapsed time: 30 seconds
+selectCodeEditor("designs.v", 240, 698); // cd (w, cj)
+// Elapsed time: 23 seconds
+selectCodeEditor("designs.v", 110, 125); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 163, 568); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 79, 568); // cd (w, cj)
+selectCodeEditor("designs.v", 254, 575); // cd (w, cj)
+// Elapsed time: 41 seconds
+selectCodeEditor("designs.v", 317, 343); // cd (w, cj)
+selectCodeEditor("designs.v", 299, 401); // cd (w, cj)
+selectCodeEditor("designs.v", 310, 453); // cd (w, cj)
+selectCodeEditor("designs.v", 288, 481); // cd (w, cj)
+// Elapsed time: 12 seconds
+selectCodeEditor("designs.v", 172, 400); // cd (w, cj)
+selectCodeEditor("designs.v", 197, 409); // cd (w, cj)
+selectCodeEditor("designs.v", 81, 398); // cd (w, cj)
+selectCodeEditor("designs.v", 208, 397); // cd (w, cj)
+selectCodeEditor("designs.v", 199, 405); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 212, 218); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 184, 224); // cd (w, cj)
+selectCodeEditor("designs.v", 179, 230); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 229, 238); // cd (w, cj)
+// HMemoryUtils.trashcanNow. Engine heap size: 644 MB. GUI used memory: 42 MB. Current time: 5/23/22 7:55:41 PM EEST
+// Elapsed time: 1906 seconds
+selectCodeEditor("designs.v", 368, 612); // cd (w, cj)
+selectCodeEditor("designs.v", 225, 454); // cd (w, cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
