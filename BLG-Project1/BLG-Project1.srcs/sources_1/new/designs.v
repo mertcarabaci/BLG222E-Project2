@@ -311,7 +311,6 @@ module PART1_8bit(E,FunSel,I,Q,CLK);
     input wire CLK;
     
     output wire [7:0] Q;
-    
     //Mux if S=0, output is 0, if S=1, output is I
     //Also mean, S=0 is for clear, S=1 is for load
     wire [7:0] I_funsel_mux;
@@ -652,7 +651,7 @@ module SequenceCounter(CLK,Reset,T);
     input Reset;
     output [2:0] T;
     
-    reg [2:0] counter = 3'd0; 
+    reg [2:0] counter = 3'd7; 
     
     always@(posedge CLK)begin
             counter = counter + 3'd1;
@@ -739,6 +738,7 @@ module CombinationalControlUnit(
     input T4,
     input T5,
     input T6,
+    input T7,
     
     input BRA,
     input LD,
@@ -807,15 +807,22 @@ module CombinationalControlUnit(
     reg rSC_reset = 1'b0;
     
     always@(*)begin
-        if(T0)begin
+        if(T7)begin
+            rARF_RegSel <= 3'b011;
+            rRF_RegSel <= 4'b1111;
+            rARF_FunSel <= 2'b11;
+            rIR_LH <= 1'b0;
+            rMem_CS <= 1'b0;
+        end
+        else if(T0)begin
             rRF_RegSel <= 4'b1111;
             rARF_RegSel <= 3'b011;
             rARF_FunSel <= 2'b01;
             rARF_OutDSel <= 2'b01;
-            rMem_WR <= 0;
-            rMem_CS <= 1;
-            rIR_Enable <= 1;
-            rIR_LH <= 1;
+            rMem_WR <= 1'b0;
+            rMem_CS <= 1'b1;
+            rIR_Enable <= 1'b1;
+            rIR_LH <= 1'b1;
             rIR_Funsel <= 2'b10;
         end
         else if(T1)begin 
@@ -823,10 +830,10 @@ module CombinationalControlUnit(
             rARF_RegSel <= 3'b011;
             rARF_FunSel <= 2'b01;
             rARF_OutDSel <= 2'b01;
-            rMem_WR <= 0;
-            rMem_CS <= 1;
-            rIR_Enable <= 1;
-            rIR_LH <= 0;
+            rMem_WR <= 1'b0;
+            rMem_CS <= 1'b1;
+            rIR_Enable <= 1'b1;
+            rIR_LH <= 1'b0;
             rIR_Funsel <= 2'b10;        
         end
         else if(BRA&AddressMode&T2)begin
@@ -1333,15 +1340,12 @@ module HardwiredControlUnit(CLK);
     wire DEC;
     wire BNE;
         
-
-wire [3:0] SRCREG1;
-wire [3:0] SRCREG2;
-wire AddressMode;
-
     CombinationalControlUnit(T0,T1,T2,T3,T4,T5,T6,T7,BRA,LD,ST,MOV,AND,OR,NOT,
          ADD,SUB,LSR,LSL,PUL,PSH,INC,DEC,BNE,ALU_Sys.IROut[9:8],ALU_Sys.IROut[11:8],
          ALU_Sys.IROut[7:4],ALU_Sys.IROut[3:0],ALU_Sys.IROut[10],
-         ALU_Sys.ALUOutFlag[3],ALU_Sys.ALUOutFlag[2],ALU_Sys.ALUOutFlag[1],ALU_Sys.ALUOutFlag[0]);
+         ALU_Sys.ALUOutFlag[3],ALU_Sys.ALUOutFlag[2],ALU_Sys.ALUOutFlag[1],ALU_Sys.ALUOutFlag[0],RF_OutASel,RF_OutBSel,
+         RF_FunSel,RF_RegSel,ALU_FunSel,ARF_OutCSel,ARF_OutDSel,
+             ARF_FunSel,ARF_RegSel,IR_LH,IR_Enable,IR_Funsel,Mem_WR,Mem_CS,MuxASel,MuxBSel,MuxCSel,Reset);
          
     ALUSystem ALU_Sys(RF_OutASel,RF_OutBSel,RF_FunSel,RF_RegSel,ALU_FunSel,ARF_OutCSel,ARF_OutDSel,
     ARF_FunSel,ARF_RegSel,IR_LH,IR_Enable,IR_Funsel,Mem_WR,Mem_CS,MuxASel,MuxBSel,MuxCSel,CLK);
@@ -1350,9 +1354,60 @@ wire AddressMode;
     
     SequenceCounter SC(CLK,Reset,T);
     Decoder_8_1 SC_DECODER(T,T0,T1,T2,T3,T4,T5,T6,T7);
-
-
 endmodule
+
+
+module CombCount(CLK,BRA,LD,ST,MOV,AND,OR,NOT,
+         ADD,SUB,LSR,LSL,PUL,PSH,INC,DEC,BNE,REGSEL,DESTREG,SRCREG1,SRCREG2,AddressMode,Z,C,N,O,
+         RF_OutASel,RF_OutBSel,RF_FunSel,RF_RegSel,ALU_FunSel,ARF_OutCSel,ARF_OutDSel,
+             ARF_FunSel,ARF_RegSel,IR_LH,IR_Enable,IR_Funsel,Mem_WR,Mem_CS,MuxASel,MuxBSel,MuxCSel,SC_reset);
+         input CLK;
+         input BRA;
+         input LD;
+         input ST;
+         input MOV;
+         input AND;
+         input OR;
+         input NOT;
+         input ADD;
+         input SUB;
+         input LSR;
+         input LSL;
+         input PUL;
+         input PSH;
+         input INC;
+         input DEC;
+         input BNE;
+         input [1:0] REGSEL;
+         input [3:0] DESTREG;
+         input [3:0] SRCREG1;
+         input [3:0] SRCREG2;
+         input AddressMode;
+         input Z;
+         input C;
+         input N;
+         input O;
+         
+         output wire [1:0] RF_OutASel;
+         output wire [1:0] RF_OutBSel; 
+         output wire [1:0] RF_FunSel;
+         output wire [3:0] RF_RegSel;
+         output wire [3:0] ALU_FunSel;
+         output wire [1:0] ARF_OutCSel; 
+         output wire [1:0] ARF_OutDSel; 
+         output wire [1:0] ARF_FunSel;
+         output wire [2:0] ARF_RegSel;
+         output wire IR_LH;
+         output wire IR_Enable;
+         output wire [1:0] IR_Funsel;
+         output wire Mem_WR;
+         output wire Mem_CS;
+         output wire [1:0] MuxASel;
+         output wire [1:0] MuxBSel;
+         output wire MuxCSel;
+         output wire SC_reset;
+endmodule
+
 
 
 
