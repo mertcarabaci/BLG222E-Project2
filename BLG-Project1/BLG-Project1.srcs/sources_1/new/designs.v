@@ -949,6 +949,14 @@ module CombinationalControlUnit(
                         rRF_OutASel <= SRCREG1[1:0];
                     end           
                 endcase
+                case(SRCREG2[2])
+                    1'b0:begin
+                        rARF_OutCSel <= SRCREG2[1:0];
+                    end
+                    1'b1:begin
+                        rRF_OutBSel <= SRCREG2[1:0];
+                    end           
+                endcase
             end
             else begin
                 case(SRCREG1[2])
@@ -959,15 +967,15 @@ module CombinationalControlUnit(
                         rRF_OutBSel <= SRCREG1[1:0];
                     end           
                 endcase
+                case(SRCREG2[2])
+                    1'b0:begin
+                        rARF_OutCSel <= SRCREG2[1:0];
+                    end
+                    1'b1:begin
+                        rRF_OutASel <= SRCREG2[1:0];
+                    end           
+                endcase
             end
-            case(SRCREG2[2])
-                1'b0:begin
-                    rARF_OutCSel <= SRCREG2[1:0];
-                end
-                1'b1:begin
-                    rRF_OutASel <= SRCREG2[1:0];
-                end           
-            endcase
             if(MOV)begin
                 rSC_reset <= 1'b1;
                 if(DESTREG[2] == 1'b1)begin
