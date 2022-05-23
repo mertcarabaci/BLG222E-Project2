@@ -903,7 +903,83 @@ module CombinationalControlUnit(
             rMem_WR <= 1'b1;
             rMem_CS <= 1'b1;
         end
-        else if((MOV|AND|OR|NOT|ADD|SUB|LSR|LSL|PUL|PSH|INC|DEC)&T3)begin
+        else if((MOV|AND|OR|NOT|ADD|SUB|LSR|LSL|PUL|PSH|INC|DEC)&T2)begin
+            rMem_CS <= 0;
+            rIR_Enable <= 0;
+            case(DESTREG)
+                4'b0000:begin
+                    rARF_RegSel <= 3'b011;
+                    rRF_RegSel <= 4'b1111;
+                end
+                4'b0001:begin
+                    rARF_RegSel <= 3'b011;
+                    rRF_RegSel <= 4'b1111;
+                end
+                4'b0010:begin
+                    rARF_RegSel <= 3'b101;
+                    rRF_RegSel <= 4'b1111;
+                end
+                4'b0011:begin
+                    rARF_RegSel <= 3'b110;
+                    rRF_RegSel <= 4'b1111;
+                end
+                4'b0100:begin
+                    rRF_RegSel <= 4'b0111;
+                    rARF_RegSel <= 3'b111;
+                end
+                4'b0101:begin
+                    rRF_RegSel <= 4'b1011;
+                    rARF_RegSel <= 3'b111;
+                end
+                4'b0110:begin
+                    rRF_RegSel <= 4'b1101;
+                    rARF_RegSel <= 3'b111;
+                end
+                4'b0111:begin
+                    rRF_RegSel <= 4'b1110;
+                    rARF_RegSel <= 3'b111;
+                end             
+            endcase
+            case(SRCREG1[2])
+                1'b0:begin
+                    rARF_OutCSel <= SRCREG1[1:0];
+                end
+                1'b1:begin
+                    rRF_OutBSel <= SRCREG1[1:0];
+                end           
+            endcase
+            case(SRCREG2[2])
+                1'b0:begin
+                    rARF_OutCSel <= SRCREG2[1:0];
+                end
+                1'b1:begin
+                    rRF_OutASel <= SRCREG2[1:0];
+                end           
+            endcase
+            if(MOV)begin
+                if(DESTREG[2] == 1'b1)begin
+                    rRF_FunSel <= 2'b10;
+                    if(SRCREG1[2] == 1'b1)begin 
+                        rALU_FunSel <= 4'b0001;
+                        rMuxASel <= 2'b11;
+                    end
+                    else begin
+                        rMuxASel <= 2'b10;
+                    end
+                end
+                else begin
+                    rARF_FunSel <= 2'b10;
+                    if(SRCREG1[2] == 1'b1)begin 
+                        rALU_FunSel <= 4'b0001;
+                        rMuxBSel <= 2'b11;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                        rALU_FunSel <= 4'b0000;
+                        rMuxBSel <= 2'b11;
+                    end
+                end 
+            end
             
         end
     end
