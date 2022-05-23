@@ -903,7 +903,7 @@ module CombinationalControlUnit(
             rMem_WR <= 1'b1;
             rMem_CS <= 1'b1;
         end
-        else if((MOV|AND|OR|NOT|ADD|SUB|LSR|LSL|PUL|PSH|INC|DEC)&T2)begin
+        else if((MOV|AND|OR|NOT|ADD|SUB|LSR|LSL|INC|DEC)&T2)begin
             rMem_CS <= 0;
             rIR_Enable <= 0;
             case(DESTREG)
@@ -1177,13 +1177,91 @@ module CombinationalControlUnit(
                     rMuxBSel <= 2'b11;
                 end 
             end 
+            else if(INC | DEC)begin
+                rSC_reset <= 1'b0;
+                if(DESTREG[2] == 1'b1)begin
+                    rRF_FunSel <= 2'b10;
+                    if(SRCREG1[2] == 1'b1)begin 
+                        rALU_FunSel <= 4'b0001;
+                        rMuxASel <= 2'b11;
+                    end
+                    else begin
+                        rMuxASel <= 2'b10;
+                    end
+                end
+                else begin
+                    rARF_FunSel <= 2'b10;
+                    if(SRCREG1[2] == 1'b1)begin 
+                        rALU_FunSel <= 4'b0001;
+                        rMuxBSel <= 2'b11;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                        rALU_FunSel <= 4'b0000;
+                        rMuxBSel <= 2'b11;
+                    end
+                end  
+            end
         end
         else if(PUL&T2)begin
             rSC_reset <= 1'b1;
             rIR_Enable <= 1'b0;
             
         end
-        
+        else if(INC&T3)begin
+            rSC_reset <= 1'b1;
+            if(DESTREG[2] == 1'b1)begin
+                rRF_FunSel <= 2'b01;
+            end
+        end
+        else if(DEC&T3)begin
+            rSC_reset <= 1'b1;
+            if(DESTREG[2] == 1'b1)begin
+                rRF_FunSel <= 2'b00;
+            end
+        end
+        else if(PUL&T2)begin
+            rSC_reset <= 1'b1;
+            rIR_Enable <= 1'b0;
+            rRF_OutBSel <= DESTREG[1:0];
+            rRF_RegSel <= 4'b1111;
+            rARF_RegSel <= 3'b110;
+            rARF_FunSel <= 2'b00; 
+            rARF_OutDSel <= 2'b11;
+            rALU_FunSel <= 4'b0001; 
+            rMem_WR <= 1'b1;
+            rMem_CS <= 1'b1;
+        end
+        else if(PSH&T2)begin
+            rSC_reset <= 1'b0;
+            rIR_Enable <= 1'b0;
+            rRF_RegSel <= 4'b1111;
+            rARF_RegSel <= 3'b110;
+            rARF_FunSel <= 2'b01;
+            rMem_CS <= 1'b0;
+        end
+        else if(PSH&T3)begin
+            rSC_reset <= 1'b1;
+            rIR_Enable <= 1'b0;
+            if(DESTREG[1:0] == 2'b00)begin
+                rRF_RegSel <= 4'b0111;
+            end
+            else if(DESTREG[1:0] == 2'b01)begin
+                 rRF_RegSel <= 4'b1011;
+            end
+            else if(DESTREG[1:0] == 2'b10)begin
+                rRF_RegSel <= 4'b1101;
+            end
+            else if(DESTREG[1:0] == 2'b11)begin
+                rRF_RegSel <= 4'b1110;
+            end            
+            rRF_FunSel <= 4'b10;
+            rARF_RegSel <= 3'b111;
+            rARF_OutDSel <= 2'b11;
+            rMem_WR <= 1'b0;
+            rMem_CS <= 1'b1;
+            rMuxASel <= 2'B01;
+        end    
     end
     
     assign RF_OutASel = rRF_OutASel;
