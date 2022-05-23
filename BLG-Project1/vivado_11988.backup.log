@@ -1,0 +1,539 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon May 23 15:31:57 2022
+# Process ID: 11988
+# Current directory: C:/Users/CCT/Desktop/Homeworks/BLG222E-Project2/BLG-Project1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14148 C:\Users\CCT\Desktop\Homeworks\BLG222E-Project2\BLG-Project1\BLG-Project1.xpr
+# Log file: C:/Users/CCT/Desktop/Homeworks/BLG222E-Project2/BLG-Project1/vivado.log
+# Journal file: C:/Users/CCT/Desktop/Homeworks/BLG222E-Project2/BLG-Project1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/CCT/Desktop/Homeworks/BLG222E-Project2/BLG-Project1/BLG-Project1.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx_LogicLab/Vivado/2017.4/data/ip'.
+update_compile_order -fileset sources_1
+eset_property top SequenceCounterTest [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'SequenceCounterTest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/RAM.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj SequenceCounterTest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module D_Latch
+INFO: [VRFC 10-311] analyzing module D_Flip_Flop
+INFO: [VRFC 10-311] analyzing module MUX2_1_4bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX4_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX16_4_8bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_16bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_1bit
+INFO: [VRFC 10-311] analyzing module Full_Adder_1bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_4bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_8bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_16bit
+INFO: [VRFC 10-311] analyzing module ZCNO_register
+INFO: [VRFC 10-311] analyzing module PART1_8bit
+INFO: [VRFC 10-311] analyzing module PART1_16bit
+INFO: [VRFC 10-311] analyzing module PART2_a
+INFO: [VRFC 10-311] analyzing module PART2_b
+INFO: [VRFC 10-311] analyzing module PART2_c
+INFO: [VRFC 10-311] analyzing module PART3
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-311] analyzing module ALUSystem
+INFO: [VRFC 10-311] analyzing module SequenceCounter
+INFO: [VRFC 10-311] analyzing module CombinationalControlUnit
+INFO: [VRFC 10-311] analyzing module HardwiredControlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module part1_8bit_test
+INFO: [VRFC 10-311] analyzing module part1_16bit_test
+INFO: [VRFC 10-311] analyzing module PART2_a_test
+INFO: [VRFC 10-311] analyzing module PART2_b_test
+INFO: [VRFC 10-311] analyzing module PART2_c_test
+INFO: [VRFC 10-311] analyzing module PART3_test
+INFO: [VRFC 10-311] analyzing module Project1Test
+INFO: [VRFC 10-311] analyzing module lasttest
+INFO: [VRFC 10-311] analyzing module SequenceCounterTest
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819be057ad0ade57cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SequenceCounterTest_behav xil_defaultlib.SequenceCounterTest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.SequenceCounter
+Compiling module xil_defaultlib.SequenceCounterTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot SequenceCounterTest_behav
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/xsim.dir/SequenceCounterTest_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon May 23 12:52:59 2022...
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 784.496 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SequenceCounterTest_behav -key {Behavioral:sim_1:Functional:SequenceCounterTest} -tclbatch {SequenceCounterTest.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source SequenceCounterTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SequenceCounterTest_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 798.059 ; gain = 15.883
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'SequenceCounterTest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/RAM.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj SequenceCounterTest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module D_Latch
+INFO: [VRFC 10-311] analyzing module D_Flip_Flop
+INFO: [VRFC 10-311] analyzing module MUX2_1_4bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX4_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX16_4_8bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_16bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_1bit
+INFO: [VRFC 10-311] analyzing module Full_Adder_1bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_4bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_8bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_16bit
+INFO: [VRFC 10-311] analyzing module ZCNO_register
+INFO: [VRFC 10-311] analyzing module PART1_8bit
+INFO: [VRFC 10-311] analyzing module PART1_16bit
+INFO: [VRFC 10-311] analyzing module PART2_a
+INFO: [VRFC 10-311] analyzing module PART2_b
+INFO: [VRFC 10-311] analyzing module PART2_c
+INFO: [VRFC 10-311] analyzing module PART3
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-311] analyzing module ALUSystem
+INFO: [VRFC 10-311] analyzing module SequenceCounter
+INFO: [VRFC 10-311] analyzing module CombinationalControlUnit
+INFO: [VRFC 10-311] analyzing module HardwiredControlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module part1_8bit_test
+INFO: [VRFC 10-311] analyzing module part1_16bit_test
+INFO: [VRFC 10-311] analyzing module PART2_a_test
+INFO: [VRFC 10-311] analyzing module PART2_b_test
+INFO: [VRFC 10-311] analyzing module PART2_c_test
+INFO: [VRFC 10-311] analyzing module PART3_test
+INFO: [VRFC 10-311] analyzing module Project1Test
+INFO: [VRFC 10-311] analyzing module lasttest
+INFO: [VRFC 10-311] analyzing module SequenceCounterTest
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819be057ad0ade57cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SequenceCounterTest_behav xil_defaultlib.SequenceCounterTest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.SequenceCounter
+Compiling module xil_defaultlib.SequenceCounterTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot SequenceCounterTest_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SequenceCounterTest_behav -key {Behavioral:sim_1:Functional:SequenceCounterTest} -tclbatch {SequenceCounterTest.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source SequenceCounterTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SequenceCounterTest_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 804.469 ; gain = 1.742
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'SequenceCounterTest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/RAM.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj SequenceCounterTest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module D_Latch
+INFO: [VRFC 10-311] analyzing module D_Flip_Flop
+INFO: [VRFC 10-311] analyzing module MUX2_1_4bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX4_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX16_4_8bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_16bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_1bit
+INFO: [VRFC 10-311] analyzing module Full_Adder_1bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_4bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_8bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_16bit
+INFO: [VRFC 10-311] analyzing module ZCNO_register
+INFO: [VRFC 10-311] analyzing module PART1_8bit
+INFO: [VRFC 10-311] analyzing module PART1_16bit
+INFO: [VRFC 10-311] analyzing module PART2_a
+INFO: [VRFC 10-311] analyzing module PART2_b
+INFO: [VRFC 10-311] analyzing module PART2_c
+INFO: [VRFC 10-311] analyzing module PART3
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-311] analyzing module ALUSystem
+INFO: [VRFC 10-311] analyzing module SequenceCounter
+INFO: [VRFC 10-311] analyzing module CombinationalControlUnit
+INFO: [VRFC 10-311] analyzing module HardwiredControlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module part1_8bit_test
+INFO: [VRFC 10-311] analyzing module part1_16bit_test
+INFO: [VRFC 10-311] analyzing module PART2_a_test
+INFO: [VRFC 10-311] analyzing module PART2_b_test
+INFO: [VRFC 10-311] analyzing module PART2_c_test
+INFO: [VRFC 10-311] analyzing module PART3_test
+INFO: [VRFC 10-311] analyzing module Project1Test
+INFO: [VRFC 10-311] analyzing module lasttest
+INFO: [VRFC 10-311] analyzing module SequenceCounterTest
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819be057ad0ade57cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SequenceCounterTest_behav xil_defaultlib.SequenceCounterTest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.SequenceCounter
+Compiling module xil_defaultlib.SequenceCounterTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot SequenceCounterTest_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SequenceCounterTest_behav -key {Behavioral:sim_1:Functional:SequenceCounterTest} -tclbatch {SequenceCounterTest.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source SequenceCounterTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SequenceCounterTest_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 809.648 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'SequenceCounterTest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/RAM.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj SequenceCounterTest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module D_Latch
+INFO: [VRFC 10-311] analyzing module D_Flip_Flop
+INFO: [VRFC 10-311] analyzing module MUX2_1_4bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX4_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX16_4_8bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_16bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_1bit
+INFO: [VRFC 10-311] analyzing module Full_Adder_1bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_4bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_8bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_16bit
+INFO: [VRFC 10-311] analyzing module ZCNO_register
+INFO: [VRFC 10-311] analyzing module PART1_8bit
+INFO: [VRFC 10-311] analyzing module PART1_16bit
+INFO: [VRFC 10-311] analyzing module PART2_a
+INFO: [VRFC 10-311] analyzing module PART2_b
+INFO: [VRFC 10-311] analyzing module PART2_c
+INFO: [VRFC 10-311] analyzing module PART3
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-311] analyzing module ALUSystem
+INFO: [VRFC 10-311] analyzing module SequenceCounter
+INFO: [VRFC 10-311] analyzing module CombinationalControlUnit
+INFO: [VRFC 10-311] analyzing module HardwiredControlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module part1_8bit_test
+INFO: [VRFC 10-311] analyzing module part1_16bit_test
+INFO: [VRFC 10-311] analyzing module PART2_a_test
+INFO: [VRFC 10-311] analyzing module PART2_b_test
+INFO: [VRFC 10-311] analyzing module PART2_c_test
+INFO: [VRFC 10-311] analyzing module PART3_test
+INFO: [VRFC 10-311] analyzing module Project1Test
+INFO: [VRFC 10-311] analyzing module lasttest
+INFO: [VRFC 10-311] analyzing module SequenceCounterTest
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819be057ad0ade57cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SequenceCounterTest_behav xil_defaultlib.SequenceCounterTest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.SequenceCounter
+Compiling module xil_defaultlib.SequenceCounterTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot SequenceCounterTest_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SequenceCounterTest_behav -key {Behavioral:sim_1:Functional:SequenceCounterTest} -tclbatch {SequenceCounterTest.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source SequenceCounterTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SequenceCounterTest_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 812.277 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'SequenceCounterTest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/RAM.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/TestBench.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj SequenceCounterTest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module D_Latch
+INFO: [VRFC 10-311] analyzing module D_Flip_Flop
+INFO: [VRFC 10-311] analyzing module MUX2_1_4bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX4_1_8bit
+INFO: [VRFC 10-311] analyzing module MUX16_4_8bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_16bit
+INFO: [VRFC 10-311] analyzing module MUX2_1_1bit
+INFO: [VRFC 10-311] analyzing module Full_Adder_1bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_4bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_8bit
+INFO: [VRFC 10-311] analyzing module Adder_Substractor_16bit
+INFO: [VRFC 10-311] analyzing module ZCNO_register
+INFO: [VRFC 10-311] analyzing module PART1_8bit
+INFO: [VRFC 10-311] analyzing module PART1_16bit
+INFO: [VRFC 10-311] analyzing module PART2_a
+INFO: [VRFC 10-311] analyzing module PART2_b
+INFO: [VRFC 10-311] analyzing module PART2_c
+INFO: [VRFC 10-311] analyzing module PART3
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-311] analyzing module ALUSystem
+INFO: [VRFC 10-311] analyzing module SequenceCounter
+INFO: [VRFC 10-311] analyzing module CombinationalControlUnit
+INFO: [VRFC 10-311] analyzing module HardwiredControlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module part1_8bit_test
+INFO: [VRFC 10-311] analyzing module part1_16bit_test
+INFO: [VRFC 10-311] analyzing module PART2_a_test
+INFO: [VRFC 10-311] analyzing module PART2_b_test
+INFO: [VRFC 10-311] analyzing module PART2_c_test
+INFO: [VRFC 10-311] analyzing module PART3_test
+INFO: [VRFC 10-311] analyzing module Project1Test
+INFO: [VRFC 10-311] analyzing module lasttest
+INFO: [VRFC 10-311] analyzing module SequenceCounterTest
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819be057ad0ade57cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SequenceCounterTest_behav xil_defaultlib.SequenceCounterTest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.SequenceCounter
+Compiling module xil_defaultlib.SequenceCounterTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot SequenceCounterTest_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SequenceCounterTest_behav -key {Behavioral:sim_1:Functional:SequenceCounterTest} -tclbatch {SequenceCounterTest.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source SequenceCounterTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SequenceCounterTest_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 813.613 ; gain = 0.953
+set_property top Decoder_16_1 [current_fileset]
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-1
+Top: Decoder_16_1
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module MUX2_1_1bit [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:189]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 949.543 ; gain = 113.051
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Decoder_16_1' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:677]
+INFO: [Synth 8-256] done synthesizing module 'Decoder_16_1' (1#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:677]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 980.145 ; gain = 143.652
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 980.145 ; gain = 143.652
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:28 ; elapsed = 00:00:22 . Memory (MB): peak = 1341.516 ; gain = 505.023
+6 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:22 . Memory (MB): peak = 1341.516 ; gain = 505.023
+refresh_design
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module MUX2_1_1bit [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:189]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1343.301 ; gain = 1.785
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Decoder_16_1' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:677]
+INFO: [Synth 8-256] done synthesizing module 'Decoder_16_1' (1#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:677]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 1382.871 ; gain = 41.355
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1382.871 ; gain = 41.355
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:15 . Memory (MB): peak = 1408.375 ; gain = 66.859
+close_design
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon May 23 16:25:32 2022...

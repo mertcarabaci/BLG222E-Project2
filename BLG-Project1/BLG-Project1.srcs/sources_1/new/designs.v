@@ -650,19 +650,44 @@ endmodule
 module SequenceCounter(CLK,Reset,T);
     input CLK;
     input Reset;
-    output [3:0] T;
+    output [2:0] T;
     
-    reg [3:0] counter = 4'd0; 
+    reg [2:0] counter = 3'd0; 
     
     always@(posedge CLK)begin
-            counter = counter + 4'd1;
+            counter = counter + 3'd1;
     end
     always@(*)begin
             if(Reset == 1'b1)begin
-                counter = 4'd0;
+                counter = 3'd0;
             end
     end
     assign T = counter;
+endmodule
+
+module Decoder_8_1(
+    input [3:0] selection,
+    output reg S0 = 4'd0,
+    output reg S1 = 4'd0,
+    output reg S2 = 4'd0,
+    output reg S3 = 4'd0,
+    output reg S4 = 4'd0,
+    output reg S5 = 4'd0,
+    output reg S6 = 4'd0,
+    output reg S7 = 4'd0
+    );
+    always@(*)begin
+        case(selection)
+            4'd0: S0 <= 1;
+            4'd1: S1 <= 1;
+            4'd2: S2 <= 1;
+            4'd3: S3 <= 1;
+            4'd4: S4 <= 1;
+            4'd5: S5 <= 1;
+            4'd6: S6 <= 1;
+            4'd7: S7 <= 1;      
+        endcase
+    end
 endmodule
 
 module Decoder_16_1(
@@ -952,19 +977,20 @@ module HardwiredControlUnit(CLK);
     wire DEC;
     wire BNE;
         
-wire [1:0] REGSEL; 
-wire [3:0] DESTREG; 
+
 wire [3:0] SRCREG1;
 wire [3:0] SRCREG2;
 wire AddressMode;
 
     CombinationalControlUnit(T0,T1,T2,T3,T4,T5,T6,T7,BRA,LD,ST,MOV,AND,OR,NOT,
-         ADD,SUB,LSR,LSL,PUL,PSH,INC,DEC,BNE,REGSEL,DESTREG,SRCREG1,SRCREG2,AddressMode,
+         ADD,SUB,LSR,LSL,PUL,PSH,INC,DEC,BNE,ALU_Sys.IROut[9:8],ALU_Sys.IROut[11:8],
+         ALU_Sys.IROut[7:4],ALU_Sys.IROut[3:0],ALU_Sys.IROut[10],
          ALU_Sys.ALUOutFlag[3],ALU_Sys.ALUOutFlag[2],ALU_Sys.ALUOutFlag[1],ALU_Sys.ALUOutFlag[0]);
          
     ALUSystem ALU_Sys(RF_OutASel,RF_OutBSel,RF_FunSel,RF_RegSel,ALU_FunSel,ARF_OutCSel,ARF_OutDSel,
     ARF_FunSel,ARF_RegSel,IR_LH,IR_Enable,IR_Funsel,Mem_WR,Mem_CS,MuxASel,MuxBSel,MuxCSel,CLK);
     
+    Decoder_16_1 IR_DECODE(ALU_Sys.IROut[15:12],BRA,LD,ST,MOV,AND,OR,NOT,ADD,SUB,LSR,LSL,PUL,PSH,INC,DEC,BNE);
     
     SequenceCounter SC(CLK,Reset,T);
     Decoder_8_1 SC_DECODER(T,T0,T1,T2,T3,T4,T5,T6,T7);
