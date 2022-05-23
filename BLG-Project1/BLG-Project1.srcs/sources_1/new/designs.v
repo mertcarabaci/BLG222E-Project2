@@ -51,6 +51,17 @@ module D_Flip_Flop(D,CLK,Q,E);
 
 endmodule
 
+module MUX2_1_1bit(S0,S1,O,S);
+    input wire S0;
+    input wire S1;
+    input wire S;
+    
+    output wire O;
+    
+    assign O = (S0&(~S)) | (S1&S);
+    
+endmodule
+
 module MUX2_1_4bit(S0,S1,O,S);
     input wire [3:0] S0;
     input wire [3:0] S1;
@@ -644,7 +655,212 @@ module ALUSystem(
     PART3 ALU(MuxCOut,BOut,ALU_FunSel,ALUOut,ALUOutFlag,Clock);
     
 endmodule
-        
+
+module SequenceCounter(CLK,Reset,T);
+    input CLK;
+    input Reset;
+    output [3:0] T;
+    
+    reg [3:0] counter = 4'd0; 
+    
+    always@(posedge CLK)begin
+            counter = counter + 4'd1;
+    end
+    always@(*)begin
+            if(Reset == 1'b1)begin
+                counter = 4'd0;
+            end
+    end
+    assign T = counter;
+endmodule
+
+module CombinationalControlUnit(
+    input T0,
+    input T1,
+    input T2,
+    input T3,
+    input T4,
+    input T5,
+    input T6,
+    
+    input BRA,
+    input LD,
+    input ST,
+    input MOV,
+    input AND,
+    input OR,
+    input NOT,
+    input ADD,
+    input SUB,
+    input LSR,
+    input LSL,
+    input PUL,
+    input PSH,
+    input INC,
+    input DEC,
+    input BNE,
+    
+    input [1:0] REGSEL,
+    
+    input AddressMode,
+    
+    input Z,
+    input C,
+    input N,
+    input O,  
+    
+    input [15:0] IROut,
+    
+    output [1:0] RF_OutASel, 
+    output [1:0] RF_OutBSel, 
+    output [1:0] RF_FunSel,
+    output [3:0] RF_RegSel,
+    output [3:0] ALU_FunSel,
+    output [1:0] ARF_OutCSel, 
+    output [1:0] ARF_OutDSel, 
+    output [1:0] ARF_FunSel,
+    output [2:0] ARF_RegSel,
+    output IR_LH,
+    output IR_Enable,
+    output [1:0] IR_Funsel,
+    output Mem_WR,
+    output Mem_CS,
+    output [1:0] MuxASel,
+    output [1:0] MuxBSel,
+    output MuxCSel
+    output SC_reset);
+    
+    reg  [1:0] rRF_OutASel;
+    reg  [1:0] rRF_OutBSel; 
+    reg  [1:0] rRF_FunSel;
+    reg  [3:0] rRF_RegSel;
+    reg  [3:0] rALU_FunSel;
+    reg  [1:0] rARF_OutCSel; 
+    reg  [1:0] rARF_OutDSel; 
+    reg  [1:0] rARF_FunSel;
+    reg  [2:0] rARF_RegSel;
+    reg  rIR_LH;
+    reg  rIR_Enable;
+    reg  [1:0] rIR_Funsel;
+    reg  rMem_WR;
+    reg  rMem_CS;
+    reg [1:0] rMuxASel;
+    reg [1:0] rMuxBSel;
+    reg rMuxCSel;
+    reg rSC_reset = 1'b0;
+    
+    
+    always@(*)begin
+        if(BRA&AddressMode&T2)begin
+            rMuxBSel = 2'b01;
+            rARF_RegSel = 3'b011;
+            rARF_FunSel = 2'b10;
+            rSC_reset = 1'b1;
+            rIR_Enable = 1'b0;
+            rRF_RegSel = 4'b1111;
+            rMem_CS = 1'b0;
+        end
+        else if((BRA&~AddressMode&T2) | (BNE&~Z&T2&~AddressMode))begin
+            rSC_reset = 1'b1;
+        end
+        else if(BNE_select_IM = BNE&~Z&T2&AddressMode)begin
+            rMuxBSel = 2'b01;
+            rARF_RegSel = 3'b011;
+            rARF_FunSel = 2'b10;
+            rSC_reset = 1'b1;
+            rIR_Enable = 1'b0;
+            rRF_RegSel = 4'b1111;
+            rMem_CS = 1'b0;
+        end
+        else if(LD&T2&~AddressMod)begin
+            rARF_RegSel = 3'b111;
+            rARF_OutDSel = 2'b10;
+            rMem_WR = 1'b0;
+            rMem_CS = 1'b1;
+            rMuxASel = 2'b01;
+            rIR_Enable = 1'b0;
+            rSC_reset = 1'b1;
+            rRF_FunSel = 2'b10;
+            if(REGSEL == 2'b00)begin
+                rRF_RegSel = 4'b0111;
+            end
+            else if(REGSEL == 2'b01)begin
+                rRF_RegSel = 4'b1011;
+            end
+            else if(REGSEL == 2'b10)begin
+                rRF_RegSel = 4'b1101;
+            end
+            else if(REGSEL == 2'b11)begin
+                rRF_RegSel = 4'b1110;
+            end           
+        end
+        else if(LD&T2&AddressMode)begin
+            rMuxASel = 2'b00;
+            rMem_CS = 1'b0;
+            rARF_RegSel = 3'b111;
+            rSC_reset = 1'b1;
+            rIR_Enable = 1'b0;
+            rRF_FunSel = 2'b10;
+            if(REGSEL == 2'b00)begin
+                rRF_RegSel = 4'b0111;
+            end
+            else if(REGSEL == 2'b01)begin
+                rRF_RegSel = 4'b1011;
+            end
+            else if(REGSEL == 2'b10)begin
+                rRF_RegSel = 4'b1101;
+            end
+            else if(REGSEL == 2'b11)begin
+                rRF_RegSel = 4'b1110;
+            end
+            
+        end
+    end
+   
+    
+    wire ST_select_D = ST&T2&~AddressMode;
+    wire ST_select_IM = ST&T2&AddressMode;//reset
+    
+    wire MOV_select = MOV&T2;
+    wire MOV_dest;
+    wire MOV_src;
+    MUX2_1_1bit MOVDEST(0,1,MOV_dest,DESTREG[2]);
+    MUX2_1_1bit MOVSRC(0,1,MOV_src,SRCREG1[2]);
+    wire MOV_dest_select = MOV_select & MOV_dest;
+    wire MOV_src_select = MOV_select & MOV_src;
+    
+    wire NOT_select = NOT&T2;
+    wire NOT_dest;
+    wire NOT_src;
+    MUX2_1_1bit NOTDEST(0,1,NOT_dest,DESTREG[2]);
+    MUX2_1_1bit NOTSRC(0,1,NOT_src,SRCREG1[2]);
+    wire NOT_dest_select = NOT_select & NOT_dest;
+    wire NOT_src_select = NOT_select & NOT_src;
+    
+    
+    
+    
+
+    decoderRF_OutASel();
+    decoderRF_OutBSel();
+    decoderRF_FunSel();
+    decoderRF_RegSel();
+    decoderALU_FunSel();
+    decoderARF_OutCSel();
+    decoderARF_OutDSel();
+    decoderARF_FunSel();
+    decoderARF_RegSel();
+    decoderIR_LH();
+    decoderIR_Enable();
+    decoderIR_Funsel();
+    decoderMem_WR();
+    decoderMem_CS();
+    decoderMuxASel();
+    decoderMuxBSel(2'b01);
+    decoderMuxCSel)();
+    
+endmodule
+
 module HardwiredControlUnit(CLK);
     reg [3:0] clock_counter;
     input CLK;

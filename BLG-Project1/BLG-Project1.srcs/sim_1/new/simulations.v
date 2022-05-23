@@ -322,3 +322,20 @@ module lasttest();
         end  
     
 endmodule
+
+module SequenceCounterTest();
+    reg CLK;
+    reg Reset;
+    wire [3:0] T;
+    
+    SequenceCounter uut(CLK,Reset,T);
+    initial begin
+        CLK = 0;
+        forever #20 CLK = ~CLK;       
+    end 
+    initial begin
+        Reset = 0; #235
+        Reset = 1; #2 
+        Reset = 0; 
+    end
+endmodule
