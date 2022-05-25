@@ -805,6 +805,7 @@ module CombinationalControlUnit(
             rMem_CS <= 1'b0;            
         end
         else if(T0)begin
+            rSC_reset = 1'b0;
             rRF_RegSel <= 4'b1111;
             rARF_RegSel <= 3'b011;
             rARF_FunSel <= 2'b01;
@@ -816,6 +817,7 @@ module CombinationalControlUnit(
             rIR_Funsel <= 2'b10;
         end
         else if(T1)begin 
+            rSC_reset = 1'b0;
             rRF_RegSel <= 4'b1111;
             rARF_RegSel <= 3'b011;
             rARF_FunSel <= 2'b01;
@@ -835,7 +837,7 @@ module CombinationalControlUnit(
             rRF_RegSel = 4'b1111;
             rMem_CS = 1'b1;
         end
-        else if((BRA&~AddressMode&T2) | (BNE&~Z&T2&~AddressMode) | (ST&T2&AddressMode))begin
+        else if((BRA&~AddressMode&T2) | (BNE&T2&~AddressMode) | (ST&T2&AddressMode) | (BNE&Z&T2))begin
             rSC_reset <= 1'b1;
         end
         else if(BNE&~Z&T2&AddressMode)begin
@@ -904,7 +906,7 @@ module CombinationalControlUnit(
             rMem_CS <= 1'b1;
             rIR_Enable <= 1'b0;
             case(DESTREG)
-                4'b0000:begin
+                4'b0001:begin
                     rARF_RegSel <= 3'b011;
                     rRF_RegSel <= 4'b1111;
                 end
@@ -935,8 +937,8 @@ module CombinationalControlUnit(
                 4'b0111:begin
                     rRF_RegSel <= 4'b1110;
                     rARF_RegSel <= 3'b111;
-                end             
-            endcase
+                end      
+            endcase       
             if(LSL|LSR)begin
                 case(SRCREG1[2])
                     1'b0:begin
@@ -1173,42 +1175,66 @@ module CombinationalControlUnit(
                     rALU_FunSel <= 4'b0110;
                     rMuxBSel <= 2'b11;
                 end 
-            end 
+            end
             else if(INC | DEC)begin
-                rSC_reset <= 1'b0;
-                if(DESTREG[2] == 1'b1)begin
-                    rRF_FunSel <= 2'b10;
-                    if(SRCREG1[2] == 1'b1)begin 
-                        rALU_FunSel <= 4'b0001;
-                        rMuxASel <= 2'b11;
-                    end
-                    else begin
-                        rMuxASel <= 2'b10;
-                    end
-                end
-                else begin
-                    rARF_FunSel <= 2'b10;
-                    if(SRCREG1[2] == 1'b1)begin 
-                        rALU_FunSel <= 4'b0001;
-                        rMuxBSel <= 2'b11;
+                if(DESTREG == SRCREG1)begin
+                    rALU_FunSel <= 4'b0000;
+                    rSC_reset <= 1'b1;
+                    if(DESTREG[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                        rRF_OutASel <= DESTREG[1:0];
+                        if(INC == 1'b1)begin
+                            rRF_FunSel <= 2'b01;
+                        end
+                        else begin
+                            rRF_FunSel <= 2'b00;
+                        end
                     end
                     else begin
                         rMuxCSel <= 1'b0;
-                        rALU_FunSel <= 4'b0000;
-                        rMuxBSel <= 2'b11;
+                        rARF_OutCSel <= DESTREG[1:0];
+                        if(INC == 1'b1)begin
+                            rARF_FunSel <= 2'b01;
+                        end
+                        else begin
+                            rARF_FunSel <= 2'b00;
+                        end
                     end
-                end  
-            end
-        end
-        else if(PUL&T2)begin
-            rSC_reset <= 1'b1;
-            rIR_Enable <= 1'b0;
-            
+                end
+                else begin
+                    rSC_reset <= 1'b0;
+                    if(DESTREG[2] == 1'b1)begin
+                        rRF_FunSel <= 2'b10;
+                        if(SRCREG1[2] == 1'b1)begin 
+                            rALU_FunSel <= 4'b0001;
+                            rMuxASel <= 2'b11;
+                        end
+                        else begin
+                            rMuxASel <= 2'b10;
+                        end
+                    end
+                    else begin
+                        rARF_FunSel <= 2'b10;
+                        if(SRCREG1[2] == 1'b1)begin 
+                            rALU_FunSel <= 4'b0001;
+                            rMuxBSel <= 2'b11;
+                        end
+                        else begin
+                            rMuxCSel <= 1'b0;
+                            rALU_FunSel <= 4'b0000;
+                            rMuxBSel <= 2'b11;
+                        end
+                    end  
+               end
+            end           
         end
         else if(INC&T3)begin
             rSC_reset <= 1'b1;
             if(DESTREG[2] == 1'b1)begin
                 rRF_FunSel <= 2'b01;
+            end
+            else begin
+                rARF_FunSel <= 2'b01;
             end
         end
         else if(DEC&T3)begin
@@ -1218,16 +1244,23 @@ module CombinationalControlUnit(
             end
         end
         else if(PUL&T2)begin
+            if(SRCREG1[2] == 1'b1)begin
+                rRF_OutASel <= SRCREG1[1:0]; 
+                rMuxCSel <= 1'b1; 
+            end
+            else begin
+                rARF_OutCSel <= SRCREG1[1:0];
+                rMuxCSel <= 1'b0;
+            end
             rSC_reset <= 1'b1;
             rIR_Enable <= 1'b0;
-            rRF_OutBSel <= DESTREG[1:0];
+            rALU_FunSel <= 4'b0000; 
+            rMem_WR <= 1'b1;
+            rMem_CS <= 1'b0;
             rRF_RegSel <= 4'b1111;
             rARF_RegSel <= 3'b110;
             rARF_FunSel <= 2'b00; 
-            rARF_OutDSel <= 2'b11;
-            rALU_FunSel <= 4'b0001; 
-            rMem_WR <= 1'b1;
-            rMem_CS <= 1'b0;
+            rARF_OutDSel <= 2'b11;             
         end
         else if(PSH&T2)begin
             rSC_reset <= 1'b0;
@@ -1240,24 +1273,43 @@ module CombinationalControlUnit(
         else if(PSH&T3)begin
             rSC_reset <= 1'b1;
             rIR_Enable <= 1'b0;
-            if(DESTREG[1:0] == 2'b00)begin
-                rRF_RegSel <= 4'b0111;
-            end
-            else if(DESTREG[1:0] == 2'b01)begin
-                 rRF_RegSel <= 4'b1011;
-            end
-            else if(DESTREG[1:0] == 2'b10)begin
-                rRF_RegSel <= 4'b1101;
-            end
-            else if(DESTREG[1:0] == 2'b11)begin
-                rRF_RegSel <= 4'b1110;
-            end            
-            rRF_FunSel <= 4'b10;
-            rARF_RegSel <= 3'b111;
             rARF_OutDSel <= 2'b11;
             rMem_WR <= 1'b0;
             rMem_CS <= 1'b0;
-            rMuxASel <= 2'B01;
+            if(DESTREG[2] == 1'b1)begin
+                rRF_FunSel <= 4'b10;
+                rARF_RegSel <= 3'b111;
+                rMuxASel <= 2'b01;
+                if(DESTREG[1:0] == 2'b00)begin
+                    rRF_RegSel <= 4'b0111;
+                end
+                else if(DESTREG[1:0] == 2'b01)begin
+                     rRF_RegSel <= 4'b1011;
+                end
+                else if(DESTREG[1:0] == 2'b10)begin
+                    rRF_RegSel <= 4'b1101;
+                end
+                else if(DESTREG[1:0] == 2'b11)begin
+                    rRF_RegSel <= 4'b1110;
+                end    
+            end
+            else begin
+                rARF_FunSel <= 4'b10;
+                rRF_RegSel <= 4'b1111;
+                rMuxBSel <= 2'b10;
+                if(DESTREG[1:0] == 2'b00)begin
+                    rARF_RegSel <= 4'b011;
+                end
+                else if(DESTREG[1:0] == 2'b01)begin
+                     rARF_RegSel <= 4'b011;
+                end
+                else if(DESTREG[1:0] == 2'b10)begin
+                    rARF_RegSel <= 4'b101;
+                end
+                else if(DESTREG[1:0] == 2'b11)begin
+                    rARF_RegSel <= 4'b110;
+                end  
+            end
         end    
     end
     
@@ -1346,7 +1398,7 @@ module HardwiredControlUnit(CLK);
     Decoder_8_1 SC_DECODER(T,T0,T1,T2,T3,T4,T5,T6,T7);
 endmodule
 
-
+/*
 module CombCount(CLK,BRA,LD,ST,MOV,AND,OR,NOT,
          ADD,SUB,LSR,LSL,PUL,PSH,INC,DEC,BNE,REGSEL,DESTREG,SRCREG1,SRCREG2,AddressMode,Z,C,N,O,
          RF_OutASel,RF_OutBSel,RF_FunSel,RF_RegSel,ALU_FunSel,ARF_OutCSel,ARF_OutDSel,
@@ -1398,6 +1450,6 @@ module CombCount(CLK,BRA,LD,ST,MOV,AND,OR,NOT,
          output wire SC_reset;
 endmodule
 
-
+*/
 
 
