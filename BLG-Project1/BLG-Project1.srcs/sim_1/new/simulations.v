@@ -396,3 +396,13 @@ module CombCountTest();
                    ARF_FunSel,ARF_RegSel,IR_LH,IR_Enable,IR_Funsel,Mem_WR,Mem_CS,MuxASel,MuxBSel,MuxCSel,SC_reset);
       
 endmodule
+
+
+module HardwiredControlUnitTest();
+    reg CLK;
+    HardwiredControlUnit uut(CLK);
+    initial begin
+        CLK = 0;
+        forever #20 CLK = ~CLK;       
+    end 
+endmodule

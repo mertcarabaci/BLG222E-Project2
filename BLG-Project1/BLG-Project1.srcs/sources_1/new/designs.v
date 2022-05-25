@@ -655,8 +655,6 @@ module SequenceCounter(CLK,Reset,T);
     
     always@(posedge CLK)begin
             counter = counter + 3'd1;
-    end
-    always@(*)begin
             if(Reset == 1'b1)begin
                 counter = 3'd0;
             end
@@ -665,69 +663,61 @@ module SequenceCounter(CLK,Reset,T);
 endmodule
 
 module Decoder_8_1(
-    input [3:0] selection,
-    output reg S0 = 4'd0,
-    output reg S1 = 4'd0,
-    output reg S2 = 4'd0,
-    output reg S3 = 4'd0,
-    output reg S4 = 4'd0,
-    output reg S5 = 4'd0,
-    output reg S6 = 4'd0,
-    output reg S7 = 4'd0
+    input [2:0] s,
+    output S0,
+    output S1,
+    output S2,
+    output S3,
+    output S4,
+    output S5,
+    output S6,
+    output S7
     );
-    always@(*)begin
-        case(selection)
-            4'd0: S0 <= 1;
-            4'd1: S1 <= 1;
-            4'd2: S2 <= 1;
-            4'd3: S3 <= 1;
-            4'd4: S4 <= 1;
-            4'd5: S5 <= 1;
-            4'd6: S6 <= 1;
-            4'd7: S7 <= 1;      
-        endcase
-    end
+    assign S0=(~s[0]&~s[1]&~s[2]),
+    S1=(~s[2]&~s[1]&s[0]),
+    S2=(~s[2]&s[1]&~s[0]),
+    S3=(~s[2]&s[1]&s[0]),
+    S4=(s[2]&~s[1]&~s[0]),
+    S5=(s[2]&~s[1]&s[0]),
+    S6=(s[2]&s[1]&~s[0]),
+    S7=(s[2]&s[1]&s[0]);
 endmodule
 
 module Decoder_16_1(
-    input [3:0] selection,
-    output reg S0 = 4'd0,
-    output reg S1 = 4'd0,
-    output reg S2 = 4'd0,
-    output reg S3 = 4'd0,
-    output reg S4 = 4'd0,
-    output reg S5 = 4'd0,
-    output reg S6 = 4'd0,
-    output reg S7 = 4'd0,
-    output reg S8 = 4'd0,
-    output reg S9 = 4'd0,
-    output reg S10 = 4'd0,
-    output reg S11 = 4'd0,
-    output reg S12 = 4'd0,
-    output reg S13 = 4'd0,
-    output reg S14 = 4'd0,
-    output reg S15 = 4'd0
+    input [3:0] s,
+    output S0,
+    output S1,
+    output S2,
+    output S3,
+    output S4,
+    output S5,
+    output S6,
+    output S7,
+    output S8,
+    output S9,
+    output S10,
+    output S11,
+    output S12,
+    output S13,
+    output S14,
+    output S15
     );
-    always@(*)begin
-        case(selection)
-            4'd0: S0 <= 1;
-            4'd1: S1 <= 1;
-            4'd2: S2 <= 1;
-            4'd3: S3 <= 1;
-            4'd4: S4 <= 1;
-            4'd5: S5 <= 1;
-            4'd6: S6 <= 1;
-            4'd7: S7 <= 1;
-            4'd8: S8 <= 1;
-            4'd9: S9 <= 1;
-            4'd10: S10 <= 1;
-            4'd11: S11 <= 1;
-            4'd12: S12 <= 1;
-            4'd13: S13 <= 1;
-            4'd14: S14 <= 1;
-            4'd15: S15 <= 1;        
-        endcase
-    end
+    assign S0=(~s[3]&~s[2]&~s[1]&~s[0]),
+    S1=(~s[3]&~s[2]&~s[1]&s[0]),
+    S2=(~s[3]&~s[2]&s[1]&~s[0]),
+    S3=(~s[3]&~s[2]&s[1]&s[0]),
+    S4=(~s[3]&s[2]&~s[1]&~s[0]),
+    S5=(~s[3]&s[2]&~s[1]&s[0]),
+    S6=(~s[3]&s[2]&s[1]&~s[0]),
+    S7=(~s[3]&s[2]&s[1]&s[0]),
+    S8=(s[3]&~s[2]&~s[1]&~s[0]),
+    S9=(s[3]&~s[2]&~s[1]&s[0]),
+    S10=(s[3]&~s[2]&s[1]&~s[0]),
+    S11=(s[3]&~s[2]&s[1]&s[0]),
+    S12=(s[3]&s[2]&~s[1]&~s[0]),
+    S13=(s[3]&s[2]&~s[1]&s[0]),
+    S14=(s[3]&s[2]&s[1]&~s[0]),
+    S15=(s[3]&s[2]&s[1]&s[0]);
 endmodule
 
 module CombinationalControlUnit(
@@ -812,7 +802,7 @@ module CombinationalControlUnit(
             rRF_RegSel <= 4'b1111;
             rARF_FunSel <= 2'b11;
             rIR_LH <= 1'b0;
-            rMem_CS <= 1'b0;
+            rMem_CS <= 1'b0;            
         end
         else if(T0)begin
             rRF_RegSel <= 4'b1111;
@@ -820,7 +810,7 @@ module CombinationalControlUnit(
             rARF_FunSel <= 2'b01;
             rARF_OutDSel <= 2'b01;
             rMem_WR <= 1'b0;
-            rMem_CS <= 1'b1;
+            rMem_CS <= 1'b0;
             rIR_Enable <= 1'b1;
             rIR_LH <= 1'b1;
             rIR_Funsel <= 2'b10;
@@ -831,7 +821,7 @@ module CombinationalControlUnit(
             rARF_FunSel <= 2'b01;
             rARF_OutDSel <= 2'b01;
             rMem_WR <= 1'b0;
-            rMem_CS <= 1'b1;
+            rMem_CS <= 1'b0;
             rIR_Enable <= 1'b1;
             rIR_LH <= 1'b0;
             rIR_Funsel <= 2'b10;        
@@ -843,7 +833,7 @@ module CombinationalControlUnit(
             rSC_reset = 1'b1;
             rIR_Enable = 1'b0;
             rRF_RegSel = 4'b1111;
-            rMem_CS = 1'b0;
+            rMem_CS = 1'b1;
         end
         else if((BRA&~AddressMode&T2) | (BNE&~Z&T2&~AddressMode) | (ST&T2&AddressMode))begin
             rSC_reset <= 1'b1;
@@ -855,13 +845,13 @@ module CombinationalControlUnit(
             rSC_reset <= 1'b1;
             rIR_Enable <= 1'b0;
             rRF_RegSel <= 4'b1111;
-            rMem_CS <= 1'b0;
+            rMem_CS <= 1'b1;
         end
         else if(LD&T2&~AddressMode)begin
             rARF_RegSel <= 3'b111;
             rARF_OutDSel <= 2'b10;
             rMem_WR <= 1'b0;
-            rMem_CS <= 1'b1;
+            rMem_CS <= 1'b0;
             rMuxASel <= 2'b01;
             rIR_Enable <= 1'b0;
             rSC_reset <= 1'b1;
@@ -881,7 +871,7 @@ module CombinationalControlUnit(
         end
         else if(LD&T2&AddressMode)begin
             rMuxASel <= 2'b00;
-            rMem_CS <= 1'b0;
+            rMem_CS <= 1'b1;
             rARF_RegSel <= 3'b111;
             rSC_reset <= 1'b1;
             rIR_Enable <= 1'b0;
@@ -908,11 +898,11 @@ module CombinationalControlUnit(
             rARF_RegSel <= 3'b111;
             rIR_Enable <= 1'b0;
             rMem_WR <= 1'b1;
-            rMem_CS <= 1'b1;
+            rMem_CS <= 1'b0;
         end
         else if((MOV|AND|OR|NOT|ADD|SUB|LSR|LSL|INC|DEC)&T2)begin
-            rMem_CS <= 0;
-            rIR_Enable <= 0;
+            rMem_CS <= 1'b1;
+            rIR_Enable <= 1'b0;
             case(DESTREG)
                 4'b0000:begin
                     rARF_RegSel <= 3'b011;
@@ -1237,7 +1227,7 @@ module CombinationalControlUnit(
             rARF_OutDSel <= 2'b11;
             rALU_FunSel <= 4'b0001; 
             rMem_WR <= 1'b1;
-            rMem_CS <= 1'b1;
+            rMem_CS <= 1'b0;
         end
         else if(PSH&T2)begin
             rSC_reset <= 1'b0;
@@ -1245,7 +1235,7 @@ module CombinationalControlUnit(
             rRF_RegSel <= 4'b1111;
             rARF_RegSel <= 3'b110;
             rARF_FunSel <= 2'b01;
-            rMem_CS <= 1'b0;
+            rMem_CS <= 1'b1;
         end
         else if(PSH&T3)begin
             rSC_reset <= 1'b1;
@@ -1266,7 +1256,7 @@ module CombinationalControlUnit(
             rARF_RegSel <= 3'b111;
             rARF_OutDSel <= 2'b11;
             rMem_WR <= 1'b0;
-            rMem_CS <= 1'b1;
+            rMem_CS <= 1'b0;
             rMuxASel <= 2'B01;
         end    
     end
@@ -1340,7 +1330,7 @@ module HardwiredControlUnit(CLK);
     wire DEC;
     wire BNE;
         
-    CombinationalControlUnit(T0,T1,T2,T3,T4,T5,T6,T7,BRA,LD,ST,MOV,AND,OR,NOT,
+    CombinationalControlUnit combUnit(T0,T1,T2,T3,T4,T5,T6,T7,BRA,LD,ST,MOV,AND,OR,NOT,
          ADD,SUB,LSR,LSL,PUL,PSH,INC,DEC,BNE,ALU_Sys.IROut[9:8],ALU_Sys.IROut[11:8],
          ALU_Sys.IROut[7:4],ALU_Sys.IROut[3:0],ALU_Sys.IROut[10],
          ALU_Sys.ALUOutFlag[3],ALU_Sys.ALUOutFlag[2],ALU_Sys.ALUOutFlag[1],ALU_Sys.ALUOutFlag[0],RF_OutASel,RF_OutBSel,
