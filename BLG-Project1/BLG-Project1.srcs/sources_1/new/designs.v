@@ -797,16 +797,21 @@ module CombinationalControlUnit(
     reg rSC_reset = 1'b0;
     
     always@(*)begin
-        if(T7)begin
-            rARF_RegSel <= 3'b011;
-            rRF_RegSel <= 4'b1111;
+        //Sequence counter starts from T7 at the start of the program and resets all registers in a clock cycle
+        //Then it continues to T0.
+        if(T7)begin 
+            rARF_RegSel <= 3'b000;
+            rRF_RegSel <= 4'b0000;
             rARF_FunSel <= 2'b11;
-            rIR_LH <= 1'b0;
-            rMem_CS <= 1'b0;            
+            rRF_FunSel <= 2'b11;
+            rIR_Enable <= 1'b0;
+            rMem_CS <= 1'b1;            
         end
+        
+        //When T0, IR(7-0) is loaded from M[PC] and PC is incremented by one.
         else if(T0)begin
-            rSC_reset = 1'b0;
-            rRF_RegSel <= 4'b1111;
+            rSC_reset = 1'b0; //reset is 0 becuase we need to continue to T1
+            rRF_RegSel <= 4'b1111; //RF_RegSel is 111 because we don't change anything inside RF. 
             rARF_RegSel <= 3'b011;
             rARF_FunSel <= 2'b01;
             rARF_OutDSel <= 2'b01;
@@ -816,9 +821,11 @@ module CombinationalControlUnit(
             rIR_LH <= 1'b1;
             rIR_Funsel <= 2'b10;
         end
+        
+        //When T1, IR(15-8) is loaded from M[PC] and PC is incremented by one.
         else if(T1)begin 
-            rSC_reset = 1'b0;
-            rRF_RegSel <= 4'b1111;
+            rSC_reset = 1'b0; //reset is 0 becuase we need to continue to T1
+            rRF_RegSel <= 4'b1111; //RF_RegSel is 111 because we don't change anything inside RF. 
             rARF_RegSel <= 3'b011;
             rARF_FunSel <= 2'b01;
             rARF_OutDSel <= 2'b01;
@@ -828,36 +835,51 @@ module CombinationalControlUnit(
             rIR_LH <= 1'b0;
             rIR_Funsel <= 2'b10;        
         end
+        
+        //When T2 and BRA are 1, IR(7-0)(address value) is loaded into PC register
         else if(BRA&AddressMode&T2)begin
             rMuxBSel = 2'b01;
             rARF_RegSel = 3'b011;
             rARF_FunSel = 2'b10;
-            rSC_reset = 1'b1;
+            rSC_reset = 1'b1; //Counter reset is 1 because BRA instruction is finished in 1 clock cycle
+            //IR and Mem are disable becuase we dont use them and RF_Regsel is 11111 because we odnt use RF
             rIR_Enable = 1'b0;
             rRF_RegSel = 4'b1111;
             rMem_CS = 1'b1;
         end
+        
+        //When an instruction cannot move on, clock is reseted to T0
+        //BRA and BNE are instructions with IM addressing mode, if address mode bit is 0, we dont continue
+        //ST is an instruction with D addressing mode, if address mode bit is 1, we dont continue
+        //For BNE, if Z flag is not 0, the instruction cannot continue and clock is reseted to T0
         else if((BRA&~AddressMode&T2) | (BNE&T2&~AddressMode) | (ST&T2&AddressMode) | (BNE&Z&T2))begin
             rSC_reset <= 1'b1;
         end
+        
+        //When T2 and BNE are 1 and Z is 0, IR(7-0)(address value) is loaded into PC register
         else if(BNE&~Z&T2&AddressMode)begin
             rMuxBSel <= 2'b01;
             rARF_RegSel <= 3'b011;
             rARF_FunSel <= 2'b10;
-            rSC_reset <= 1'b1;
+            rSC_reset <= 1'b1; //Counter reset is 1 because BRA instruction is finished in 1 clock cycle
+            //IR and Mem are disable becuase we dont use them and RF_Regsel is 11111 because we odnt use 
             rIR_Enable <= 1'b0;
             rRF_RegSel <= 4'b1111;
             rMem_CS <= 1'b1;
         end
+        
+        //When T2 and LD are 1 and AddressMode is D, data in the mem address which is selected according to AR is loaded into register determined by REGSEL
         else if(LD&T2&~AddressMode)begin
             rARF_RegSel <= 3'b111;
-            rARF_OutDSel <= 2'b10;
-            rMem_WR <= 1'b0;
+            rARF_OutDSel <= 2'b10; //AR to address input of memory
+            rMem_WR <= 1'b0; //Memory on read mode
             rMem_CS <= 1'b0;
-            rMuxASel <= 2'b01;
+            rMuxASel <= 2'b01; //data will be loaded to RF
             rIR_Enable <= 1'b0;
-            rSC_reset <= 1'b1;
+            rSC_reset <= 1'b1; //Instruction will finish after 1 clock cycle
             rRF_FunSel <= 2'b10;
+            
+            //According to REGSEL select RFregsel for the register we will change
             if(REGSEL == 2'b00)begin
                 rRF_RegSel <= 4'b0111;
             end
@@ -871,13 +893,15 @@ module CombinationalControlUnit(
                 rRF_RegSel <= 4'b1110;
             end           
         end
+        //When T2 and LD are 1 and AddressMode is IM, IR(7-0)(address value) is loaded into register determined by REGSEL
         else if(LD&T2&AddressMode)begin
             rMuxASel <= 2'b00;
             rMem_CS <= 1'b1;
             rARF_RegSel <= 3'b111;
-            rSC_reset <= 1'b1;
+            rSC_reset <= 1'b1; //Instruction will finish after 1 clock cycle
             rIR_Enable <= 1'b0;
-            rRF_FunSel <= 2'b10;
+            rRF_FunSel <= 2'b10;       
+            //According to REGSEL select RFregsel for the register we will change
             if(REGSEL == 2'b00)begin
                 rRF_RegSel <= 4'b0111;
             end
@@ -891,6 +915,8 @@ module CombinationalControlUnit(
                 rRF_RegSel <= 4'b1110;
             end
         end
+        
+        //When T2 and ST are 1 and AddressMode is D, data in the register determined by REGSEL will be loaded to M[AR]
         else if(ST&T2&~AddressMode)begin
             rSC_reset <= 1'b1;
             rRF_OutBSel <= REGSEL;
@@ -902,9 +928,13 @@ module CombinationalControlUnit(
             rMem_WR <= 1'b1;
             rMem_CS <= 1'b0;
         end
+        
         else if((MOV|AND|OR|NOT|ADD|SUB|LSR|LSL|INC|DEC)&T2)begin
-            rMem_CS <= 1'b1;
-            rIR_Enable <= 1'b0;
+            rMem_CS <= 1'b1; //Disabled becuase we dont need memory 
+            rIR_Enable <= 1'b0; //Disabled because we won't load anything to IR
+            
+            //DESTREG is common for all instruction. So we will determine regsel inputs of RF and ARF.
+            //If a register is DESTREG, it regSel for it will be 0 and other regSels will be 1
             case(DESTREG)
                 4'b0001:begin
                     rARF_RegSel <= 3'b011;
@@ -939,115 +969,91 @@ module CombinationalControlUnit(
                     rARF_RegSel <= 3'b111;
                 end      
             endcase       
-            if(LSL|LSR)begin
-                case(SRCREG1[2])
-                    1'b0:begin
-                        rARF_OutCSel <= SRCREG1[1:0];
-                    end
-                    1'b1:begin
-                        rRF_OutASel <= SRCREG1[1:0];
-                    end           
-                endcase
-                case(SRCREG2[2])
-                    1'b0:begin
-                        rARF_OutCSel <= SRCREG2[1:0];
-                    end
-                    1'b1:begin
-                        rRF_OutBSel <= SRCREG2[1:0];
-                    end           
-                endcase
-                
+            
+            //Determine OutSels of RF and ARF according to SRCREG1
+            //if SRCREG1[2] is 0, we will select a register from ARF, otherwise from RF.     
+            case(SRCREG1[2])
+                1'b0:begin
+                    rARF_OutCSel <= SRCREG1[1:0];
+                end
+                1'b1:begin
+                    rRF_OutASel <= SRCREG1[1:0];
+                end           
+            endcase
+            if(SRCREG2[2] == 1'b1 )begin
+                rRF_OutBSel <= SRCREG2[1:0]; //SRCREG2 only for registers in RF.
+            end
+            //If LSL or LSR is 1 at T2
+            if(LSL|LSR)begin          
                 if(LSR) begin
-                    rSC_reset <= 1'b1;
+                    rSC_reset <= 1'b1; //Instruction will finish after 1 clock cycle
+                    rALU_FunSel <= 4'b1011;//Funsel for LSR operation
+                    
+                    //if srcreg1 is coming from RF muxc will select RFoutA otherwise it will select ARFOutC                                            
+                    if(SRCREG1[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end
                     if(DESTREG[2] == 1'b1)begin
-                        rRF_FunSel <= 2'b10;
-                        if(SRCREG1[2] == 1'b1)begin
-                            rMuxCSel <= 1'b1;
-                        end
-                        else begin
-                            rMuxCSel <= 1'b0;
-                        end
-                        rALU_FunSel <= 4'b1011;
+                        rRF_FunSel <= 2'b10; 
                         rMuxASel <= 2'b11;
                     end
                     else begin
                         rARF_FunSel <= 2'b10;
-                        if(SRCREG1[2] == 1'b1)begin
-                            rMuxCSel <= 1'b1;
-                        end
-                        else begin
-                            rMuxCSel <= 1'b0;
-                        end
-                        rALU_FunSel <= 4'b1011;
                         rMuxBSel <= 2'b11;
                     end 
                 end 
                 else if(LSL) begin
-                    rSC_reset <= 1'b1;
+                    rALU_FunSel <= 4'b1010; //Funsel for LSL operation
+                    rSC_reset <= 1'b1; //Instruction will finish after 1 clock cycle
+                    
+                    //if srcreg1 is coming from RF muxc will select RFoutA otherwise it will select ARFOutC    
+                    if(SRCREG1[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1;
+                    end
+                    else begin
+                        rMuxCSel <= 1'b0;
+                    end   
                     if(DESTREG[2] == 1'b1)begin
-                        rRF_FunSel <= 2'b10;
-                        if(SRCREG1[2] == 1'b1)begin
-                            rMuxCSel <= 1'b1;
-                        end
-                        else begin
-                            rMuxCSel <= 1'b0;
-                        end
-                        rALU_FunSel <= 4'b1010;
+                        rRF_FunSel <= 2'b10;                                            
                         rMuxASel <= 2'b11;
                     end
                     else begin
                         rARF_FunSel <= 2'b10;
-                        if(SRCREG1[2] == 1'b1)begin
-                            rMuxCSel <= 1'b1;
-                        end
-                        else begin
-                            rMuxCSel <= 1'b0;
-                        end
-                        rALU_FunSel <= 4'b1010;
                         rMuxBSel <= 2'b11;
                     end 
                 end           
             end
-            else begin
-                case(SRCREG1[2])
-                    1'b0:begin
-                        rARF_OutCSel <= SRCREG1[1:0];
-                    end
-                    1'b1:begin
-                        rRF_OutASel <= SRCREG1[1:0];
-                    end           
-                endcase
-                case(SRCREG2[2])
-                    1'b0:begin
-                        rARF_OutCSel <= SRCREG2[1:0];
-                    end
-                    1'b1:begin
-                        rRF_OutBSel <= SRCREG2[1:0];
-                    end           
-                endcase
-            end
-            if(MOV)begin
-                rSC_reset <= 1'b1;
+            
+            //If MOV is 1 at T2
+            else if(MOV)begin
+                rSC_reset <= 1'b1; //Instruction will finish after 1 clock cycle
+                //if DESTREG is in RF, output of SRCREG1 will go through ALU, pass MuxA and be loaded into DESTREG
                 if(DESTREG[2] == 1'b1)begin
-                    rRF_FunSel <= 2'b10;
-                    if(SRCREG1[2] == 1'b1)begin 
-                        rALU_FunSel <= 4'b0001;
-                        rMuxASel <= 2'b11;
+                    rRF_FunSel <= 2'b10; 
+                    if(SRCREG1[2] == 1'b1)begin
+                        rMuxCSel <= 1'b1; //Select RFOutA
+                        rALU_FunSel <= 4'b0000; //Pass input to out without changing
+                        rMuxASel <= 2'b11; //Select ALU output
                     end
                     else begin
-                        rMuxASel <= 2'b10;
+                        rMuxASel <= 2'b10; //Select ARFout
                     end
                 end
+                //if DESTREG is in ARF, output of SRCREG1 will go through ALU, pass MuxB and be loaded into DESTREG
                 else begin
                     rARF_FunSel <= 2'b10;
                     if(SRCREG1[2] == 1'b1)begin 
-                        rALU_FunSel <= 4'b0001;
-                        rMuxBSel <= 2'b11;
+                        rMuxCSel <= 1'b1; //Select RFOutA
+                        rALU_FunSel <= 4'b0000; //Pass input to out without changing
+                        rMuxBSel <= 2'b11; //Select ALU output
                     end
                     else begin
-                        rMuxCSel <= 1'b0;
-                        rALU_FunSel <= 4'b0000;
-                        rMuxBSel <= 2'b11;
+                        rMuxCSel <= 1'b0; //Select ARFOutA
+                        rALU_FunSel <= 4'b0000; //Pass input to out without changing
+                        rMuxBSel <= 2'b11; //Select ALU output
                     end
                 end 
             end

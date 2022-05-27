@@ -1,0 +1,759 @@
+/*
+
+Xilinx Vivado v2017.4 (64-bit) [Major: 2017, Minor: 4]
+SW Build: 2086221 on Fri Dec 15 20:55:39 MST 2017
+IP Build: 2085800 on Fri Dec 15 22:25:07 MST 2017
+
+Process ID: 21440
+License: Customer
+
+Current time: 	Fri May 27 12:37:20 EEST 2022
+Time zone: 	Eastern European Time (Asia/Istanbul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 12
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 158 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2017.4/tps/win64/jre
+JVM executable location: 	C:/Xilinx/Vivado/2017.4/tps/win64/jre/bin/java.exe
+
+User name: 	mertc
+User home directory: C:/Users/mertc
+User working directory: C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1
+User country: 	GB
+User language: 	en
+User locale: 	en_GB
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2017.4
+RDI_DATADIR: C:/Xilinx/Vivado/2017.4/data
+RDI_BINDIR: C:/Xilinx/Vivado/2017.4/bin
+
+Vivado preferences file location: C:/Users/mertc/AppData/Roaming/Xilinx/Vivado/2017.4/vivado.xml
+Vivado preferences directory: C:/Users/mertc/AppData/Roaming/Xilinx/Vivado/2017.4/
+Vivado layouts directory: C:/Users/mertc/AppData/Roaming/Xilinx/Vivado/2017.4/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2017.4/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/vivado.log
+Vivado journal file location: 	C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/vivado.jou
+Engine tmp dir: 	C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/.Xil/Vivado-21440-DESKTOP-PKBE7EJ
+
+GUI allocated memory:	188 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 579 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\Users\mertc\Desktop\BLG222E-Project2\BLG-Project1\BLG-Project1.xpr. Version: Vivado v2017.4.1 
+// bs (cj):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 46 MB (+45734kb) [00:00:09]
+// [Engine Memory]: 499 MB (+372156kb) [00:00:09]
+// [GUI Memory]: 59 MB (+10894kb) [00:00:10]
+// [GUI Memory]: 79 MB (+18308kb) [00:00:10]
+// [Engine Memory]: 540 MB (+16824kb) [00:00:10]
+// [GUI Memory]: 93 MB (+10341kb) [00:00:11]
+// [GUI Memory]: 98 MB (+606kb) [00:00:11]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 584 MB. GUI used memory: 40 MB. Current time: 5/27/22 12:37:21 PM EEST
+// Project name: BLG-Project1; location: C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1; part: xc7a100tcsg324-1
+// [Engine Memory]: 585 MB (+17986kb) [00:00:12]
+dismissDialog("Open Project"); // bs (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (designs.v) elapsed time: 0.2s
+// Elapsed time: 71 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, HardwiredControlUnit (designs.v)]", 1, true); // B (D, cj) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, HardwiredControlUnit (designs.v)]", 1, true, false, false, false, false, true); // B (D, cj) - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 607 MB. GUI used memory: 43 MB. Current time: 5/27/22 12:38:36 PM EEST
+// Elapsed time: 67 seconds
+selectCodeEditor("designs.v", 353, 177); // cd (w, cj)
+// Elapsed time: 704 seconds
+selectCodeEditor("designs.v", 1001, 330); // cd (w, cj)
+// Elapsed time: 529 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "designs.v", 1); // k (j, cj)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "designs.v", 1, false, true); // k (j, cj) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // R (Q, cj)
+selectCodeEditor("designs.v", 315, 341); // cd (w, cj)
+// Elapsed time: 31 seconds
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("designs.v", 269, 343); // cd (w, cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 80 seconds
+selectCodeEditor("designs.v", 142, 347); // cd (w, cj)
+selectCodeEditor("designs.v", 265, 327); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 26, 349); // cd (w, cj)
+selectCodeEditor("designs.v", 26, 349, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 209, 370); // cd (w, cj)
+selectCodeEditor("designs.v", 304, 344); // cd (w, cj)
+// Elapsed time: 20 seconds
+selectCodeEditor("designs.v", 167, 502); // cd (w, cj)
+// Elapsed time: 40 seconds
+selectCodeEditor("designs.v", 134, 515); // cd (w, cj)
+// Elapsed time: 28 seconds
+selectCodeEditor("designs.v", 289, 511); // cd (w, cj)
+// [GUI Memory]: 104 MB (+427kb) [00:26:55]
+// Elapsed time: 53 seconds
+selectCodeEditor("designs.v", 193, 260); // cd (w, cj)
+selectCodeEditor("designs.v", 349, 444); // cd (w, cj)
+selectCodeEditor("designs.v", 306, 287); // cd (w, cj)
+selectCodeEditor("designs.v", 351, 398); // cd (w, cj)
+// Elapsed time: 29 seconds
+selectCodeEditor("designs.v", 127, 243); // cd (w, cj)
+// Elapsed time: 12 seconds
+selectCodeEditor("designs.v", 104, 319); // cd (w, cj)
+selectCodeEditor("designs.v", 104, 319, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 120, 603); // cd (w, cj)
+selectCodeEditor("designs.v", 120, 603, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 343, 610); // cd (w, cj)
+// Elapsed time: 18 seconds
+selectCodeEditor("designs.v", 385, 228); // cd (w, cj)
+selectCodeEditor("designs.v", 359, 199); // cd (w, cj)
+// Elapsed time: 71 seconds
+selectCodeEditor("designs.v", 560, 213); // cd (w, cj)
+selectCodeEditor("designs.v", 134, 172); // cd (w, cj)
+selectCodeEditor("designs.v", 276, 284); // cd (w, cj)
+selectCodeEditor("designs.v", 273, 263); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 247, 239); // cd (w, cj)
+// Elapsed time: 20 seconds
+selectCodeEditor("designs.v", 322, 322); // cd (w, cj)
+selectCodeEditor("designs.v", 464, 356); // cd (w, cj)
+selectCodeEditor("designs.v", 460, 410); // cd (w, cj)
+selectCodeEditor("designs.v", 56, 160); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 215, 360); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 165, 388); // cd (w, cj)
+selectCodeEditor("designs.v", 518, 430); // cd (w, cj)
+selectCodeEditor("designs.v", 324, 495); // cd (w, cj)
+selectCodeEditor("designs.v", 308, 575); // cd (w, cj)
+selectCodeEditor("designs.v", 249, 209); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 248, 439); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 214, 197); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 311, 415); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 234, 429); // cd (w, cj)
+selectCodeEditor("designs.v", 294, 519); // cd (w, cj)
+// HMemoryUtils.trashcanNow. Engine heap size: 609 MB. GUI used memory: 45 MB. Current time: 5/27/22 1:08:38 PM EEST
+// Elapsed time: 32 seconds
+selectCodeEditor("designs.v", 208, 447); // cd (w, cj)
+selectCodeEditor("designs.v", 196, 438); // cd (w, cj)
+selectCodeEditor("designs.v", 130, 98); // cd (w, cj)
+selectCodeEditor("designs.v", 90, 389); // cd (w, cj)
+// Elapsed time: 90 seconds
+selectCodeEditor("designs.v", 520, 414); // cd (w, cj)
+selectCodeEditor("designs.v", 590, 379); // cd (w, cj)
+selectCodeEditor("designs.v", 590, 379); // cd (w, cj)
+selectCodeEditor("designs.v", 176, 418); // cd (w, cj)
+selectCodeEditor("designs.v", 176, 418, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 628, 378); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+// Elapsed time: 13 seconds
+selectCodeEditor("designs.v", 495, 454); // cd (w, cj)
+selectCodeEditor("designs.v", 495, 454); // cd (w, cj)
+selectCodeEditor("designs.v", 495, 454); // cd (w, cj)
+selectCodeEditor("designs.v", 370, 456); // cd (w, cj)
+selectCodeEditor("designs.v", 366, 462); // cd (w, cj)
+// Elapsed time: 30 seconds
+selectCodeEditor("designs.v", 650, 610); // cd (w, cj)
+selectCodeEditor("designs.v", 580, 526); // cd (w, cj)
+selectCodeEditor("designs.v", 538, 486); // cd (w, cj)
+selectCodeEditor("designs.v", 476, 429); // cd (w, cj)
+selectCodeEditor("designs.v", 448, 488); // cd (w, cj)
+selectCodeEditor("designs.v", 751, 467); // cd (w, cj)
+// Elapsed time: 41 seconds
+selectCodeEditor("designs.v", 868, 490); // cd (w, cj)
+selectCodeEditor("designs.v", 817, 556); // cd (w, cj)
+// Elapsed time: 218 seconds
+selectCodeEditor("designs.v", 679, 420); // cd (w, cj)
+selectCodeEditor("designs.v", 493, 330); // cd (w, cj)
+// Elapsed time: 84 seconds
+selectCodeEditor("designs.v", 107, 399); // cd (w, cj)
+selectCodeEditor("designs.v", 192, 399); // cd (w, cj)
+selectCodeEditor("designs.v", 505, 402); // cd (w, cj)
+// Elapsed time: 32 seconds
+selectCodeEditor("designs.v", 72, 400); // cd (w, cj)
+selectCodeEditor("designs.v", 159, 416); // cd (w, cj)
+// Elapsed time: 18 seconds
+selectCodeEditor("designs.v", 452, 398); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 691, 413); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+// Elapsed time: 51 seconds
+selectCodeEditor("designs.v", 420, 380); // cd (w, cj)
+selectCodeEditor("designs.v", 902, 532); // cd (w, cj)
+selectCodeEditor("designs.v", 526, 489); // cd (w, cj)
+// Elapsed time: 13 seconds
+selectCodeEditor("designs.v", 730, 172); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 90, 502); // cd (w, cj)
+selectCodeEditor("designs.v", 116, 452); // cd (w, cj)
+selectCodeEditor("designs.v", 122, 685); // cd (w, cj)
+selectCodeEditor("designs.v", 130, 297); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 166, 300); // cd (w, cj)
+selectCodeEditor("designs.v", 166, 300, false, false, false, false, true); // cd (w, cj) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("designs.v", 720, 350); // cd (w, cj)
+selectCodeEditor("designs.v", 852, 301); // cd (w, cj)
+selectCodeEditor("designs.v", 849, 299); // cd (w, cj)
+selectCodeEditor("designs.v", 782, 283); // cd (w, cj)
+selectCodeEditor("designs.v", 814, 291); // cd (w, cj)
+selectCodeEditor("designs.v", 837, 344); // cd (w, cj)
+selectCodeEditor("designs.v", 817, 287); // cd (w, cj)
+selectCodeEditor("designs.v", 711, 295); // cd (w, cj)
+selectCodeEditor("designs.v", 653, 298); // cd (w, cj)
+selectCodeEditor("designs.v", 744, 537); // cd (w, cj)
+selectCodeEditor("designs.v", 555, 207); // cd (w, cj)
+selectCodeEditor("designs.v", 121, 194); // cd (w, cj)
+selectCodeEditor("designs.v", 309, 428); // cd (w, cj)
+selectCodeEditor("designs.v", 206, 494); // cd (w, cj)
+selectCodeEditor("designs.v", 88, 77); // cd (w, cj)
+selectCodeEditor("designs.v", 775, 78); // cd (w, cj)
+selectCodeEditor("designs.v", 775, 78, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 228, 385); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 213, 60); // cd (w, cj)
+// [GUI Memory]: 109 MB (+526kb) [00:43:46]
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 243, 378); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 467, 470); // cd (w, cj)
+selectCodeEditor("designs.v", 208, 375); // cd (w, cj)
+selectCodeEditor("designs.v", 662, 296); // cd (w, cj)
+selectCodeEditor("designs.v", 57, 295); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 218, 467); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 113, 281); // cd (w, cj)
+selectCodeEditor("designs.v", 113, 488); // cd (w, cj)
+selectCodeEditor("designs.v", 158, 514); // cd (w, cj)
+selectCodeEditor("designs.v", 158, 514, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 167, 462); // cd (w, cj)
+selectCodeEditor("designs.v", 167, 462, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 222, 484); // cd (w, cj)
+selectCodeEditor("designs.v", 222, 484, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 247, 467); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+// Elapsed time: 26 seconds
+selectCodeEditor("designs.v", 589, 286); // cd (w, cj)
+selectCodeEditor("designs.v", 945, 260); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 99, 637); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 366, 657); // cd (w, cj)
+selectCodeEditor("designs.v", 326, 446); // cd (w, cj)
+// Elapsed time: 50 seconds
+selectCodeEditor("designs.v", 363, 263); // cd (w, cj)
+selectCodeEditor("designs.v", 875, 268); // cd (w, cj)
+selectCodeEditor("designs.v", 371, 265); // cd (w, cj)
+// Elapsed time: 29 seconds
+selectCodeEditor("designs.v", 920, 361); // cd (w, cj)
+selectCodeEditor("designs.v", 988, 428); // cd (w, cj)
+selectCodeEditor("designs.v", 427, 277); // cd (w, cj)
+selectCodeEditor("designs.v", 361, 290); // cd (w, cj)
+// Elapsed time: 16 seconds
+selectCodeEditor("designs.v", 355, 323); // cd (w, cj)
+selectCodeEditor("designs.v", 358, 383); // cd (w, cj)
+selectCodeEditor("designs.v", 340, 365); // cd (w, cj)
+// [GUI Memory]: 118 MB (+3401kb) [00:47:09]
+// Elapsed time: 58 seconds
+selectCodeEditor("designs.v", 663, 405); // cd (w, cj)
+// Elapsed time: 30 seconds
+selectCodeEditor("designs.v", 527, 387); // cd (w, cj)
+selectCodeEditor("designs.v", 468, 395); // cd (w, cj)
+// Elapsed time: 21 seconds
+selectCodeEditor("designs.v", 452, 524); // cd (w, cj)
+selectCodeEditor("designs.v", 246, 411); // cd (w, cj)
+typeControlKey(null, null, 'z');
+selectCodeEditor("designs.v", 382, 477); // cd (w, cj)
+selectCodeEditor("designs.v", 486, 487); // cd (w, cj)
+selectCodeEditor("designs.v", 428, 448); // cd (w, cj)
+selectCodeEditor("designs.v", 322, 414); // cd (w, cj)
+// Elapsed time: 38 seconds
+selectCodeEditor("designs.v", 102, 451); // cd (w, cj)
+// Elapsed time: 10 seconds
+selectCodeEditor("designs.v", 261, 506); // cd (w, cj)
+selectCodeEditor("designs.v", 528, 578); // cd (w, cj)
+selectCodeEditor("designs.v", 575, 37); // cd (w, cj)
+// [GUI Memory]: 125 MB (+643kb) [00:49:52]
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 244, 404); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 220, 296); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 250, 704); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 203, 227); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 251, 639); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 367, 530); // cd (w, cj)
+selectCodeEditor("designs.v", 249, 106); // cd (w, cj)
+selectCodeEditor("designs.v", 332, 461); // cd (w, cj)
+selectCodeEditor("designs.v", 566, 601); // cd (w, cj)
+selectCodeEditor("designs.v", 493, 533); // cd (w, cj)
+// Elapsed time: 13 seconds
+selectCodeEditor("designs.v", 207, 385); // cd (w, cj)
+selectCodeEditor("designs.v", 867, 22); // cd (w, cj)
+selectCodeEditor("designs.v", 825, 238); // cd (w, cj)
+selectCodeEditor("designs.v", 866, 124); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 74, 326); // cd (w, cj)
+selectCodeEditor("designs.v", 71, 321); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+// Elapsed time: 35 seconds
+selectCodeEditor("designs.v", 167, 314); // cd (w, cj)
+selectCodeEditor("designs.v", 359, 315); // cd (w, cj)
+selectCodeEditor("designs.v", 359, 315, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 367, 312); // cd (w, cj)
+// Elapsed time: 33 seconds
+selectCodeEditor("designs.v", 167, 265); // cd (w, cj)
+selectCodeEditor("designs.v", 348, 481); // cd (w, cj)
+selectCodeEditor("designs.v", 336, 364); // cd (w, cj)
+selectCodeEditor("designs.v", 301, 463); // cd (w, cj)
+selectCodeEditor("designs.v", 272, 575); // cd (w, cj)
+selectCodeEditor("designs.v", 166, 399); // cd (w, cj)
+// Elapsed time: 21 seconds
+selectCodeEditor("designs.v", 163, 396); // cd (w, cj)
+// Elapsed time: 54 seconds
+selectCodeEditor("designs.v", 287, 482); // cd (w, cj)
+selectCodeEditor("designs.v", 380, 478); // cd (w, cj)
+selectCodeEditor("designs.v", 338, 465); // cd (w, cj)
+// Elapsed time: 25 seconds
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+// Elapsed time: 27 seconds
+selectCodeEditor("designs.v", 560, 513); // cd (w, cj)
+selectCodeEditor("designs.v", 593, 329); // cd (w, cj)
+// [GUI Memory]: 132 MB (+1277kb) [00:54:57]
+// Elapsed time: 139 seconds
+selectCodeEditor("designs.v", 459, 271); // cd (w, cj)
+selectCodeEditor("designs.v", 362, 338); // cd (w, cj)
+// Elapsed time: 104 seconds
+selectCodeEditor("designs.v", 460, 348); // cd (w, cj)
+// Elapsed time: 16 seconds
+selectCodeEditor("designs.v", 910, 584); // cd (w, cj)
+selectCodeEditor("designs.v", 596, 395); // cd (w, cj)
+selectCodeEditor("designs.v", 251, 114); // cd (w, cj)
+selectCodeEditor("designs.v", 172, 251); // cd (w, cj)
+selectCodeEditor("designs.v", 161, 201); // cd (w, cj)
+// Elapsed time: 25 seconds
+selectCodeEditor("designs.v", 371, 311); // cd (w, cj)
+// Elapsed time: 47 seconds
+selectCodeEditor("designs.v", 289, 260); // cd (w, cj)
+selectCodeEditor("designs.v", 408, 282); // cd (w, cj)
+selectCodeEditor("designs.v", 287, 234); // cd (w, cj)
+selectCodeEditor("designs.v", 147, 265); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 201, 248); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+// Elapsed time: 28 seconds
+selectCodeEditor("designs.v", 626, 346); // cd (w, cj)
+selectCodeEditor("designs.v", 643, 178); // cd (w, cj)
+// HMemoryUtils.trashcanNow. Engine heap size: 609 MB. GUI used memory: 47 MB. Current time: 5/27/22 1:38:38 PM EEST
+// Elapsed time: 27 seconds
+selectCodeEditor("designs.v", 112, 302); // cd (w, cj)
+selectCodeEditor("designs.v", 250, 406); // cd (w, cj)
+selectCodeEditor("designs.v", 193, 442); // cd (w, cj)
+selectCodeEditor("designs.v", 200, 422); // cd (w, cj)
+selectCodeEditor("designs.v", 200, 422); // cd (w, cj)
+// Elapsed time: 53 seconds
+selectCodeEditor("designs.v", 1017, 116); // cd (w, cj)
+selectCodeEditor("designs.v", 198, 422); // cd (w, cj)
+// Elapsed time: 15 seconds
+selectCodeEditor("designs.v", 220, 276); // cd (w, cj)
+// Elapsed time: 22 seconds
+selectCodeEditor("designs.v", 229, 389); // cd (w, cj)
+selectCodeEditor("designs.v", 310, 191); // cd (w, cj)
+// Elapsed time: 36 seconds
+selectCodeEditor("designs.v", 360, 192); // cd (w, cj)
+// Elapsed time: 23 seconds
+selectCodeEditor("designs.v", 230, 410); // cd (w, cj)
+selectCodeEditor("designs.v", 230, 410, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 221, 405); // cd (w, cj)
+selectCodeEditor("designs.v", 221, 405, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 573, 354); // cd (w, cj)
+// Elapsed time: 193 seconds
+selectCodeEditor("designs.v", 286, 598); // cd (w, cj)
+selectCodeEditor("designs.v", 458, 691); // cd (w, cj)
+selectCodeEditor("designs.v", 378, 595); // cd (w, cj)
+selectCodeEditor("designs.v", 371, 578); // cd (w, cj)
+// Elapsed time: 54 seconds
+selectCodeEditor("designs.v", 114, 71); // cd (w, cj)
+selectCodeEditor("designs.v", 114, 71, false, false, false, false, true); // cd (w, cj) - Double Click
+// Elapsed time: 37 seconds
+selectCodeEditor("designs.v", 120, 214); // cd (w, cj)
+selectCodeEditor("designs.v", 185, 307); // cd (w, cj)
+selectCodeEditor("designs.v", 185, 307, false, false, false, false, true); // cd (w, cj) - Double Click
+// Elapsed time: 13 seconds
+selectCodeEditor("designs.v", 168, 467); // cd (w, cj)
+// Elapsed time: 35 seconds
+selectCodeEditor("designs.v", 389, 559); // cd (w, cj)
+selectCodeEditor("designs.v", 297, 627); // cd (w, cj)
+// Elapsed time: 52 seconds
+selectCodeEditor("designs.v", 110, 370); // cd (w, cj)
+selectCodeEditor("designs.v", 216, 489); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 222, 267); // cd (w, cj)
+selectCodeEditor("designs.v", 512, 573); // cd (w, cj)
+selectCodeEditor("designs.v", 140, 342); // cd (w, cj)
+selectCodeEditor("designs.v", 83, 338); // cd (w, cj)
+selectCodeEditor("designs.v", 262, 402); // cd (w, cj)
+selectCodeEditor("designs.v", 298, 518); // cd (w, cj)
+selectCodeEditor("designs.v", 294, 551); // cd (w, cj)
+selectCodeEditor("designs.v", 204, 279); // cd (w, cj)
+selectCodeEditor("designs.v", 202, 524); // cd (w, cj)
+selectCodeEditor("designs.v", 209, 297); // cd (w, cj)
+selectCodeEditor("designs.v", 272, 470); // cd (w, cj)
+// Elapsed time: 35 seconds
+selectCodeEditor("designs.v", 188, 316); // cd (w, cj)
+// Elapsed time: 27 seconds
+selectCodeEditor("designs.v", 218, 333); // cd (w, cj)
+selectCodeEditor("designs.v", 378, 369); // cd (w, cj)
+// Elapsed time: 14 seconds
+selectCodeEditor("designs.v", 402, 426); // cd (w, cj)
+selectCodeEditor("designs.v", 401, 415); // cd (w, cj)
+// Elapsed time: 44 seconds
+selectCodeEditor("designs.v", 80, 470); // cd (w, cj)
+selectCodeEditor("designs.v", 128, 492); // cd (w, cj)
+selectCodeEditor("designs.v", 128, 492, false, false, false, false, true); // cd (w, cj) - Double Click
+// Elapsed time: 13 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("designs.v", 133, 467); // cd (w, cj)
+selectCodeEditor("designs.v", 117, 333); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 103, 472); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+// Elapsed time: 17 seconds
+selectCodeEditor("designs.v", 754, 114); // cd (w, cj)
+selectCodeEditor("designs.v", 177, 498); // cd (w, cj)
+selectCodeEditor("designs.v", 244, 466); // cd (w, cj)
+selectCodeEditor("designs.v", 403, 486); // cd (w, cj)
+selectCodeEditor("designs.v", 363, 482); // cd (w, cj)
+selectCodeEditor("designs.v", 311, 525); // cd (w, cj)
+selectCodeEditor("designs.v", 311, 525, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 344, 480); // cd (w, cj)
+selectCodeEditor("designs.v", 255, 472); // cd (w, cj)
+selectCodeEditor("designs.v", 318, 481); // cd (w, cj)
+// Elapsed time: 22 seconds
+selectCodeEditor("designs.v", 584, 275); // cd (w, cj)
+// Elapsed time: 137 seconds
+selectCodeEditor("designs.v", 306, 274); // cd (w, cj)
+selectCodeEditor("designs.v", 266, 252); // cd (w, cj)
+selectCodeEditor("designs.v", 398, 333); // cd (w, cj)
+selectCodeEditor("designs.v", 168, 445); // cd (w, cj)
+selectCodeEditor("designs.v", 639, 404); // cd (w, cj)
+selectCodeEditor("designs.v", 681, 318); // cd (w, cj)
+selectCodeEditor("designs.v", 482, 62); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 197, 93); // cd (w, cj)
+selectCodeEditor("designs.v", 197, 93, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 162, 80); // cd (w, cj)
+selectCodeEditor("designs.v", 368, 293); // cd (w, cj)
+selectCodeEditor("designs.v", 323, 273); // cd (w, cj)
+selectCodeEditor("designs.v", 440, 335); // cd (w, cj)
+// Elapsed time: 165 seconds
+selectCodeEditor("designs.v", 410, 307); // cd (w, cj)
+selectCodeEditor("designs.v", 357, 200); // cd (w, cj)
+selectCodeEditor("designs.v", 338, 177); // cd (w, cj)
+selectCodeEditor("designs.v", 346, 205); // cd (w, cj)
+// Elapsed time: 31 seconds
+selectCodeEditor("designs.v", 360, 245); // cd (w, cj)
+selectCodeEditor("designs.v", 355, 298); // cd (w, cj)
+selectCodeEditor("designs.v", 346, 324); // cd (w, cj)
+// Elapsed time: 30 seconds
+selectCodeEditor("designs.v", 296, 366); // cd (w, cj)
+selectCodeEditor("designs.v", 312, 476); // cd (w, cj)
+selectCodeEditor("designs.v", 328, 519); // cd (w, cj)
+// Elapsed time: 23 seconds
+selectCodeEditor("designs.v", 399, 521); // cd (w, cj)
+selectCodeEditor("designs.v", 352, 633); // cd (w, cj)
+selectCodeEditor("designs.v", 392, 461); // cd (w, cj)
+selectCodeEditor("designs.v", 384, 504); // cd (w, cj)
+selectCodeEditor("designs.v", 372, 575); // cd (w, cj)
+selectCodeEditor("designs.v", 358, 652); // cd (w, cj)
+selectCodeEditor("designs.v", 334, 666); // cd (w, cj)
+// Elapsed time: 73 seconds
+selectCodeEditor("designs.v", 397, 683); // cd (w, cj)
+// Elapsed time: 11 seconds
+selectCodeEditor("designs.v", 556, 690); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+typeControlKey(null, null, 'z');
+selectCodeEditor("designs.v", 357, 505); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+// Elapsed time: 55 seconds
+selectCodeEditor("designs.v", 462, 496); // cd (w, cj)
+selectCodeEditor("designs.v", 381, 407); // cd (w, cj)
+selectCodeEditor("designs.v", 382, 421); // cd (w, cj)
+selectCodeEditor("designs.v", 339, 466); // cd (w, cj)
+selectCodeEditor("designs.v", 281, 120); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 329, 484); // cd (w, cj)
+selectCodeEditor("designs.v", 351, 286); // cd (w, cj)
+selectCodeEditor("designs.v", 338, 197); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+typeControlKey(null, null, 'z');
+selectCodeEditor("designs.v", 336, 436); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 375, 238); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 540, 468); // cd (w, cj)
+selectCodeEditor("designs.v", 532, 386); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 196, 371); // cd (w, cj)
+selectCodeEditor("designs.v", 278, 213); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 316, 238); // cd (w, cj)
+// Elapsed time: 106 seconds
+selectCodeEditor("designs.v", 422, 199); // cd (w, cj)
+// Elapsed time: 11 seconds
+selectCodeEditor("designs.v", 220, 294); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 228, 448); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 209, 60); // cd (w, cj)
+selectCodeEditor("designs.v", 377, 416); // cd (w, cj)
+selectCodeEditor("designs.v", 293, 331); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 266, 378); // cd (w, cj)
+selectCodeEditor("designs.v", 401, 514); // cd (w, cj)
+selectCodeEditor("designs.v", 401, 514); // cd (w, cj)
+selectCodeEditor("designs.v", 337, 397); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 268, 397); // cd (w, cj)
+selectCodeEditor("designs.v", 311, 408); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 357, 510); // cd (w, cj)
+// Elapsed time: 10 seconds
+selectCodeEditor("designs.v", 395, 386); // cd (w, cj)
+// HMemoryUtils.trashcanNow. Engine heap size: 609 MB. GUI used memory: 45 MB. Current time: 5/27/22 2:08:39 PM EEST
+// Elapsed time: 231 seconds
+selectCodeEditor("designs.v", 674, 421); // cd (w, cj)
+selectCodeEditor("designs.v", 682, 510); // cd (w, cj)
+selectCodeEditor("designs.v", 682, 510); // cd (w, cj)
+selectCodeEditor("designs.v", 167, 300); // cd (w, cj)
+selectCodeEditor("designs.v", 660, 528); // cd (w, cj)
+// Elapsed time: 15 seconds
+selectCodeEditor("designs.v", 295, 568); // cd (w, cj)
+selectCodeEditor("designs.v", 197, 400); // cd (w, cj)
+selectCodeEditor("designs.v", 500, 248); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 340, 352); // cd (w, cj)
+selectCodeEditor("designs.v", 804, 408); // cd (w, cj)
+selectCodeEditor("designs.v", 526, 240); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 607, 250); // cd (w, cj)
+selectCodeEditor("designs.v", 777, 267); // cd (w, cj)
+selectCodeEditor("designs.v", 702, 239); // cd (w, cj)
+selectCodeEditor("designs.v", 260, 340); // cd (w, cj)
+selectCodeEditor("designs.v", 162, 346); // cd (w, cj)
+selectCodeEditor("designs.v", 372, 414); // cd (w, cj)
+selectCodeEditor("designs.v", 166, 397); // cd (w, cj)
+// Elapsed time: 10 seconds
+selectCodeEditor("designs.v", 417, 453); // cd (w, cj)
+selectCodeEditor("designs.v", 402, 424); // cd (w, cj)
+selectCodeEditor("designs.v", 387, 383); // cd (w, cj)
+// Elapsed time: 12 seconds
+selectCodeEditor("designs.v", 623, 385); // cd (w, cj)
+selectCodeEditor("designs.v", 212, 538); // cd (w, cj)
+selectCodeEditor("designs.v", 182, 400); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 774, 73); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 162, 401); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 137, 394); // cd (w, cj)
+selectCodeEditor("designs.v", 338, 518); // cd (w, cj)
+selectCodeEditor("designs.v", 243, 374); // cd (w, cj)
+selectCodeEditor("designs.v", 331, 461); // cd (w, cj)
+selectCodeEditor("designs.v", 164, 433); // cd (w, cj)
+// Elapsed time: 11 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("designs.v", 297, 510); // cd (w, cj)
+selectCodeEditor("designs.v", 257, 383); // cd (w, cj)
+// Elapsed time: 17 seconds
+selectCodeEditor("designs.v", 210, 317); // cd (w, cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("designs.v", 270, 467); // cd (w, cj)
+// Elapsed time: 35 seconds
+selectCodeEditor("designs.v", 311, 76); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 190, 498); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 118, 513); // cd (w, cj)
+selectCodeEditor("designs.v", 296, 349); // cd (w, cj)
+selectCodeEditor("designs.v", 141, 295); // cd (w, cj)
+selectCodeEditor("designs.v", 318, 471); // cd (w, cj)
+// Elapsed time: 40 seconds
+selectCodeEditor("designs.v", 276, 342); // cd (w, cj)
+// Elapsed time: 12 seconds
+selectCodeEditor("designs.v", 230, 294); // cd (w, cj)
+selectCodeEditor("designs.v", 185, 277); // cd (w, cj)
+selectCodeEditor("designs.v", 237, 298); // cd (w, cj)
+selectCodeEditor("designs.v", 355, 322); // cd (w, cj)
+selectCodeEditor("designs.v", 355, 303); // cd (w, cj)
+// Elapsed time: 48 seconds
+selectCodeEditor("designs.v", 364, 452); // cd (w, cj)
+selectCodeEditor("designs.v", 293, 324); // cd (w, cj)
+selectCodeEditor("designs.v", 304, 343); // cd (w, cj)
+// Elapsed time: 18 seconds
+selectCodeEditor("designs.v", 318, 397); // cd (w, cj)
+// Elapsed time: 47 seconds
+selectCodeEditor("designs.v", 287, 513); // cd (w, cj)
+selectCodeEditor("designs.v", 325, 433); // cd (w, cj)
+selectCodeEditor("designs.v", 327, 445); // cd (w, cj)
+// Elapsed time: 29 seconds
+selectCodeEditor("designs.v", 313, 476); // cd (w, cj)
+selectCodeEditor("designs.v", 282, 514); // cd (w, cj)
+selectCodeEditor("designs.v", 338, 552); // cd (w, cj)
+selectCodeEditor("designs.v", 338, 568); // cd (w, cj)
+selectCodeEditor("designs.v", 322, 545); // cd (w, cj)
+selectCodeEditor("designs.v", 304, 540); // cd (w, cj)
+selectCodeEditor("designs.v", 335, 554); // cd (w, cj)
+selectCodeEditor("designs.v", 276, 545); // cd (w, cj)
+selectCodeEditor("designs.v", 317, 547); // cd (w, cj)
+selectCodeEditor("designs.v", 340, 373); // cd (w, cj)
+selectCodeEditor("designs.v", 340, 382); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 334, 551); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 370, 579); // cd (w, cj)
+// Elapsed time: 14 seconds
+selectCodeEditor("designs.v", 361, 647); // cd (w, cj)
+selectCodeEditor("designs.v", 318, 611); // cd (w, cj)
+selectCodeEditor("designs.v", 318, 632); // cd (w, cj)
+// Elapsed time: 14 seconds
+selectCodeEditor("designs.v", 344, 567); // cd (w, cj)
+// Elapsed time: 22 seconds
+selectCodeEditor("designs.v", 361, 280); // cd (w, cj)
+selectCodeEditor("designs.v", 439, 231); // cd (w, cj)
+// Elapsed time: 11 seconds
+selectCodeEditor("designs.v", 442, 213); // cd (w, cj)
+selectCodeEditor("designs.v", 442, 232); // cd (w, cj)
+selectCodeEditor("designs.v", 432, 214); // cd (w, cj)
+selectCodeEditor("designs.v", 428, 233); // cd (w, cj)
+selectCodeEditor("designs.v", 575, 199); // cd (w, cj)
+// Elapsed time: 23 seconds
+selectCodeEditor("designs.v", 428, 238); // cd (w, cj)
+selectCodeEditor("designs.v", 428, 238, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 428, 238); // cd (w, cj)
+// Elapsed time: 21 seconds
+selectCodeEditor("designs.v", 309, 177); // cd (w, cj)
+selectCodeEditor("designs.v", 595, 197); // cd (w, cj)
+// Elapsed time: 72 seconds
+selectCodeEditor("designs.v", 626, 211); // cd (w, cj)
+// Elapsed time: 18 seconds
+selectCodeEditor("designs.v", 758, 428); // cd (w, cj)
+// Elapsed time: 39 seconds
+selectCodeEditor("designs.v", 830, 210); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 211, 410); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 249, 417); // cd (w, cj)
+selectCodeEditor("designs.v", 616, 414); // cd (w, cj)
+selectCodeEditor("designs.v", 653, 449); // cd (w, cj)
+selectCodeEditor("designs.v", 710, 599); // cd (w, cj)
+selectCodeEditor("designs.v", 297, 247); // cd (w, cj)
+// Elapsed time: 45 seconds
+selectCodeEditor("designs.v", 926, 691); // cd (w, cj)
+selectCodeEditor("designs.v", 423, 249); // cd (w, cj)
+selectCodeEditor("designs.v", 205, 274); // cd (w, cj)
+selectCodeEditor("designs.v", 205, 274, false, false, false, false, true); // cd (w, cj) - Double Click
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 190, 264); // cd (w, cj)
+selectCodeEditor("designs.v", 403, 282); // cd (w, cj)
+// Elapsed time: 24 seconds
+selectCodeEditor("designs.v", 423, 302); // cd (w, cj)
+// Elapsed time: 27 seconds
+selectCodeEditor("designs.v", 411, 344); // cd (w, cj)
+selectCodeEditor("designs.v", 383, 312); // cd (w, cj)
+// Elapsed time: 12 seconds
+selectCodeEditor("designs.v", 303, 313); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 386, 363); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+// Elapsed time: 81 seconds
+selectCodeEditor("designs.v", 433, 362); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 357, 632); // cd (w, cj)
+selectCodeEditor("designs.v", 380, 493); // cd (w, cj)
+selectCodeEditor("designs.v", 364, 481); // cd (w, cj)
+// Elapsed time: 11 seconds
+selectCodeEditor("designs.v", 615, 294); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 352, 500); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 442, 313); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 333, 522); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 410, 575); // cd (w, cj)
+selectCodeEditor("designs.v", 295, 488); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 362, 562); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 338, 501); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 438, 576); // cd (w, cj)
+selectCodeEditor("designs.v", 438, 576, false, false, false, false, true); // cd (w, cj) - Double Click
+selectCodeEditor("designs.v", 435, 582); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 442, 519); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'c'); // cd (w, cj)
+selectCodeEditor("designs.v", 312, 607); // cd (w, cj)
+typeControlKey((HResource) null, "designs.v", 'v'); // cd (w, cj)
+selectCodeEditor("designs.v", 830, 500); // cd (w, cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 32 seconds
+selectCodeEditor("designs.v", 1116, 14); // cd (w, cj)
