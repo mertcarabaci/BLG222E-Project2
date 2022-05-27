@@ -1014,7 +1014,7 @@ module CombinationalControlUnit(
                         rARF_OutCSel <= SRCREG1[1:0];
                     end
                     1'b1:begin
-                        rRF_OutBSel <= SRCREG1[1:0];
+                        rRF_OutASel <= SRCREG1[1:0];
                     end           
                 endcase
                 case(SRCREG2[2])
@@ -1022,7 +1022,7 @@ module CombinationalControlUnit(
                         rARF_OutCSel <= SRCREG2[1:0];
                     end
                     1'b1:begin
-                        rRF_OutASel <= SRCREG2[1:0];
+                        rRF_OutBSel <= SRCREG2[1:0];
                     end           
                 endcase
             end
@@ -1152,29 +1152,25 @@ module CombinationalControlUnit(
                 end 
             end
             else if(SUB) begin
-                rSC_reset <= 1'b1;
-                if(DESTREG[2] == 1'b1)begin
-                    rRF_FunSel <= 2'b10;
-                    if(SRCREG2[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
-                    end
-                    else begin
-                        rMuxCSel <= 1'b0;
-                    end
-                    rALU_FunSel <= 4'b0110;
-                    rMuxASel <= 2'b11;
+                if(SRCREG1[2] == SRCREG2[2])begin
+                     rSC_reset <= 1'b1;
+                     rRF_OutASel <= SRCREG2[1:0];     
+                     rRF_OutBSel <= SRCREG1[1:0];
+                     rMuxCSel <= 1'b1;                                        
                 end
                 else begin
-                    rARF_FunSel <= 2'b10;
-                    if(SRCREG2[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
-                    end
-                    else begin
-                        rMuxCSel <= 1'b0;
-                    end
-                    rALU_FunSel <= 4'b0110;
+                    rSC_reset <= 1'b0;
+                    rMuxCSel <= 1'b0; 
+                end
+                rALU_FunSel <= 4'b0110;
+                if(DESTREG[2] == 1'b1)begin
+                    rMuxASel <= 2'b11;
+                    rRF_FunSel <= 2'b10;
+                end
+                else begin
                     rMuxBSel <= 2'b11;
-                end 
+                    rARF_FunSel <= 2'b10;
+                end
             end
             else if(INC | DEC)begin
                 if(DESTREG == SRCREG1)begin
@@ -1227,6 +1223,36 @@ module CombinationalControlUnit(
                     end  
                end
             end           
+        end
+        else if(SUB&T3)begin
+            rSC_reset <= 1'b0;
+            if(DESTREG[2] == 1'b1)begin
+                rRF_OutBSel <= DESTREG[1:0];
+                rALU_FunSel <= 4'b0011;
+                rRF_FunSel <= 2'b10;
+                rMuxASel <= 2'b11;
+            end
+            else begin
+                rARF_OutCSel <= DESTREG[1:0];
+                rALU_FunSel <= 4'b0010;
+                rMuxCSel <= 1'b0;
+                rMuxBSel <= 2'b11;
+                rARF_FunSel <= 2'b10;
+            end
+        end
+        else if(SUB&T4)begin
+            rSC_reset <= 1'b1;
+            if(DESTREG[2] == 1'b1)begin
+                rRF_OutBSel <= DESTREG[1:0];
+                rRF_FunSel <= 2'b01;
+                rALU_FunSel <= 4'b0001;
+            end
+            else begin
+                rARF_OutCSel <= DESTREG[1:0];
+                rARF_FunSel <= 2'b01;
+                rMuxCSel <= 1'b0;
+                rALU_FunSel <= 4'b0000;
+            end
         end
         else if(INC&T3)begin
             rSC_reset <= 1'b1;
