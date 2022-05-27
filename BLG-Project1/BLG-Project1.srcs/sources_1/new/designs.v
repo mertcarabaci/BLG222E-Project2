@@ -646,16 +646,17 @@ module ALUSystem(
     
 endmodule
 
+//Sequence counter for combinational control unit
 module SequenceCounter(CLK,Reset,T);
     input CLK;
     input Reset;
     output [2:0] T;
     
-    reg [2:0] counter = 3'd7; 
+    reg [2:0] counter = 3'd7; //Start counter from T7. Because at the beginning we will reset all registers
     
     always@(posedge CLK)begin
             counter = counter + 3'd1;
-            if(Reset == 1'b1)begin
+            if(Reset == 1'b1)begin //Reset counter to T0
                 counter = 3'd0;
             end
     end
@@ -1057,120 +1058,106 @@ module CombinationalControlUnit(
                     end
                 end 
             end
+            
+            //If AND is 1 at T2
             else if(AND)begin
-                rSC_reset <= 1'b1;
-                if(DESTREG[2] == 1'b1)begin
-                    rRF_FunSel <= 2'b10;
-                    if(SRCREG2[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
-                    end
-                    else begin
-                        rMuxCSel <= 1'b0;
-                    end
-                    rALU_FunSel <= 4'b0111;
-                    rMuxASel <= 2'b11;
+                rSC_reset <= 1'b1; //Instruction will finish after 1 clock cycle
+                rALU_FunSel <= 4'b0111; //AND operation in ALU
+                if(SRCREG1[2] == 1'b1)begin
+                    rMuxCSel <= 1'b1; //Select output from RF
                 end
                 else begin
-                    rARF_FunSel <= 2'b10;
-                    if(SRCREG2[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
-                    end
-                    else begin
-                        rMuxCSel <= 1'b0;
-                    end
-                    rALU_FunSel <= 4'b0111;
-                    rMuxBSel <= 2'b11;
+                    rMuxCSel <= 1'b0; //Select output from ARF
+                end
+                if(DESTREG[2] == 1'b1)begin
+                    rRF_FunSel <= 2'b10; //Load to RF
+                    rMuxASel <= 2'b11; //Select ALU output
+                end
+                else begin
+                    rARF_FunSel <= 2'b10; //Load to ARF
+                    rMuxBSel <= 2'b11; //Select ALU output
                 end 
             end
-            else if(OR) begin
-                rSC_reset <= 1'b1;
-                if(DESTREG[2] == 1'b1)begin
-                    rRF_FunSel <= 2'b10;
-                    if(SRCREG2[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
-                    end
-                    else begin
-                        rMuxCSel <= 1'b0;
-                    end
-                    rALU_FunSel <= 4'b1000;
-                    rMuxASel <= 2'b11;
+            
+            //If OR is 1 at T2
+            else if(OR)begin
+                rSC_reset <= 1'b1; //Instruction will finish after 1 clock cycle
+                rALU_FunSel <= 4'b1000; //OR operation in ALU
+                if(SRCREG1[2] == 1'b1)begin
+                    rMuxCSel <= 1'b1; //Select output from RF
                 end
                 else begin
-                    rARF_FunSel <= 2'b10;
-                    if(SRCREG2[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
-                    end
-                    else begin
-                        rMuxCSel <= 1'b0;
-                    end
-                    rALU_FunSel <= 4'b1000;
-                    rMuxBSel <= 2'b11;
+                    rMuxCSel <= 1'b0; //Select output from ARF
+                end
+                if(DESTREG[2] == 1'b1)begin
+                    rRF_FunSel <= 2'b10; //Load to RF
+                    rMuxASel <= 2'b11; //Select ALU output
+                end
+                else begin
+                    rARF_FunSel <= 2'b10; //Load to ARF
+                    rMuxBSel <= 2'b11; //Select ALU output
                 end 
             end
             else if(NOT) begin
-                rSC_reset <= 1'b1;
+                rSC_reset <= 1'b1; //Instruction will finish after 1 clock cycle
+                if(SRCREG1[2] == 1'b1)begin
+                    rALU_FunSel <= 4'b0010; //NOT A operation
+                    rMuxCSel <= 1'b1; //Select from RF
+                end
+                else begin
+                    rALU_FunSel <= 4'b0010;
+                    rMuxCSel <= 1'b0; //Select from ARF
+                end
                 if(DESTREG[2] == 1'b1)begin
                     rRF_FunSel <= 2'b10;
-                    if(SRCREG1[2] == 1'b1)begin
-                        rALU_FunSel <= 4'b0011;
-                    end
-                    else begin
-                        rALU_FunSel <= 4'b0010;
-                        rMuxCSel <= 1'b0;
-                    end
-                    rMuxASel <= 2'b11;
+                    rMuxASel <= 2'b11; //Select outALU
                 end
                 else begin
                     rARF_FunSel <= 2'b10;
-                    if(SRCREG2[2] == 1'b1)begin
-                        rALU_FunSel <= 4'b0011;
-                    end
-                    else begin
-                        rALU_FunSel <= 4'b0010;
-                        rMuxCSel <= 1'b0;
-                    end
                     rMuxBSel <= 2'b11;
                 end 
             end
+            
+            //if ADD is 1 at T2
             else if(ADD) begin
-                rSC_reset <= 1'b1;
-                if(DESTREG[2] == 1'b1)begin
-                    rRF_FunSel <= 2'b10;
-                    if(SRCREG2[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
-                    end
-                    else begin
-                        rMuxCSel <= 1'b0;
-                    end
-                    rALU_FunSel <= 4'b0100;
-                    rMuxASel <= 2'b11;
+                rSC_reset <= 1'b1; //Instruction will finish after 1 clock cycle
+                rALU_FunSel <= 4'b0100; //ADD operation
+                if(SRCREG1[2] == 1'b1)begin
+                    rMuxCSel <= 1'b1; //Select from RF
                 end
                 else begin
-                    rARF_FunSel <= 2'b10;
-                    if(SRCREG2[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
-                    end
-                    else begin
-                        rMuxCSel <= 1'b0;
-                    end
-                    rALU_FunSel <= 4'b0100;
-                    rMuxBSel <= 2'b11;
+                    rMuxCSel <= 1'b0; //Select from ARF
+                end
+                if(DESTREG[2] == 1'b1)begin
+                    rRF_FunSel <= 2'b10;
+                    rMuxASel <= 2'b11; //Select outALU
+                end
+                else begin
+                    rARF_FunSel <= 2'b10;   
+                    rMuxBSel <= 2'b11; //Select outALU
                 end 
             end
+            
+            //if SUB is 1 at T2
             else if(SUB) begin
+                //If both SRCREG1 and SRCREG2 are from RF
+                //SRCREG2 - SRCREG1 operation can be completed in 1 cycle
                 if(SRCREG1[2] == SRCREG2[2])begin
                      rSC_reset <= 1'b1;
                      rRF_OutASel <= SRCREG2[1:0];     
                      rRF_OutBSel <= SRCREG1[1:0];
                      rMuxCSel <= 1'b1;                                        
                 end
+                //If SRCREG1 is from ARF, we can't complete operation in 1 cycle. Because we must give SRCREG1 to ALU from MuxC
+                //When it comes from MuxC, the operation in ALU becomes SRCREG1 - SRCREG2. That's why we need to take 2's complement of the result
+                //in next 2 clock cycle
                 else begin
-                    rSC_reset <= 1'b0;
-                    rMuxCSel <= 1'b0; 
+                    rSC_reset <= 1'b0; //Don't reset the counter
+                    rMuxCSel <= 1'b0; //Take from ARF
                 end
-                rALU_FunSel <= 4'b0110;
+                rALU_FunSel <= 4'b0110; //SUB operation
                 if(DESTREG[2] == 1'b1)begin
-                    rMuxASel <= 2'b11;
+                    rMuxASel <= 2'b11; 
                     rRF_FunSel <= 2'b10;
                 end
                 else begin
@@ -1178,22 +1165,25 @@ module CombinationalControlUnit(
                     rARF_FunSel <= 2'b10;
                 end
             end
+            
+            //If INC or DEC is 1 at T2
             else if(INC | DEC)begin
+                //If DESTREG and SRCREG are same, we can increment or decrement in 1 cycle
                 if(DESTREG == SRCREG1)begin
                     rALU_FunSel <= 4'b0000;
-                    rSC_reset <= 1'b1;
+                    rSC_reset <= 1'b1; //Reset counter
                     if(DESTREG[2] == 1'b1)begin
-                        rMuxCSel <= 1'b1;
+                        rMuxCSel <= 1'b1; //Sent incremented data to ALU to do flag check
                         rRF_OutASel <= DESTREG[1:0];
                         if(INC == 1'b1)begin
-                            rRF_FunSel <= 2'b01;
+                            rRF_FunSel <= 2'b01; 
                         end
                         else begin
                             rRF_FunSel <= 2'b00;
                         end
                     end
                     else begin
-                        rMuxCSel <= 1'b0;
+                        rMuxCSel <= 1'b0; //Sent incremented data to ALU to do flag check
                         rARF_OutCSel <= DESTREG[1:0];
                         if(INC == 1'b1)begin
                             rARF_FunSel <= 2'b01;
@@ -1203,35 +1193,39 @@ module CombinationalControlUnit(
                         end
                     end
                 end
-                else begin
-                    rSC_reset <= 1'b0;
+                else begin //if DESTREG and SRCREG are different we need more cycles. First we will sent data to register, then increment or decrement
+                    rSC_reset <= 1'b0; //Don't reset counter
                     if(DESTREG[2] == 1'b1)begin
-                        rRF_FunSel <= 2'b10;
+                        rRF_FunSel <= 2'b10; //Load to RF
+                        rALU_FunSel <= 4'b0000;
                         if(SRCREG1[2] == 1'b1)begin 
-                            rALU_FunSel <= 4'b0001;
-                            rMuxASel <= 2'b11;
-                        end
-                        else begin
-                            rMuxASel <= 2'b10;
-                        end
-                    end
-                    else begin
-                        rARF_FunSel <= 2'b10;
-                        if(SRCREG1[2] == 1'b1)begin 
-                            rALU_FunSel <= 4'b0001;
-                            rMuxBSel <= 2'b11;
+                            rMuxCSel <= 1'b1;
+                            rMuxASel <= 2'b11; //Source is RF, take from RF
                         end
                         else begin
                             rMuxCSel <= 1'b0;
-                            rALU_FunSel <= 4'b0000;
+                            rMuxASel <= 2'b10; //Source is ARF, take from ARF
+                        end
+                    end
+                    else begin
+                        rARF_FunSel <= 2'b10; //Load to ARF
+                        rALU_FunSel <= 4'b0000;
+                        if(SRCREG1[2] == 1'b1)begin 
                             rMuxBSel <= 2'b11;
+                            rMuxCSel <= 1'b1; //Source is RF, take from RF
+                        end
+                        else begin
+                            rMuxCSel <= 1'b0; //Source is ARF, take from ARF
+                            rMuxBSel <= 2'b11; 
                         end
                     end  
                end
             end           
         end
+        //If SRCREG2 and SRCREG1 are not equal, SUB operation connot be completed in 1 cycle
         else if(SUB&T3)begin
-            rSC_reset <= 1'b0;
+            rSC_reset <= 1'b0; //Don't reset counter
+            //Take complement of the result of SRCREG1 - SRCREG2 which is calculated at T2
             if(DESTREG[2] == 1'b1)begin
                 rRF_OutBSel <= DESTREG[1:0];
                 rALU_FunSel <= 4'b0011;
@@ -1247,34 +1241,55 @@ module CombinationalControlUnit(
             end
         end
         else if(SUB&T4)begin
-            rSC_reset <= 1'b1;
+            rSC_reset <= 1'b1; //Reset counter
+            //Increment the result of NOT operation performed at T3
+            //So taking 2's complement of operation SRCREG1 - SRCREG2 will be done.
+            //As a result, we will get the result of SRCREG2 - SRCREG1 operation
             if(DESTREG[2] == 1'b1)begin
-                rRF_OutBSel <= DESTREG[1:0];
+                rRF_OutBSel <= DESTREG[1:0]; //Incremented data will be sent to ALU to perform flag check
                 rRF_FunSel <= 2'b01;
                 rALU_FunSel <= 4'b0001;
             end
             else begin
-                rARF_OutCSel <= DESTREG[1:0];
+                rARF_OutCSel <= DESTREG[1:0]; //Incremented data will be sent to ALU to perform flag check
                 rARF_FunSel <= 2'b01;
                 rMuxCSel <= 1'b0;
                 rALU_FunSel <= 4'b0000;
             end
         end
+        
+        //Increment loaded data at T2
         else if(INC&T3)begin
-            rSC_reset <= 1'b1;
+            rSC_reset <= 1'b1; //Reset counter
+            rALU_FunSel <= 4'b0000; //Sent incremented value to ALU to do flag check
             if(DESTREG[2] == 1'b1)begin
-                rRF_FunSel <= 2'b01;
+                rRF_FunSel <= 2'b01; //Increment RF
+                rMuxCSel <= 1'b1;
+                rRF_OutASel <= DESTREG[1:0];
             end
             else begin
-                rARF_FunSel <= 2'b01;
+                rARF_FunSel <= 2'b01; //Increment ARF
+                rMuxCSel <= 1'b0;
+                rARF_OutCSel <= DESTREG[1:0];
             end
         end
+        //Deccrement loaded data at T2
         else if(DEC&T3)begin
-            rSC_reset <= 1'b1;
+            rSC_reset <= 1'b1; //Reset counter
+            rALU_FunSel <= 4'b0000; //Sent decremented value to ALU to do flag check
             if(DESTREG[2] == 1'b1)begin
-                rRF_FunSel <= 2'b00;
+                rRF_FunSel <= 2'b00; //Decrement RF
+                rMuxCSel <= 1'b1;
+                rRF_OutASel <= DESTREG[1:0];
+            end
+            else begin
+                rARF_FunSel <= 2'b00; //Decrement ARF
+                rMuxCSel <= 1'b0;
+                rARF_OutCSel <= DESTREG[1:0];
             end
         end
+        
+        //If PUL is 1 at T2
         else if(PUL&T2)begin
             if(SRCREG1[2] == 1'b1)begin
                 rRF_OutASel <= SRCREG1[1:0]; 
@@ -1284,34 +1299,37 @@ module CombinationalControlUnit(
                 rARF_OutCSel <= SRCREG1[1:0];
                 rMuxCSel <= 1'b0;
             end
-            rSC_reset <= 1'b1;
+            rSC_reset <= 1'b1; //Reset counter
             rIR_Enable <= 1'b0;
-            rALU_FunSel <= 4'b0000; 
-            rMem_WR <= 1'b1;
+            rALU_FunSel <= 4'b0000; //Sent A input directly to output
+            rMem_WR <= 1'b1; //Memory write
             rMem_CS <= 1'b0;
             rRF_RegSel <= 4'b1111;
-            rARF_RegSel <= 3'b110;
-            rARF_FunSel <= 2'b00; 
-            rARF_OutDSel <= 2'b11;             
+            rARF_RegSel <= 3'b110; //Enable SP
+            rARF_FunSel <= 2'b00;  //Decrement SP
+            rARF_OutDSel <= 2'b11; //Give SP to memory            
         end
+        
+        //If PSH is 1 at T2, first increment the SP
         else if(PSH&T2)begin
-            rSC_reset <= 1'b0;
+            rSC_reset <= 1'b0; //Instruction is not completed, don't reset counter
             rIR_Enable <= 1'b0;
             rRF_RegSel <= 4'b1111;
-            rARF_RegSel <= 3'b110;
-            rARF_FunSel <= 2'b01;
-            rMem_CS <= 1'b1;
+            rARF_RegSel <= 3'b110; //Enable SP
+            rARF_FunSel <= 2'b01; //Increment SP
+            rMem_CS <= 1'b1; //Disable Mem
         end
+        //After incrementing SP, load M[SP] to Rx
         else if(PSH&T3)begin
-            rSC_reset <= 1'b1;
+            rSC_reset <= 1'b1; //Reset counter
             rIR_Enable <= 1'b0;
-            rARF_OutDSel <= 2'b11;
-            rMem_WR <= 1'b0;
+            rARF_OutDSel <= 2'b11; //SP to memory
+            rMem_WR <= 1'b0; //Memory read
             rMem_CS <= 1'b0;
             if(DESTREG[2] == 1'b1)begin
-                rRF_FunSel <= 4'b10;
-                rARF_RegSel <= 3'b111;
-                rMuxASel <= 2'b01;
+                rRF_FunSel <= 4'b10; //Load to RF
+                rARF_RegSel <= 3'b111; //Disable ARF
+                rMuxASel <= 2'b01; //Select from memory
                 if(DESTREG[1:0] == 2'b00)begin
                     rRF_RegSel <= 4'b0111;
                 end
@@ -1326,9 +1344,9 @@ module CombinationalControlUnit(
                 end    
             end
             else begin
-                rARF_FunSel <= 4'b10;
-                rRF_RegSel <= 4'b1111;
-                rMuxBSel <= 2'b10;
+                rARF_FunSel <= 4'b10; //Load to ARF
+                rRF_RegSel <= 4'b1111; //Disable RF
+                rMuxBSel <= 2'b10; //Select from memory
                 if(DESTREG[1:0] == 2'b00)begin
                     rARF_RegSel <= 4'b011;
                 end
@@ -1413,75 +1431,25 @@ module HardwiredControlUnit(CLK);
     wire INC;
     wire DEC;
     wire BNE;
-        
+    
+    //Determines control signal for ALUSystem
     CombinationalControlUnit combUnit(T0,T1,T2,T3,T4,T5,T6,T7,BRA,LD,ST,MOV,AND,OR,NOT,
          ADD,SUB,LSR,LSL,PUL,PSH,INC,DEC,BNE,ALU_Sys.IROut[9:8],ALU_Sys.IROut[11:8],
          ALU_Sys.IROut[7:4],ALU_Sys.IROut[3:0],ALU_Sys.IROut[10],
          ALU_Sys.ALUOutFlag[3],ALU_Sys.ALUOutFlag[2],ALU_Sys.ALUOutFlag[1],ALU_Sys.ALUOutFlag[0],RF_OutASel,RF_OutBSel,
          RF_FunSel,RF_RegSel,ALU_FunSel,ARF_OutCSel,ARF_OutDSel,
              ARF_FunSel,ARF_RegSel,IR_LH,IR_Enable,IR_Funsel,Mem_WR,Mem_CS,MuxASel,MuxBSel,MuxCSel,Reset);
-         
+    
+    //Performs operations according to the signal coming from combinational control unit     
     ALUSystem ALU_Sys(RF_OutASel,RF_OutBSel,RF_FunSel,RF_RegSel,ALU_FunSel,ARF_OutCSel,ARF_OutDSel,
     ARF_FunSel,ARF_RegSel,IR_LH,IR_Enable,IR_Funsel,Mem_WR,Mem_CS,MuxASel,MuxBSel,MuxCSel,CLK);
     
+    //Decodes the OpCode inside IR 
     Decoder_16_1 IR_DECODE(ALU_Sys.IROut[15:12],BRA,LD,ST,MOV,AND,OR,NOT,ADD,SUB,LSR,LSL,PUL,PSH,INC,DEC,BNE);
     
     SequenceCounter SC(CLK,Reset,T);
+    //Decodes counter signal coming from sequence counter
     Decoder_8_1 SC_DECODER(T,T0,T1,T2,T3,T4,T5,T6,T7);
 endmodule
-
-/*
-module CombCount(CLK,BRA,LD,ST,MOV,AND,OR,NOT,
-         ADD,SUB,LSR,LSL,PUL,PSH,INC,DEC,BNE,REGSEL,DESTREG,SRCREG1,SRCREG2,AddressMode,Z,C,N,O,
-         RF_OutASel,RF_OutBSel,RF_FunSel,RF_RegSel,ALU_FunSel,ARF_OutCSel,ARF_OutDSel,
-             ARF_FunSel,ARF_RegSel,IR_LH,IR_Enable,IR_Funsel,Mem_WR,Mem_CS,MuxASel,MuxBSel,MuxCSel,SC_reset);
-         input CLK;
-         input BRA;
-         input LD;
-         input ST;
-         input MOV;
-         input AND;
-         input OR;
-         input NOT;
-         input ADD;
-         input SUB;
-         input LSR;
-         input LSL;
-         input PUL;
-         input PSH;
-         input INC;
-         input DEC;
-         input BNE;
-         input [1:0] REGSEL;
-         input [3:0] DESTREG;
-         input [3:0] SRCREG1;
-         input [3:0] SRCREG2;
-         input AddressMode;
-         input Z;
-         input C;
-         input N;
-         input O;
-         
-         output wire [1:0] RF_OutASel;
-         output wire [1:0] RF_OutBSel; 
-         output wire [1:0] RF_FunSel;
-         output wire [3:0] RF_RegSel;
-         output wire [3:0] ALU_FunSel;
-         output wire [1:0] ARF_OutCSel; 
-         output wire [1:0] ARF_OutDSel; 
-         output wire [1:0] ARF_FunSel;
-         output wire [2:0] ARF_RegSel;
-         output wire IR_LH;
-         output wire IR_Enable;
-         output wire [1:0] IR_Funsel;
-         output wire Mem_WR;
-         output wire Mem_CS;
-         output wire [1:0] MuxASel;
-         output wire [1:0] MuxBSel;
-         output wire MuxCSel;
-         output wire SC_reset;
-endmodule
-
-*/
 
 

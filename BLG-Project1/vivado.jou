@@ -12,3 +12,4 @@
 start_gui
 open_project C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.xpr
 update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1

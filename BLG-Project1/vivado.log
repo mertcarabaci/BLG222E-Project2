@@ -17,3 +17,122 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'.
 update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-1
+Top: HardwiredControlUnit
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 912.410 ; gain = 113.156
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'HardwiredControlUnit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1387]
+INFO: [Synth 8-638] synthesizing module 'CombinationalControlUnit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:724]
+WARNING: [Synth 8-151] case item 4'b0001 is unreachable [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:939]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:939]
+INFO: [Synth 8-256] done synthesizing module 'CombinationalControlUnit' (1#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:724]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1444]
+INFO: [Synth 8-638] synthesizing module 'ALUSystem' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:594]
+INFO: [Synth 8-638] synthesizing module 'PART2_a' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:396]
+INFO: [Synth 8-638] synthesizing module 'PART1_8bit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:307]
+INFO: [Synth 8-638] synthesizing module 'MUX2_1_8bit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:79]
+INFO: [Synth 8-256] done synthesizing module 'MUX2_1_8bit' (2#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:79]
+INFO: [Synth 8-638] synthesizing module 'Adder_Substractor_8bit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:226]
+INFO: [Synth 8-638] synthesizing module 'Full_Adder_1bit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:189]
+INFO: [Synth 8-256] done synthesizing module 'Full_Adder_1bit' (3#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:189]
+INFO: [Synth 8-256] done synthesizing module 'Adder_Substractor_8bit' (4#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:226]
+INFO: [Synth 8-638] synthesizing module 'D_Flip_Flop' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:39]
+INFO: [Synth 8-638] synthesizing module 'D_Latch' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:23]
+INFO: [Synth 8-256] done synthesizing module 'D_Latch' (5#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:23]
+INFO: [Synth 8-256] done synthesizing module 'D_Flip_Flop' (6#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:39]
+INFO: [Synth 8-256] done synthesizing module 'PART1_8bit' (7#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:307]
+INFO: [Synth 8-638] synthesizing module 'MUX4_1_8bit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:97]
+INFO: [Synth 8-256] done synthesizing module 'MUX4_1_8bit' (8#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:97]
+INFO: [Synth 8-256] done synthesizing module 'PART2_a' (9#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:396]
+INFO: [Synth 8-638] synthesizing module 'PART2_b' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:423]
+INFO: [Synth 8-256] done synthesizing module 'PART2_b' (10#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:423]
+INFO: [Synth 8-638] synthesizing module 'Memory' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:569]
+INFO: [Synth 8-3876] $readmem data file 'RAM.mem' is read successfully [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:580]
+INFO: [Synth 8-256] done synthesizing module 'Memory' (11#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:569]
+INFO: [Synth 8-638] synthesizing module 'PART2_c' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:448]
+INFO: [Synth 8-638] synthesizing module 'MUX2_1_16bit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:163]
+INFO: [Synth 8-256] done synthesizing module 'MUX2_1_16bit' (12#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:163]
+INFO: [Synth 8-638] synthesizing module 'Adder_Substractor_16bit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:256]
+INFO: [Synth 8-256] done synthesizing module 'Adder_Substractor_16bit' (13#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:256]
+INFO: [Synth 8-638] synthesizing module 'PART1_16bit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:347]
+INFO: [Synth 8-256] done synthesizing module 'PART1_16bit' (14#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:347]
+INFO: [Synth 8-256] done synthesizing module 'PART2_c' (15#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:448]
+INFO: [Synth 8-638] synthesizing module 'PART3' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:493]
+INFO: [Synth 8-638] synthesizing module 'MUX2_1_1bit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:54]
+INFO: [Synth 8-256] done synthesizing module 'MUX2_1_1bit' (16#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:54]
+INFO: [Synth 8-638] synthesizing module 'MUX16_4_8bit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:127]
+INFO: [Synth 8-256] done synthesizing module 'MUX16_4_8bit' (17#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:127]
+INFO: [Synth 8-638] synthesizing module 'ZCNO_register' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:270]
+INFO: [Synth 8-638] synthesizing module 'MUX2_1_4bit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:65]
+INFO: [Synth 8-256] done synthesizing module 'MUX2_1_4bit' (18#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:65]
+INFO: [Synth 8-638] synthesizing module 'Adder_Substractor_4bit' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:204]
+INFO: [Synth 8-256] done synthesizing module 'Adder_Substractor_4bit' (19#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:204]
+INFO: [Synth 8-256] done synthesizing module 'ZCNO_register' (20#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:270]
+INFO: [Synth 8-256] done synthesizing module 'PART3' (21#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:493]
+INFO: [Synth 8-256] done synthesizing module 'ALUSystem' (22#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:594]
+INFO: [Synth 8-638] synthesizing module 'Decoder_16_1' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:687]
+INFO: [Synth 8-256] done synthesizing module 'Decoder_16_1' (23#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:687]
+INFO: [Synth 8-638] synthesizing module 'SequenceCounter' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:650]
+INFO: [Synth 8-256] done synthesizing module 'SequenceCounter' (24#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:650]
+INFO: [Synth 8-638] synthesizing module 'Decoder_8_1' [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:666]
+INFO: [Synth 8-256] done synthesizing module 'Decoder_8_1' (25#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:666]
+INFO: [Synth 8-256] done synthesizing module 'HardwiredControlUnit' (26#1) [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1387]
+WARNING: [Synth 8-3331] design CombinationalControlUnit has unconnected port T5
+WARNING: [Synth 8-3331] design CombinationalControlUnit has unconnected port T6
+WARNING: [Synth 8-3331] design CombinationalControlUnit has unconnected port SRCREG2[3]
+WARNING: [Synth 8-3331] design CombinationalControlUnit has unconnected port C
+WARNING: [Synth 8-3331] design CombinationalControlUnit has unconnected port N
+WARNING: [Synth 8-3331] design CombinationalControlUnit has unconnected port O
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 971.969 ; gain = 172.715
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin combUnit:REGSEL[1] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:REGSEL[0] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:DESTREG[3] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:DESTREG[2] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:DESTREG[1] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:DESTREG[0] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:SRCREG1[3] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:SRCREG1[2] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:SRCREG1[1] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:SRCREG1[0] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:SRCREG2[2] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:SRCREG2[1] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:SRCREG2[0] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:AddressMode to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin combUnit:Z to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1436]
+WARNING: [Synth 8-3295] tying undriven pin IR_DECODE:s[3] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1448]
+WARNING: [Synth 8-3295] tying undriven pin IR_DECODE:s[2] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1448]
+WARNING: [Synth 8-3295] tying undriven pin IR_DECODE:s[1] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1448]
+WARNING: [Synth 8-3295] tying undriven pin IR_DECODE:s[0] to constant 0 [C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v:1448]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 971.969 ; gain = 172.715
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 1327.965 ; gain = 528.711
+58 Infos, 27 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 1327.965 ; gain = 528.711
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri May 27 16:37:37 2022...
