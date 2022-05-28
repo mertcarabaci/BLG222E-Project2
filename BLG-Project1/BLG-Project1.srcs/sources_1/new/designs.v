@@ -1289,8 +1289,8 @@ module CombinationalControlUnit(
             end
         end
         
-        //If PUL is 1 at T2
-        else if(PUL&T2)begin
+        //If PSH is 1 at T2
+        else if(PSH&T2)begin
             if(SRCREG1[2] == 1'b1)begin
                 rRF_OutASel <= SRCREG1[1:0]; 
                 rMuxCSel <= 1'b1; 
@@ -1310,8 +1310,8 @@ module CombinationalControlUnit(
             rARF_OutDSel <= 2'b11; //Give SP to memory            
         end
         
-        //If PSH is 1 at T2, first increment the SP
-        else if(PSH&T2)begin
+        //If PUL is 1 at T2, first increment the SP
+        else if(PUL&T2)begin
             rSC_reset <= 1'b0; //Instruction is not completed, don't reset counter
             rIR_Enable <= 1'b0;
             rRF_RegSel <= 4'b1111;
@@ -1320,7 +1320,7 @@ module CombinationalControlUnit(
             rMem_CS <= 1'b1; //Disable Mem
         end
         //After incrementing SP, load M[SP] to Rx
-        else if(PSH&T3)begin
+        else if(PUL&T3)begin
             rSC_reset <= 1'b1; //Reset counter
             rIR_Enable <= 1'b0;
             rARF_OutDSel <= 2'b11; //SP to memory
