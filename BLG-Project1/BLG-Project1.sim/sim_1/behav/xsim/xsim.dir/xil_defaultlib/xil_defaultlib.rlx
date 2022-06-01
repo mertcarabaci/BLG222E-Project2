@@ -3,5 +3,5 @@
 Dec 15 2017
 21:07:18
 C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.sim/sim_1/behav/xsim/glbl.v,1652028379,verilog,,,,glbl,,,,,,,,
-C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v,1653500448,verilog,,,,HardwiredControlUnitTest;PART2_a_test;PART2_b_test;PART2_c_test;PART3_test;Project1Test;SequenceCounterTest;lasttest;part1_16bit_test;part1_8bit_test,,,,,,,,
+C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v,1654076473,verilog,,,,HardwiredControlUnitTest;PART2_a_test;PART2_b_test;PART2_c_test;PART3_test;Project1Test;SequenceCounterTest;lasttest;part1_16bit_test;part1_8bit_test,,,,,,,,
 C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sources_1/new/designs.v,1654076393,verilog,,C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.srcs/sim_1/new/simulations.v,,ALUSystem;Adder_Substractor_16bit;Adder_Substractor_4bit;Adder_Substractor_8bit;CombinationalControlUnit;D_Flip_Flop;D_Latch;Decoder_16_1;Decoder_8_1;Full_Adder_1bit;HardwiredControlUnit;MUX16_4_8bit;MUX2_1_16bit;MUX2_1_1bit;MUX2_1_4bit;MUX2_1_8bit;MUX4_1_8bit;Memory;PART1_16bit;PART1_8bit;PART2_a;PART2_b;PART2_c;PART3;SequenceCounter;ZCNO_register,,,,,,,,
