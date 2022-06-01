@@ -341,65 +341,9 @@ module SequenceCounterTest();
 endmodule
 
 
-
-
-module CombCountTest();
-         reg CLK;
-         reg BRA;
-         reg LD;
-         reg ST;
-         reg MOV;
-         reg AND;
-         reg OR;
-         reg NOT;
-         reg ADD;
-         reg SUB;
-         reg LSR;
-         reg LSL;
-         reg PUL;
-         reg PSH;
-         reg INC;
-         reg DEC;
-         reg BNE;
-         reg [1:0] REGSEL;
-         reg [3:0] DESTREG;
-         reg [3:0] SRCREG1;
-         reg [3:0] SRCREG2;
-         reg AddressMode;
-         reg Z;
-         reg C;
-         reg N;
-         reg O;
-         
-      wire [1:0] RF_OutASel;
-      wire [1:0] RF_OutBSel; 
-      wire [1:0] RF_FunSel;
-      wire [3:0] RF_RegSel;
-      wire [3:0] ALU_FunSel;
-      wire [1:0] ARF_OutCSel; 
-      wire [1:0] ARF_OutDSel; 
-      wire [1:0] ARF_FunSel;
-      wire [2:0] ARF_RegSel;
-      wire IR_LH;
-      wire IR_Enable;
-      wire [1:0] IR_Funsel;
-      wire Mem_WR;
-      wire Mem_CS;
-      wire [1:0] MuxASel;
-      wire [1:0] MuxBSel;
-      wire MuxCSel;
-      wire SC_reset;
-      
-      CombCount uut(CLK,BRA,LD,ST,MOV,AND,OR,NOT,
-               ADD,SUB,LSR,LSL,PUL,PSH,INC,DEC,BNE,REGSEL,DESTREG,SRCREG1,SRCREG2,AddressMode,Z,C,N,O,
-               RF_OutASel,RF_OutBSel,RF_FunSel,RF_RegSel,ALU_FunSel,ARF_OutCSel,ARF_OutDSel,
-                   ARF_FunSel,ARF_RegSel,IR_LH,IR_Enable,IR_Funsel,Mem_WR,Mem_CS,MuxASel,MuxBSel,MuxCSel,SC_reset);
-      
-endmodule
-
-
 module HardwiredControlUnitTest();
     reg CLK;
+
     HardwiredControlUnit uut(CLK);
     initial begin
         CLK = 0;

@@ -855,6 +855,10 @@ module CombinationalControlUnit(
         //For BNE, if Z flag is not 0, the instruction cannot continue and clock is reseted to T0
         else if((BRA&~AddressMode&T2) | (BNE&T2&~AddressMode) | (ST&T2&AddressMode) | (BNE&Z&T2))begin
             rSC_reset <= 1'b1;
+            rRF_RegSel <= 4'b1111;
+            rARF_RegSel = 3'b111;
+            rIR_Enable = 1'b0;
+            rMem_CS = 1'b1;
         end
         
         //When T2 and BNE are 1 and Z is 0, IR(7-0)(address value) is loaded into PC register

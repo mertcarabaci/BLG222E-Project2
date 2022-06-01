@@ -4,4 +4,35 @@ Running: D:/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto f97be7fe3a3244819
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.CombinationalControlUnit
+Compiling module xil_defaultlib.MUX2_1_8bit
+Compiling module xil_defaultlib.Full_Adder_1bit
+Compiling module xil_defaultlib.Adder_Substractor_8bit
+Compiling module xil_defaultlib.D_Latch
+Compiling module xil_defaultlib.D_Flip_Flop
+Compiling module xil_defaultlib.PART1_8bit
+Compiling module xil_defaultlib.MUX4_1_8bit
+Compiling module xil_defaultlib.PART2_a
+Compiling module xil_defaultlib.PART2_b
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.MUX2_1_16bit
+Compiling module xil_defaultlib.Adder_Substractor_16bit
+Compiling module xil_defaultlib.PART1_16bit
+Compiling module xil_defaultlib.PART2_c
+Compiling module xil_defaultlib.MUX2_1_1bit
+Compiling module xil_defaultlib.MUX16_4_8bit
+Compiling module xil_defaultlib.MUX2_1_4bit
+Compiling module xil_defaultlib.Adder_Substractor_4bit
+Compiling module xil_defaultlib.ZCNO_register
+Compiling module xil_defaultlib.PART3
+Compiling module xil_defaultlib.ALUSystem
+Compiling module xil_defaultlib.Decoder_16_1
+Compiling module xil_defaultlib.SequenceCounter
+Compiling module xil_defaultlib.Decoder_8_1
+Compiling module xil_defaultlib.HardwiredControlUnit
+Compiling module xil_defaultlib.HardwiredControlUnitTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot HardwiredControlUnitTest_behav
