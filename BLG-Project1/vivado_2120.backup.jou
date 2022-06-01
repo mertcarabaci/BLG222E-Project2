@@ -1,0 +1,68 @@
+#-----------------------------------------------------------
+# Vivado v2017.4.1 (64-bit)
+# SW Build 2117270 on Tue Jan 30 15:32:00 MST 2018
+# IP Build 2095745 on Tue Jan 30 17:13:15 MST 2018
+# Start of session at: Wed Jun  1 00:38:01 2022
+# Process ID: 2120
+# Current directory: C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7684 C:\Users\mertc\Desktop\BLG222E-Project2\BLG-Project1\BLG-Project1.xpr
+# Log file: C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/vivado.log
+# Journal file: C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/mertc/Desktop/BLG222E-Project2/BLG-Project1/BLG-Project1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source HardwiredControlUnitTest.tcl
+restart
+run 3000 ns
+run 900 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+restart
+run 3600 ns
+run 5 ns
+run 5 ns
+run 5 ns
+restart
+run 3561 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+close_sim
+launch_simulation
+source HardwiredControlUnitTest.tcl
+restart
+run 3581 ns
+restart
+run 3581 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+restart
+run 3920 ns
+close_sim

@@ -1387,9 +1387,20 @@ module CombinationalControlUnit(
     assign SC_reset = rSC_reset;   
         
 endmodule
-
-module HardwiredControlUnit(CLK);
+module HardwiredControlUnit(CLK,Reset_out,T_out,R1_out,R2_out,R3_out,R4_out,PC_out,AR_out,SP_out);
+//module HardwiredControlUnit(CLK);
     input CLK;
+    
+    output Reset_out;
+    output [2:0] T_out; 
+    output [7:0] R1_out;
+    output [7:0] R2_out;
+    output [7:0] R3_out;
+    output [7:0] R4_out;
+    output [7:0] PC_out;
+    output [7:0] AR_out;
+    output [7:0] SP_out;
+    
     wire [1:0] RF_OutASel;
     wire [1:0] RF_OutBSel;
     wire [1:0] RF_FunSel;
@@ -1454,6 +1465,16 @@ module HardwiredControlUnit(CLK);
     SequenceCounter SC(CLK,Reset,T);
     //Decodes counter signal coming from sequence counter
     Decoder_8_1 SC_DECODER(T,T0,T1,T2,T3,T4,T5,T6,T7);
+    
+    assign Reset_out = SC.Reset;
+    assign T_out = SC.T;
+    assign R1_out = ALU_Sys.register_file.Q1;
+    assign R2_out = ALU_Sys.register_file.Q2;
+    assign R3_out = ALU_Sys.register_file.Q3;
+    assign R4_out = ALU_Sys.register_file.Q4;
+    assign PC_out = ALU_Sys.ARF.PC;
+    assign AR_out = ALU_Sys.ARF.AR;
+    assign SP_out = ALU_Sys.ARF.SP;
 endmodule
 
 

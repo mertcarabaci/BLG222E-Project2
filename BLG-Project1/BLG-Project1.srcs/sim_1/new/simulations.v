@@ -343,8 +343,19 @@ endmodule
 
 module HardwiredControlUnitTest();
     reg CLK;
-
-    HardwiredControlUnit uut(CLK);
+    
+    wire Reset;
+    wire [2:0] T; 
+    wire [7:0] R1;
+    wire [7:0] R2;
+    wire [7:0] R3;
+    wire [7:0] R4;
+    wire [7:0] PC;
+    wire [7:0] AR;
+    wire [7:0] SP;
+    
+    HardwiredControlUnit uut(.CLK(CLK),.Reset_out(Reset),.T_out(T),.R1_out(R1),.R2_out(R2),.R3_out(R3),.R4_out(R4),.PC_out(PC),.AR_out(AR),.SP_out(SP));
+    //HardwiredControlUnit uut(CLK);
     initial begin
         CLK = 0;
         forever #20 CLK = ~CLK;       
